@@ -11,6 +11,8 @@ foreach($pgName in @('Microsoft.Web.WebView2.Core.dll','Microsoft.Web.WebView2.W
 Copy-Item -LiteralPath (Join-Path $pgVendor 'LICENSE.txt') -Destination (Join-Path $pgBin 'WebView2-LICENSE.txt') -Force
 if(Test-Path -LiteralPath (Join-Path $pgRoot 'licenses\Node-LICENSE.txt')){Copy-Item -LiteralPath (Join-Path $pgRoot 'licenses\Node-LICENSE.txt') -Destination (Join-Path $pgBin 'Node-LICENSE.txt') -Force}
 $pgCompiler=Join-Path $env:SystemRoot 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+& (Join-Path $pgBin 'node.exe') (Join-Path $PSScriptRoot 'generate-application-icon.cjs')
+if($LASTEXITCODE -ne 0){throw 'Application icon packaging failed.'}
 & (Join-Path $PSScriptRoot 'build-worker-interop.ps1')
 if(!$?){throw 'Worker interop compilation failed.'}
 $pgSources=@(Get-ChildItem -LiteralPath (Join-Path $pgRoot 'src') -Filter '*.cs' | ForEach-Object FullName)
@@ -18,6 +20,7 @@ $pgSources+=Join-Path $pgRoot 'runtime\companion\PrivateBootstrap.cs'
 $pgArgs=@('/nologo','/target:winexe','/platform:x64','/optimize+',('/out:'+(Join-Path $pgBin 'WallpaperShell.exe')),('/win32manifest:'+(Join-Path $pgRoot 'src\app.manifest')),'/reference:System.dll','/reference:System.Core.dll','/reference:System.Windows.Forms.dll','/reference:System.Drawing.dll','/reference:System.Web.Extensions.dll',('/reference:'+(Join-Path $pgBin 'Microsoft.Web.WebView2.Core.dll')),('/reference:'+(Join-Path $pgBin 'Microsoft.Web.WebView2.WinForms.dll')))
 $pgFramework=Split-Path -Parent $pgCompiler
 $pgArgs+='/reference:System.Xml.dll'
+$pgArgs+='/win32icon:'+(Join-Path $pgRoot 'identity\application.ico')
 $pgArgs+='/reference:System.IO.Compression.dll'
 $pgArgs+='/reference:System.IO.Compression.FileSystem.dll'
 foreach($pgAssembly in @('System.Runtime','System.Collections','System.Threading.Tasks','System.ObjectModel','System.Runtime.InteropServices.WindowsRuntime','System.Runtime.WindowsRuntime')){$pgArgs+='/reference:'+(Join-Path $pgFramework ($pgAssembly+'.dll'))}

@@ -34,7 +34,7 @@ namespace PaperGreen {
   AppUpdates Updates {get{if(updates==null)updates=new AppUpdates(Root);return updates;}}
   internal void MaintenanceInfo(Surface source){
    try{var config=Updates.Configuration;source.SendPolicy(new{type="app-maintenance-info",version=config.Version,repository=config.Repository,enabled=config.Enabled,reportAvailable=AppMaintenanceRules.ReportUrl(config.Repository,config.Version)!=null});}
-   catch{source.SendPolicy(new{type="app-maintenance-info",version="0.2.0",enabled=false,reportAvailable=false});}
+   catch{source.SendPolicy(new{type="app-maintenance-info",version="0.2.1",enabled=false,reportAvailable=false});}
   }
   internal bool MaintenanceRequest(Surface source,Dictionary<string,object> message){
    object type,rawAction,rawId;

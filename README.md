@@ -1,4 +1,4 @@
-# WallpaperShell · 0.2.0
+# WallpaperShell · 0.2.1
 
 WallpaperShell — приложение живых обоев для Windows x64 на C# / WinForms / WebView2. **Paper Green**, **Luna Blue** и **Classic** — темы внутри приложения.
 
@@ -8,15 +8,19 @@ Luna Blue сочетает жидкий синий мрамор, отдельн�
 
 ## Скачать
 
-[Готовый архив для Windows x64](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-win-x64.zip) · [SHA256](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-win-x64.zip.sha256) · [Все релизы](https://github.com/Kodzimba/WallpaperShell/releases).
+[Установщик для Windows x64](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-Setup-x64.exe) · [SHA256 установщика](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-Setup-x64.exe.sha256) · [Portable ZIP](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-win-x64.zip) · [Все релизы](https://github.com/Kodzimba/WallpaperShell/releases).
 
-Для запуска скачай именно WallpaperShell-win-x64.zip из Assets релиза. Архивы GitHub «Source code» содержат исходники для сборки.
+Для обычной установки скачай **WallpaperShell-Setup-x64.exe**. Он установит приложение, добавит ярлыки в меню «Пуск» и на рабочий стол и при отсутствии подготовит WebView2 и .NET Framework 4.8. Для загрузки отсутствующих компонентов Microsoft нужен интернет; .NET может запросить разрешение Windows и перезагрузку. Приложение устанавливается для текущего пользователя, в его локальную папку Programs. Первый запуск открывает Luna Blue, дальнейшие установки сохраняют выбранную тему и настройки.
+
+Версия portable распространяется отдельно как **WallpaperShell-win-x64.zip**. Архивы GitHub «Source code» содержат исходники для сборки.
 
 ## Запуск
 
-Распакуй весь portable ZIP в собственную доступную для записи папку на локальном диске с Windows ACL. Для ключа создаётся защищённый data/private; сетевые папки и файловые системы без Windows ACL не подходят. Запускай RUN.cmd для обычного окна, RUN_DESKTOP.cmd для рабочего стола или RUN_LUNA_BLUE.cmd для Luna Blue. Не переноси один EXE отдельно от папки. Исполняемый файл приложения: bin/WallpaperShell.exe.
+После установки используй ярлык **WallpaperShell**. Для удаления открой «Установленные приложения» Windows; личные настройки сохранятся. Установщик не добавляет WallpaperShell в автозагрузку.
 
-Нужны Windows x64, [.NET Framework 4.8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) и [Microsoft Edge WebView2 Evergreen Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/). Если Runtime отсутствует, установи его с официальной страницы Microsoft. Node.js и SDK-библиотеки WebView2 входят в portable пакет; отдельно устанавливать Node или npm не нужно. Приложение не устанавливает автозапуск или службу.
+Для portable распакуй весь ZIP в собственную доступную для записи папку на локальном диске с Windows ACL. Для ключа создаётся защищённый data/private; сетевые папки и файловые системы без Windows ACL не подходят. Запускай RUN.cmd для обычного окна, RUN_DESKTOP.cmd для рабочего стола или RUN_LUNA_BLUE.cmd для Luna Blue. Не переноси один EXE отдельно от папки. Исполняемый файл приложения: bin/WallpaperShell.exe.
+
+Установщик рассчитан на Windows 10 1809 или новее, Windows 11, x64. Он проверяет [.NET Framework 4.8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) и [Microsoft Edge WebView2 Evergreen Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) и запускает включённые официальные bootstrapper-программы Microsoft, когда это требуется. Node.js и SDK-библиотеки WebView2 уже входят в приложение. В portable-режиме отсутствующие Runtime устанавливаются отдельно.
 
 «Рабочий стол» возвращает значки Windows и завершает WallpaperShell. Обычное закрытие завершает только собственные окна и backend. Существующие обои и их службы приложение не заменяет.
 
@@ -40,7 +44,7 @@ Luna Blue сочетает жидкий синий мрамор, отдельн�
 
 Открой WallpaperShell.csproj в Visual Studio либо выполни tools/bootstrap-build.ps1 в Windows PowerShell. Bootstrap получает закреплённую официальную версию Node.js с проверкой SHA256; сборка не зависит от соседних проектов или локального кеша разработчика. После сборки tools/test.ps1 выполняет JS и нативные проверки на тестовых данных.
 
-tools/export-source.ps1 создаёт чистый исходник по разрешённому списку файлов и проверяет его перед публикацией. tools/package-release.ps1 создаёт WallpaperShell-win-x64.zip с манифестом и отдельным .zip.sha256. CI проверяет чистую сборку; release workflow подготавливает черновик релиза. Порядок выпуска: [docs/RELEASING.md](docs/RELEASING.md).
+tools/export-source.ps1 создаёт чистый исходник по разрешённому списку файлов и проверяет его перед публикацией. tools/package-release.ps1 создаёт WallpaperShell-win-x64.zip с манифестом и отдельным .zip.sha256. tools/package-installer.ps1 собирает установщик из этого проверенного ZIP. CI проверяет чистую сборку, установку, ярлыки и удаление на отдельной машине; release workflow подготавливает черновик релиза. Подробнее: [установщик](docs/INSTALLER.md), [порядок выпуска](docs/RELEASING.md).
 
 Публичный исходник сохраняет все три темы. Непроверенные старые растровые фоны Classic заменены проверенным мрамором Luna Blue; локальные оригиналы не публикуются. Шрифты и сторонние библиотеки сопровождаются лицензиями. Происхождение включённых ресурсов: [NOTICE.md](NOTICE.md) и licenses/assets-provenance.json.
 

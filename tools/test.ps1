@@ -35,4 +35,6 @@ try{
  if(!$?){throw 'Dependency integrity tests failed.'}
  & (Join-Path $PSScriptRoot 'test-app-updates.ps1')
  if(!$?){throw 'Native update tests failed.'}
+ & (Join-Path $PSScriptRoot 'test-installer.ps1')
+ if(!$?){throw 'Installer policy tests failed.'}
 }finally{Pop-Location}

@@ -4,8 +4,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "size": 226,
-      "sha256": "b0ad5218d8a72dbb24e4ffdd0efb902c6b0e02ebcf1581b221b85f799245ce6a"
+      "size": 259,
+      "sha256": "a9d5cb6bfc74d9a764f63d690f4284ec7a7528ef182f09e787d03c28af9dd025"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -14,13 +14,13 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "size": 1469,
-      "sha256": "c919d930a2918e50c01b15882aff6a605945a218da174349bbcc942f12f19ac5"
+      "size": 1778,
+      "sha256": "e1ad5cb2ea05f7db79ea863b8c3fd9b3f786967f43f8c91f7d9141de4bf9f802"
     },
     {
       "path": ".github/workflows/release.yml",
-      "size": 4250,
-      "sha256": "1700c354ef9d83d142bc54329b06ffd8fdedf9dc532bf57b7add6cc44a5c7c94"
+      "size": 4947,
+      "sha256": "9fb898f2fe7119ea349a763a586ed747dbd09928cdeb5c4414e490d761cf01e0"
     },
     {
       "path": ".gitignore",
@@ -34,13 +34,13 @@
     },
     {
       "path": "NOTICE.md",
-      "size": 1867,
-      "sha256": "3b43b507966c50377ae81d386347577ee8fcdaf8d86d8d5019d3cf44b09926ac"
+      "size": 2417,
+      "sha256": "4ba6acd7977bc26b17c5709895ed18b7a668a3776d2dca88bc058818de9024ff"
     },
     {
       "path": "README.md",
-      "size": 8344,
-      "sha256": "bcd4161be0203ed80e6ab94ceaa2aa06dd7605fa17aacd1b18a2ba50509b0dba"
+      "size": 9963,
+      "sha256": "54352ad0315c91071a501d29801baa2f532196067bb8ebfbccf22f2aef02eb26"
     },
     {
       "path": "RUN.cmd",
@@ -64,18 +64,23 @@
     },
     {
       "path": "WallpaperShell.csproj",
-      "size": 2942,
-      "sha256": "17f78ee89ce06e4a30eda1c05483104a35a5ae32e8e82a4b05d1d4f9fb082e50"
+      "size": 3034,
+      "sha256": "90a9e95d3524f2721780a5fe9f13e65102685945f54262f02cc40d1652de9f3a"
     },
     {
       "path": "app-release.json",
       "size": 135,
-      "sha256": "4ba4b26432a9d657e6e56b5464dd4539b27ce639506e83959a3711338a677beb"
+      "sha256": "bd449716ae457c44600884f9c5bde4199cfd78db60e6663500b4cc97cfa44011"
     },
     {
       "path": "docs/DEPENDENCIES.md",
-      "size": 2631,
-      "sha256": "a4097a6bb595cc8111c1dd469c7c001c0c1405d971877066688c62ee2f6f761c"
+      "size": 3369,
+      "sha256": "406ac4a7829c3a6f9dfd42ee0c8e3e9864f839473e28a28cb90fc9f28fe98cb0"
+    },
+    {
+      "path": "docs/INSTALLER.md",
+      "size": 4002,
+      "sha256": "37e95d3728d22c9bdfe61e943363ffd8572e86c38327cbd4954674d08a95be49"
     },
     {
       "path": "docs/NOTIFICATIONS.md",
@@ -84,18 +89,23 @@
     },
     {
       "path": "docs/PRIVACY.md",
-      "size": 2725,
-      "sha256": "b8a9c44745960eed474b8652ecb1c7311e66ce1d5d8d8bfec0f120b59b26ddb4"
+      "size": 3152,
+      "sha256": "381205834ffec143054c78a838ad99ce9fb85c5ff6781880d4887c2abc343a76"
     },
     {
       "path": "docs/RELEASING.md",
-      "size": 2827,
-      "sha256": "50e53906c7a23dd9d85142b05608396603b34e1a057f26d2c5cd450ef3df428f"
+      "size": 3428,
+      "sha256": "9f015ba872f2bbced8e87913cce789ead7fdec9b55bef1db36f6b4086fe42d06"
     },
     {
       "path": "docs/SECURITY_REVIEW.md",
       "size": 5678,
       "sha256": "1208aaa8b4d838988714a494a7bef23afa3ed61bb6d50fc9da9640ab9e2d6f36"
+    },
+    {
+      "path": "identity/application.ico",
+      "size": 945,
+      "sha256": "ce8c53a97397c16dcf0ede751c40f4c1c105bfd1e7762a2dff6bda55f2d32ed1"
     },
     {
       "path": "identity/notifications/AppxManifest.xml",
@@ -128,14 +138,24 @@
       "sha256": "2b059a90fa938de247ce17a8d245d312b29983164c9fe74dbb8f76572d739d7b"
     },
     {
+      "path": "installer/WallpaperShell.iss",
+      "size": 8016,
+      "sha256": "6bd6c11b8a24766957a65d5c7ed2a8941614990346286cf879def14f834d1528"
+    },
+    {
+      "path": "installer/policy.iss",
+      "size": 2844,
+      "sha256": "ed44a027585e73bb5f6bbaff6133906290b7ec815bccc9478e146e61ca1e898c"
+    },
+    {
       "path": "licenses/Node-LICENSE.txt",
       "size": 160555,
       "sha256": "ed34dd8e3f0a78dbaf00d0444ce8e285b015b765379c2e17880455f70370f8e9"
     },
     {
       "path": "licenses/assets-provenance.json",
-      "size": 2680,
-      "sha256": "239533136093b558a54c82f0d3afdef240fdaad7fd9216557d3abdc80a97c718"
+      "size": 3081,
+      "sha256": "def4ec5e131cdcacd09ac611de58ddf91ff81293681a4eefec51e0d11d944485"
     },
     {
       "path": "licenses/fonts/DejaVu-LICENSE.txt",
@@ -146,6 +166,11 @@
       "path": "licenses/fonts/Oswald-OFL.txt",
       "size": 4483,
       "sha256": "0fd731a904b729a4e02eaf5e8ebd06783edd9abe400e8882760160230675b652"
+    },
+    {
+      "path": "licenses/installer/Inno-Setup-LICENSE.txt",
+      "size": 1521,
+      "sha256": "2e5346868c2a18434489824e11d65c3031620f792fefc415d05f19cd441abf5c"
     },
     {
       "path": "runtime/companion/DesktopInterop.cs",
@@ -883,9 +908,14 @@
       "sha256": "e7aa06568d1b422b8293818739267e505ecd9cf8182cfe92ad4f6dad3e985a48"
     },
     {
+      "path": "src/AppAssembly.cs",
+      "size": 242,
+      "sha256": "4e680e3c2a96aa468f9e64cdb2cbe28c2c0ba062143c46f7f410e156fcfdd264"
+    },
+    {
       "path": "src/AppMaintenance.cs",
       "size": 7861,
-      "sha256": "ec4eb0e223cce426e14c9abc5a4054d8877197a01de423f30e359395c27323e8"
+      "sha256": "d315360bced88294f5382980eba9afda10191ec46c0098dd4d1716acc52ecc8f"
     },
     {
       "path": "src/AppUpdates.cs",
@@ -975,7 +1005,7 @@
     {
       "path": "src/app.manifest",
       "size": 983,
-      "sha256": "90e81d82f4810b3b9875f686ac947aab73e594a3a8bd77eae51de5333b255762"
+      "sha256": "4d83df83f363fc35e314576f6ce54fd33905208d0f1ff120324e8766559c076d"
     },
     {
       "path": "tests/AppUpdatesTests.cs",
@@ -986,6 +1016,11 @@
       "path": "tests/AudioTests.cs",
       "size": 4212,
       "sha256": "3949c3a1a4d2184c83054966368795f8115b139ef4a9f5d047ccafdf43822907"
+    },
+    {
+      "path": "tests/InstallerPolicy.iss",
+      "size": 3127,
+      "sha256": "0fe334c22d26761703d86d0240e9679b96425048b7bb7a5f921b6c8de35f5618"
     },
     {
       "path": "tests/LauncherSessionTests.cs",
@@ -1146,6 +1181,11 @@
       "path": "tests/helpers/luna-scene-fixture.cjs",
       "size": 3423,
       "sha256": "d1ecdf9d8aef3fb02a41d426a9093a9a04431092b89d83419a7c3556edc0d10e"
+    },
+    {
+      "path": "tests/installer-package.test.cjs",
+      "size": 1950,
+      "sha256": "552e4e55cf09161390c5e8556bb99f897d7a2d99ea47cccfbfaeddc56dff38a8"
     },
     {
       "path": "tests/launcher-freshness.test.cjs",
@@ -1333,6 +1373,11 @@
       "sha256": "fef1edf983dc09f87da98c108c67fb01eff481df3b7880c2fa626d095f5b27ef"
     },
     {
+      "path": "tools/bootstrap-installer.ps1",
+      "size": 4214,
+      "sha256": "df62ef86da00b26876816f3d025fa904d6da98d35dabe612e07c55d67e25a106"
+    },
+    {
       "path": "tools/build-launcher.ps1",
       "size": 844,
       "sha256": "b629d77ee1cb37bf311b0b0cd4b6a2c86d57bede7704e8083c289c9d32fa7e3c"
@@ -1349,13 +1394,13 @@
     },
     {
       "path": "tools/build.ps1",
-      "size": 3745,
-      "sha256": "5deb9430e9f965c65ec9dfa3de2cd14e5c8b7e4438f0c6ad8fd593885a54a2ef"
+      "size": 3973,
+      "sha256": "f41fededa3fc4641bca63362f217210906f74c76c717eb8330324491b9f5d8ac"
     },
     {
       "path": "tools/check-security.cjs",
-      "size": 3293,
-      "sha256": "ad6eb9e535e2ed1792348480a6f78d397fb6f49fff9e2206bc863aaf50186a1a"
+      "size": 3297,
+      "sha256": "69d84b895174d8490c3f3d7e732ad925c024d2144842bf02303138d2ba34cf93"
     },
     {
       "path": "tools/export-source.ps1",
@@ -1363,14 +1408,29 @@
       "sha256": "a6c062550d12a580e1c2c7f396b394d2f4d062f1ddb9a6573c2b98d6b26cdf04"
     },
     {
+      "path": "tools/generate-application-icon.cjs",
+      "size": 609,
+      "sha256": "47e10369a9b4dd4ef2be6a6c9a8c5fba629060a1abffa0c9b10d9d7034f16ae2"
+    },
+    {
       "path": "tools/generate-notification-icons.ps1",
       "size": 1534,
       "sha256": "271b53cee38ff969d2f50f736b796b21b302c8c70539d41090cf2c76d6f9f7fc"
     },
     {
+      "path": "tools/installer-dependencies.json",
+      "size": 5523,
+      "sha256": "52827bb52640513e2fad98b57ee0370fe244016c6c8f09cdaf170e1c52210ddd"
+    },
+    {
       "path": "tools/launch-luna.ps1",
       "size": 1475,
       "sha256": "09d6c52a9aff657535e569ecae882474c2cde6ab567f55b20627dbc6bb77eb81"
+    },
+    {
+      "path": "tools/package-installer.ps1",
+      "size": 3790,
+      "sha256": "c6cd7a131ef321df7d494c6966a5c8af8378b482d341bfaa6758ab34d32bfe68"
     },
     {
       "path": "tools/package-release.ps1",
@@ -1379,8 +1439,8 @@
     },
     {
       "path": "tools/publication.cjs",
-      "size": 11044,
-      "sha256": "fa316cdb691799eb535f00a0e74978ae6c3b9d6471d085a229931f9ebf5b1695"
+      "size": 11361,
+      "sha256": "71df11bb63decaad9cede24f42b60b47ed8c54588f1bc9fd992bffd381d05d8c"
     },
     {
       "path": "tools/runtime-dependencies.json",
@@ -1406,6 +1466,16 @@
       "path": "tools/test-dependency-integrity.ps1",
       "size": 3136,
       "sha256": "dcd4fcbc283e9237261b1b89533137dc06bf19cc62f6b592fac74fc3be00ac07"
+    },
+    {
+      "path": "tools/test-installed-package.ps1",
+      "size": 7147,
+      "sha256": "4f2d4623f08a38b2f8f46b1ec9d2529bca01e31954724da94b673c09bc9247f9"
+    },
+    {
+      "path": "tools/test-installer.ps1",
+      "size": 1201,
+      "sha256": "0f83b55f2c769c0ec94924cab80c7ea65ccfe02b5a90f4028ec3c4e017dce5be"
     },
     {
       "path": "tools/test-launcher-session.ps1",
@@ -1464,8 +1534,8 @@
     },
     {
       "path": "tools/test.ps1",
-      "size": 2038,
-      "sha256": "67282ca6f71e2dcf1c2f877049b9d072c00396d0f8ebc0a153458ad1d54d6a0d"
+      "size": 2137,
+      "sha256": "090b89970785aca73123a856fe0ca42832c4304d86ec73b3393791481d2e547d"
     },
     {
       "path": "tools/validate-update-package.ps1",

@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_pro
 function audit(root,{index=true}={}){
  let repository='';try{repository=JSON.parse(fs.readFileSync(path.join(root,'app-release.json'),'utf8')).repository||'';}catch{}if(!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository))repository='';
  const files=P.list(root,'source'),findings=P.scan(root,files),personal=[process.env.USERNAME,process.env.COMPUTERNAME].filter(s=>s&&s.length>=5&&!['runneradmin','runner','localhost','system'].includes(s.toLowerCase()));
- const inspect=(name,bytes,scope)=>{const binary=/\.(?:png|ttf|dll|exe)$/i.test(name),body=binary?bytes.toString('latin1')+'\n'+bytes.toString('utf16le'):bytes.toString('utf8');for(const rule of P.scanText(body))findings.push({path:name,rule,scope});const identityText=repository?body.replaceAll(repository,'PUBLIC_REPOSITORY'):body;if(personal.some(s=>new RegExp('(^|[^a-z0-9])'+s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-z0-9]|$)','i').test(identityText)))findings.push({path:name,rule:'local-machine-identity',scope});};
+ const inspect=(name,bytes,scope)=>{const binary=/\.(?:png|ttf|dll|exe|ico)$/i.test(name),body=binary?bytes.toString('latin1')+'\n'+bytes.toString('utf16le'):bytes.toString('utf8');for(const rule of P.scanText(body))findings.push({path:name,rule,scope});const identityText=repository?body.replaceAll(repository,'PUBLIC_REPOSITORY'):body;if(personal.some(s=>new RegExp('(^|[^a-z0-9])'+s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-z0-9]|$)','i').test(identityText)))findings.push({path:name,rule:'local-machine-identity',scope});};
  for(const name of files)inspect(name,fs.readFileSync(path.join(root,name)),'worktree');
  let indexed=0,history=false,historyBlobs=0;
  if(index){

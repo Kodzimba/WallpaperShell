@@ -11,4 +11,6 @@
 *.webp binary
 *.ttf binary
 *.dll binary
+*.ico binary
+*.iss text eol=crlf
 *.exe binary
