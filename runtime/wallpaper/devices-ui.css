@@ -1,0 +1,17 @@
+#settings .pg-device-settings{margin-top:22px;padding-top:18px;border-top:1px solid #8299a744}
+#settings .pg-device-settings h3{font:600 18px/1.3 'Segoe UI',sans-serif;margin:0 0 10px}
+#settings .pg-device-settings .help,#settings .pg-device-settings p{font:12px/1.55 'Segoe UI',sans-serif;letter-spacing:normal;overflow-wrap:anywhere;margin:8px 0}
+#settings .pg-device-field{display:grid;gap:7px;margin:14px 0;font:13px/1.35 'Segoe UI',sans-serif}
+#settings .pg-device-field select{box-sizing:border-box;width:100%;min-width:0;min-height:38px;padding:8px 10px;font:13px 'Segoe UI',sans-serif;color:inherit;background:var(--surface,#0a1d32);border:1px solid #91a9b655;border-radius:7px;text-overflow:ellipsis}
+#settings .pg-device-actions{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+#settings .pg-device-actions button{width:auto;margin:0;padding:8px 10px;border:1px solid #91a9b655;border-radius:7px;color:inherit;background:transparent;font:12px/1.3 'Segoe UI',sans-serif;min-height:36px;cursor:pointer}
+#settings .pg-device-actions button:hover:enabled{background:#a4c8e322}#settings .pg-device-actions button:disabled{opacity:.4;cursor:default}
+#settings .pg-device-connections{padding:8px 12px;background:#91a9b611;border-radius:8px}#settings .pg-device-connections p{font-size:11px;margin:4px 0}
+#settings .pg-device-status{color:inherit;opacity:.8}#settings .pg-device-status[data-error=true]{color:#db795b;opacity:1}
+#settings .pg-device-help{margin-top:14px;border-top:1px solid #91a9b633;padding-top:10px}#settings .pg-device-help summary{cursor:pointer;font:13px/1.5 'Segoe UI',sans-serif}#settings .pg-device-help p{font-size:12px;opacity:.8}
+body[data-theme=luna-blue] #settings .pg-device-field select{background:#09182b;border-color:#84acd055;color:#d9e9fa}
+body[data-theme=luna-blue] #settings .pg-device-status[data-error=true]{color:#ffbcaa}
+body[data-theme=luna-blue] #settings .pg-device-connections p{color:#c3d8ec}
+#settings .pg-devices-open{min-height:40px;width:100%;margin:0 0 14px;padding:9px 12px;border:1px solid #91a9b655;border-radius:7px;background:#91a9b614;color:inherit;font:14px 'Segoe UI',sans-serif;cursor:pointer}
+#systemModel,#mouseModel{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body[data-theme=luna-blue] #systemModel,body[data-theme=luna-blue] #mouseModel{flex:1}

@@ -1,0 +1,334 @@
+/* Luna-specific geometry. Native layers and the shared action controllers stay in charge. */
+body[data-theme=luna-blue] .luna-signal {
+  top:auto; bottom:12px; left:0; right:0; line-height:12px;
+}
+body[data-theme=luna-blue] .widget header {
+  align-items:center; min-height:14px; letter-spacing:1.2px;
+}
+body[data-theme=luna-blue] .widget header .dot { margin-left:auto; flex:none; }
+body[data-theme=luna-blue] :is(.settings-toggle,.start-toggle) {
+  display:grid; place-items:center; padding:0; line-height:1; font-size:0;
+}
+body[data-theme=luna-blue] .settings-toggle>.icon { display:block; width:22px; height:22px; }
+body[data-theme=luna-blue] .start-toggle>svg { display:block; width:26px; height:26px; }
+
+/* A six-week month fits the same card as a five-week month. */
+body[data-theme=luna-blue] .calendar .widget-content { padding:18px 20px; }
+body[data-theme=luna-blue] .calendar header { height:28px; margin:0 0 10px; }
+body[data-theme=luna-blue] .calendar #calendarToday { font-size:9px; }
+body[data-theme=luna-blue] .calendar .weekdays { height:24px; margin:0; line-height:24px; }
+body[data-theme=luna-blue] .calendar-days { height:180px; align-content:start; }
+
+/* Keep the shared glass material on a separate paint layer. Updating weather
+   text/SVG must not invalidate the same surface that samples the WebGL water. */
+body[data-theme=luna-blue] .widget.weather {
+  background:transparent; isolation:isolate;
+  -webkit-backdrop-filter:none; backdrop-filter:none;
+}
+body[data-theme=luna-blue] .widget.weather:before {
+  content:''; display:block; position:absolute; inset:0; width:auto; height:auto;
+  border:0; border-radius:inherit; z-index:0; pointer-events:none;
+  background:var(--luna-panel); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px);
+}
+body[data-theme=luna-blue] .weather .widget-content {
+  display:grid; grid-template-rows:1fr auto; gap:5px; padding:11px 18px 9px; z-index:1;
+}
+body[data-theme=luna-blue] .weather-body { height:auto; min-height:0; gap:12px; }
+body[data-theme=luna-blue] .weather-art { width:30px; height:36px; flex:0 0 30px; }
+body[data-theme=luna-blue] .weather-art .icon { width:30px; height:36px; }
+body[data-theme=luna-blue] .weather-info { align-items:center; gap:12px; }
+body[data-theme=luna-blue] .temperature { flex:none; line-height:32px; }
+body[data-theme=luna-blue] .temperature:before { margin-right:9px; }
+body[data-theme=luna-blue] #weatherText {
+  max-width:none; min-width:0; flex:1; font-size:12px; line-height:15px; margin:0;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+}
+body[data-theme=luna-blue] .weather #weatherStatus {
+  position:static; margin:0; font-size:9px; line-height:11px; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis;
+}
+
+/* All three small cards share a header and a stable bottom line. */
+body[data-theme=luna-blue] :is(.system,.network,.mouse) .widget-content { padding:15px 18px; }
+body[data-theme=luna-blue] :is(.system,.network,.mouse) header { height:14px; margin:0 0 10px; }
+body[data-theme=luna-blue] .system .metric { margin:8px 0 5px; }
+body[data-theme=luna-blue] .network .traffic { margin:7px 0 0; align-items:baseline; }
+body[data-theme=luna-blue] .network .traffic b { font-variant-numeric:tabular-nums; }
+body[data-theme=luna-blue] .network-detail {
+  position:absolute; left:18px; bottom:16px; margin:0; font-size:10px; line-height:13px;
+}
+body[data-theme=luna-blue] .network-test-row {
+  position:absolute; left:auto; top:auto; right:18px; bottom:12px; width:auto;
+  margin:0; gap:8px; align-items:center;
+}
+body[data-theme=luna-blue] .network-test-row #networkSpeedTime {
+  position:static; max-width:112px; font-size:9px; line-height:12px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+body[data-theme=luna-blue] .network-test-row button {
+  position:static; min-width:50px; min-height:24px; padding:4px 9px; flex:none; font-size:10px;
+}
+body[data-theme=luna-blue] .network-test-row button:is(:hover,:focus-visible,:active):enabled {
+  background:#b6d8f82e; border-color:var(--accent); color:var(--luna-text); transform:none;
+}
+body[data-theme=luna-blue] .mouse .compact-body { min-height:58px; gap:12px; }
+body[data-theme=luna-blue] .mouse .compact-values { min-height:33px; align-items:center; }
+body[data-theme=luna-blue] .mouse #mouseBattery { font-variant-numeric:tabular-nums; }
+body[data-theme=luna-blue] .mouse .bar { margin-top:8px; }
+
+/* Clear the inherited 145px player-control inset and absolute timestamp. */
+body[data-theme=luna-blue] .media .widget-content { padding:15px 20px; }
+body[data-theme=luna-blue] .media header { height:12px; min-height:12px; margin:0 0 10px; }
+body[data-theme=luna-blue] .media .media-body { height:118px; gap:18px; }
+body[data-theme=luna-blue] .media .media-info { height:118px; gap:5px; }
+body[data-theme=luna-blue] .media .cover { border-radius:10px; }
+body[data-theme=luna-blue] .media[data-artwork=wide] .cover { width:124px; height:88px; flex-basis:124px; }
+body[data-theme=luna-blue] .media[data-artwork=portrait] .cover { width:66px; height:88px; flex-basis:66px; }
+body[data-theme=luna-blue] .media .timeline {
+  position:relative; display:flex; flex-direction:column; align-items:stretch;
+  height:23px; gap:6px; margin:4px 0 0; padding:0;
+}
+body[data-theme=luna-blue] .media .timeline>div { width:100%; height:2px; flex:none; }
+body[data-theme=luna-blue] .media .timeline>span {
+  position:static; font:10px/12px 'Segoe UI',sans-serif; font-variant-numeric:tabular-nums;
+}
+body[data-theme=luna-blue] .media .player-controls {
+  padding:0; justify-content:flex-start; gap:10px; margin:auto 0 0;
+}
+body[data-theme=luna-blue] .media .player-volume { width:115px; gap:8px; }
+body[data-theme=luna-blue] .media .player-feedback { left:20px; right:20px; bottom:2px; }
+
+/* A compact centered window strip; further rows use the existing scroll area. */
+body[data-theme=luna-blue] .open-windows .widget-content { padding:14px 18px; }
+body[data-theme=luna-blue] .open-windows header { height:12px; min-height:12px; margin:0 0 10px; }
+body[data-theme=luna-blue] .desktop-window-grid { height:58px; grid-auto-rows:58px; gap:6px 10px; }
+body[data-theme=luna-blue] .desktop-window-tile { height:58px; }
+body[data-theme=luna-blue] .desktop-window { height:58px; padding:3px 10px; gap:4px; }
+body[data-theme=luna-blue] :is(.desktop-window-icon,.desktop-window-glyph) {
+  width:32px; height:32px; flex:0 0 32px; font-size:22px; line-height:32px;
+}
+body[data-theme=luna-blue] .desktop-window-label { font-size:10px; line-height:12px; }
+body[data-theme=luna-blue] .desktop-window-feedback {
+  left:18px; right:18px; bottom:0; padding:2px 0; background:#0d2238; color:#dcecff;
+  font:10px/12px 'Segoe UI',sans-serif;
+}
+body[data-theme=luna-blue] .notifications .widget-content { padding:16px 18px 14px; }
+body[data-theme=luna-blue] .notifications header { height:12px; min-height:12px; margin:0 0 12px; }
+/* Rows and their grid tracks must agree: inheriting 60px tracks under 68px
+   cards overlapped each following message, including its action hit area. */
+body[data-theme=luna-blue] .desktop-notification-list { grid-auto-rows:68px; }
+body[data-theme=luna-blue] .desktop-notification { padding-right:32px; gap:10px; }
+body[data-theme=luna-blue] .desktop-notification-copy { min-width:0; flex:1; padding-right:12px; }
+body[data-theme=luna-blue] .desktop-notification-feedback { font:11px/15px 'Segoe UI',sans-serif; }
+
+/* The inline category menu uses the same material as the telemetry cards.
+   A separate native popup cannot sample another HWND with CSS backdrop-filter.
+   Its stage therefore paints our own static marble in composition coordinates:
+   no screen capture, second water renderer or platform transparency dependency. */
+body[data-theme=luna-blue] .launcher-panel {
+  background:var(--luna-panel); border-color:var(--luna-line); border-radius:24px;
+  color:var(--luna-text); box-shadow:0 15px 50px var(--luna-shadow);
+  -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px);
+}
+body[data-theme=luna-blue] .launcher-panel:before { display:none; }
+body[data-theme=luna-blue] .launcher-panel :is(h2,.launcher-item-name) { color:var(--luna-text); }
+body[data-theme=luna-blue] .launcher-panel :is(#launcherArrange,#launcherClose) { color:var(--luna-text); }
+body[data-theme=luna-blue] .launcher-panel>header { border-color:var(--luna-line); }
+body[data-theme=luna-blue] .launcher-panel :is(.launcher-section,.launcher-empty,.launcher-selection>span,.launcher-panel-foot,.launcher-panel-foot>button,.launcher-panel>header>button) { color:var(--luna-muted); }
+body[data-theme=luna-blue] .launcher-panel .launcher-panel-foot { border-color:var(--luna-line); }
+body[data-theme=luna-blue] .launcher-item { background:var(--luna-hover); border-color:var(--luna-line); }
+body[data-theme=luna-blue] .launcher-item:hover:enabled,
+body[data-theme=luna-blue] .launcher-selected .launcher-item { background:color-mix(in srgb,var(--accent) 18%,transparent); border-color:var(--accent); }
+body[data-theme=luna-blue] .launcher-item-icon>.icon { color:var(--accent); }
+body[data-theme=luna-blue] .launcher-scroll-track { background:var(--luna-hover); }
+body[data-theme=luna-blue] .launcher-scroll-thumb { background:var(--luna-muted); }
+body[data-theme=luna-blue] .launcher-scrollbar>button,
+body[data-theme=luna-blue] .launcher-tile>select { background:var(--luna-panel); color:var(--luna-text); border-color:var(--luna-line); }
+body[data-theme=luna-blue].overlay-host #stage {
+  background-color:#020a18;
+  background-image:linear-gradient(90deg,#010c1f6b,transparent 35%,transparent 70%,#010c1f60),linear-gradient(0deg,#020d20b0,transparent 45%),url('assets/marble-water.png');
+  background-size:100% 100%,100% 100%,cover; background-position:center; background-repeat:no-repeat;
+}
+body[data-theme=luna-blue].overlay-host .launcher-panel { box-shadow:none; }
+body[data-theme=luna-blue] .system #systemModel {
+  min-width:0; overflow:hidden; text-overflow:ellipsis; flex:1;
+}
+/* Keep keyboard focus inside clipped cards, using the selected Luna accent. */
+body[data-theme=luna-blue] :is(button,input,select):focus-visible { outline-color:var(--accent); }
+body[data-theme=luna-blue] :is(.desktop-window-close,.desktop-notification-open,.desktop-notification-dismiss):focus-visible {
+  outline:2px solid var(--accent); outline-offset:-2px;
+}
+/* A stopped/offscreen ticker should not reserve a transform compositing layer. */
+body[data-theme=luna-blue] .desktop-notification-list.is-paused .desktop-notification-track,
+body[data-theme=luna-blue] .desktop-notification.is-outside .desktop-notification-track,
+body[data-theme=luna-blue].motion-off .desktop-notification.has-overflow .desktop-notification-track { will-change:auto; }
+
+/* Explicit states override the purple hover rules of the original file picker. */
+body[data-theme=luna-blue] :is(.launcher-selection,.launcher-file-filters) { gap:8px; }
+body[data-theme=luna-blue] .launcher-selection>button {
+  min-height:34px; padding:7px 12px; border-radius:7px; font:12px/18px 'Segoe UI',sans-serif;
+}
+body[data-theme=luna-blue] .launcher-panel :is(.launcher-selection,.launcher-file-filters)>button:is(:hover,:focus-visible,:active):enabled,
+body[data-theme=luna-blue] .launcher-panel .launcher-file-check:is(:hover,:focus-visible,:active):enabled {
+  background:color-mix(in srgb,var(--accent) 22%,var(--luna-panel)); border-color:var(--accent); color:var(--luna-text); transform:none;
+}
+body[data-theme=luna-blue] .launcher-panel :is(.launcher-selection,.launcher-file-filters)>button[aria-pressed=true] {
+  background:color-mix(in srgb,var(--accent) 26%,var(--luna-panel)); border-color:var(--accent); color:var(--luna-text);
+}
+body[data-theme=luna-blue] .launcher-panel .launcher-file-check[aria-checked=true] {
+  background:color-mix(in srgb,var(--accent) 26%,var(--luna-panel)); border-color:var(--accent); color:var(--luna-text);
+}
+body[data-theme=luna-blue] .launcher-panel :is(.launcher-selection,.launcher-file-filters)>button,
+body[data-theme=luna-blue] .launcher-panel .launcher-file-filters>button>small,
+body[data-theme=luna-blue] .launcher-panel .launcher-file-check { background:var(--luna-hover); border-color:var(--luna-line); color:var(--luna-text); }
+body[data-theme=luna-blue] .launcher-selection-box { border-color:var(--accent); background:#b6d8f82b; box-shadow:none; }
+body[data-theme=luna-blue] .launcher-drag-ghost { background:#0d263def; border-color:#9fc6e8; border-radius:9px; }
+body[data-theme=luna-blue] .launcher-drag-ghost :is(strong,span) { color:#dcecff; }
+
+/* Category feedback fades independently of text and never moves the hit area. */
+body[data-theme=luna-blue] .launcher-rail { height:400px; }
+body[data-theme=luna-blue] .launcher-categories>button {
+  position:relative; isolation:isolate; overflow:hidden;
+  transition:color .28s ease,border-color .28s ease;
+}
+body[data-theme=luna-blue] .launcher-categories>button,
+body[data-theme=luna-blue] .launcher-categories>button:is(:hover,[aria-expanded=true]),
+body[data-theme=luna-blue] .launcher-categories.launcher-hovering>button[data-hovered=true],
+body[data-theme=luna-blue] .launcher-categories.launcher-hovering>button:not([data-hovered=true]) {
+  background:transparent; box-shadow:none; transform:none;
+}
+body[data-theme=luna-blue] .launcher-categories>button:before {
+  content:''; position:absolute; inset:3px 0; z-index:-1; pointer-events:none;
+  background:linear-gradient(90deg,#9acfff24,#9acfff0b); border-radius:7px;
+  opacity:0; transition:opacity .32s cubic-bezier(.2,.65,.3,1);
+}
+body[data-theme=luna-blue] .launcher-categories>button:is(:hover,:focus-visible,[aria-expanded=true]):before,
+body[data-theme=luna-blue] .launcher-categories.launcher-hovering>button[data-hovered=true]:before { opacity:1; }
+body[data-theme=luna-blue] .launcher-categories.launcher-hovering>button:not([data-hovered=true]):not(:focus-visible):before { opacity:0; }
+body[data-theme=luna-blue] .launcher-categories>button>i { transition:color .28s ease; }
+body[data-theme=luna-blue] .launcher-system {
+  display:grid; grid-template-columns:52px 92px minmax(0,1fr); gap:8px;
+  height:48px; margin:8px 0 0; padding:0; align-items:center;
+}
+body[data-theme=luna-blue] .launcher-system>button {
+  display:flex; align-items:center; justify-content:center; min-width:0;
+  height:40px; min-height:40px; padding:8px 5px; gap:6px; margin:0;
+  font:11px/14px 'Segoe UI',sans-serif; white-space:nowrap;
+  transition:background-color .25s ease,color .25s ease;
+}
+body[data-theme=luna-blue] .launcher-system>button>.icon { width:16px; height:16px; flex:0 0 16px; }
+body[data-theme=luna-blue] .launcher-system>button>span { line-height:14px; }
+@media(prefers-reduced-motion:reduce) {
+  body[data-theme=luna-blue] .launcher-categories>button,
+  body[data-theme=luna-blue] .launcher-categories>button:before,
+  body[data-theme=luna-blue] .launcher-system>button { transition:none; }
+}
+body[data-theme=luna-blue].motion-off .launcher-categories>button,
+body[data-theme=luna-blue].motion-off .launcher-categories>button:before,
+body[data-theme=luna-blue].motion-off .launcher-system>button { transition:none; }
+
+body[data-theme=luna-blue] #settings .settings-navigation>header {
+  display:flex; align-items:center; justify-content:space-between; min-height:30px;
+}
+body[data-theme=luna-blue] #settings .settings-tabs {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:14px 0 20px;
+}
+body[data-theme=luna-blue] #settings .settings-tabs>button {
+  min-height:40px; padding:9px 4px; margin:0; white-space:nowrap;
+}
+body[data-theme=luna-blue] #settings :is(h3,#applicationThemes>strong) {
+  display:block; font:600 16px/1.3 'Segoe UI',sans-serif; margin:20px 0 10px;
+}
+body[data-theme=luna-blue] #settings .theme-choices {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:0 0 20px;
+}
+body[data-theme=luna-blue] #settings .theme-choices>button { padding:13px 6px; min-height:48px; }
+body[data-theme=luna-blue] #settings .appearance-modes { gap:8px; }
+body[data-theme=luna-blue] #settings .appearance-modes>button {
+  min-height:44px; border-radius:8px; font:14px/1.3 'Segoe UI',sans-serif;
+}
+body[data-theme=luna-blue] #settings .appearance-modes>button[aria-pressed=true] {
+  background:#b6d8f82b; border-color:#b6d8f8;
+}
+body[data-theme=luna-blue] #settings .appearance-custom { gap:8px; align-items:stretch; }
+body[data-theme=luna-blue] #settings .appearance-custom>button { font-size:14px; border-radius:7px; }
+body[data-theme=luna-blue] #settings .check {
+  display:flex; flex-direction:row-reverse; align-items:center; justify-content:space-between;
+  min-height:34px; gap:14px; margin:10px 0; font:14px/1.4 'Segoe UI',sans-serif;
+}
+body[data-theme=luna-blue] #settings .check input { width:18px; height:18px; margin:0; flex:none; }
+body[data-theme=luna-blue] #settings .app-mode-controls {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px;
+  border-top:1px solid #9bbcdf44; margin-top:20px; padding-top:16px;
+}
+body[data-theme=luna-blue] #settings .app-mode-controls>strong { grid-column:1/-1; font-size:16px; }
+body[data-theme=luna-blue] #settings .app-mode-controls>button {
+  width:auto!important; margin:0!important; padding:10px 5px; min-height:42px;
+  border:1px solid #9bbcdf44; border-radius:7px; color:#dcecff; background:transparent;
+  font:13px/1.35 'Segoe UI',sans-serif;
+}
+body[data-theme=luna-blue] #settings .app-mode-controls>[data-host-mode=quit] { grid-column:1/-1; }
+
+body[data-theme=luna-blue] .power-overlay { background:#020713ac; backdrop-filter:blur(8px); }
+body[data-theme=luna-blue] .power-dialog {
+  width:min(520px,calc(100vw - 48px)); padding:28px; border:1px solid #a0c7e959;
+  border-radius:20px; background:#0a1d32; color:#e4f1ff; box-shadow:0 20px 90px #0008;
+}
+body[data-theme=luna-blue] .power-dialog-icon { color:#b6d8f8; }
+body[data-theme=luna-blue] .power-dialog h2 { font:500 24px/1.25 'Segoe UI',sans-serif; margin:18px 0 12px; }
+body[data-theme=luna-blue] .power-dialog p { font:14px/1.5 'Segoe UI',sans-serif; color:#bad0e6; }
+body[data-theme=luna-blue] .power-dialog .power-status { font:13px/1.4 'Segoe UI',sans-serif; color:#99b6d1; }
+body[data-theme=luna-blue] .power-dialog-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+body[data-theme=luna-blue] .power-dialog-actions button {
+  min-height:44px; padding:10px 12px; border:1px solid #a0c7e959; border-radius:8px;
+  font:14px/1.3 'Segoe UI',sans-serif; background:transparent; color:#dcecff;
+}
+
+/* Optional constructor widgets use the same surface and controls as the theme. */
+body[data-theme=luna-blue] .desktop-control .widget-content{padding:14px 18px;display:flex;flex-direction:column;align-items:stretch;gap:10px}
+body[data-theme=luna-blue] .desktop-control header{width:auto;margin:0;font-size:10px;line-height:13px;flex:0 0 auto}
+body[data-theme=luna-blue] .desktop-control .control-choices{width:100%;height:42px;flex:1;gap:8px}
+body[data-theme=luna-blue] .desktop-control .control-choices button{border-radius:7px;background:transparent;border-color:var(--luna-line);color:var(--luna-text);padding:5px}
+body[data-theme=luna-blue] .desktop-control .control-choices button[aria-pressed=true]{background:var(--luna-hover);border-color:var(--accent)}
+body[data-theme=luna-blue] .desktop-control .control-choices button:hover:enabled{background:var(--luna-hover);border-color:var(--accent)}
+body[data-theme=luna-blue] .desktop-control .control-feedback{left:18px;right:18px;bottom:3px;background:#0a1d32;color:#b6d8f8;font-size:9px}
+body[data-theme=luna-blue] .ecoflow .widget-content{padding:13px 18px}
+body[data-theme=luna-blue] .ecoflow header{font:10px/13px 'Segoe UI',sans-serif;margin-bottom:8px}
+body[data-theme=luna-blue] .ecoflow .compact-body{height:46px;gap:12px;align-items:center}
+body[data-theme=luna-blue] .ecoflow .compact-body>.icon{width:30px;height:36px;color:var(--accent)}
+body[data-theme=luna-blue] .ecoflow .compact-values{display:flex;align-items:center;gap:12px;font:10px/1.3 'Segoe UI',sans-serif}
+body[data-theme=luna-blue] .ecoflow .compact-values>b{font:30px/1 'Segoe UI',sans-serif;color:var(--luna-text)}
+body[data-theme=luna-blue] .ecoflow .bar{position:static;margin:5px 0 0;width:100%;height:4px}
+body[data-theme=luna-blue] .ecoflow .eco-runtime{margin:7px 0 1px;line-height:12px}
+body[data-theme=luna-blue] .ecoflow .eco-runtime>span{font-size:9px;color:var(--luna-muted)}
+body[data-theme=luna-blue] .ecoflow .eco-runtime>b{font-size:11px;color:var(--accent)}
+body[data-theme=luna-blue] .ecoflow .eco-load{height:19px;border-color:var(--luna-line)}
+body[data-theme=luna-blue] .ecoflow .eco-load path{stroke:var(--accent)}
+body[data-theme=luna-blue] .ecoflow #ecoStatus{bottom:3px;left:18px;right:18px;font:8px/10px 'Segoe UI',sans-serif;background:transparent}
+body[data-theme=luna-blue] .pet .widget-content{padding:16px 18px}
+body[data-theme=luna-blue] .pet header{font:10px/13px 'Segoe UI',sans-serif;margin-bottom:16px}
+body[data-theme=luna-blue] .pet .pet-space{position:absolute;left:18px;bottom:17px;font:55px/1 Georgia,serif;color:var(--accent)}
+body[data-theme=luna-blue] .pet .compact-info{position:absolute;left:88px;right:18px;top:55px;display:grid;gap:8px}
+body[data-theme=luna-blue] .pet .compact-info b{font:13px/1.2 'Segoe UI',sans-serif}
+body[data-theme=luna-blue] .pet .compact-info span{font:10px/1.3 'Segoe UI',sans-serif;color:var(--luna-muted)}
+body[data-theme=luna-blue] :is(.ecoflow,.pet) header{position:static;left:auto;top:auto;display:flex;align-items:center}
+body[data-theme=luna-blue] :is(.ecoflow,.pet) header .dot{margin-left:auto}
+body[data-theme=luna-blue] .desktop-control .control-choices button{height:42px;min-height:42px;width:auto}
+body[data-theme=luna-blue] .desktop-control .control-choices .icon{width:28px;height:28px;color:var(--luna-text);fill:none}
+body[data-theme=luna-blue] .ecoflow .compact-body>.icon{position:static;left:auto;top:auto;fill:none;stroke:var(--accent)}
+body[data-theme=luna-blue] .ecoflow .compact-info{position:static;left:auto;right:auto;top:auto;min-width:0;flex:1}
+body[data-theme=luna-blue] .ecoflow .compact-values{gap:8px}
+body[data-theme=luna-blue] .ecoflow .compact-values>b{font-size:26px}
+body[data-theme=luna-blue] .ecoflow .compact-values>.eco-power{position:static;left:auto;right:auto;top:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 0 auto}
+body[data-theme=luna-blue] .ecoflow .eco-power>span{gap:3px}
+body[data-theme=luna-blue] .ecoflow .eco-power small{font:8px/1 'Segoe UI',sans-serif;color:var(--luna-muted)}
+body[data-theme=luna-blue] .ecoflow .compact-values .eco-power b{font:17px/1 'Segoe UI',sans-serif;color:var(--luna-text)}
+body[data-theme=luna-blue] .ecoflow .eco-runtime{position:static;left:auto;top:auto;justify-content:space-between}
+body[data-theme=luna-blue] .ecoflow .eco-load{position:static;left:auto;right:auto;top:auto;width:100%}
+body[data-theme=luna-blue] .ecoflow .eco-model{right:18px;bottom:6px;color:var(--accent);font:9px/12px 'Segoe UI',sans-serif}
+body[data-theme=luna-blue] .ecoflow #ecoStatus{display:block;right:90px;bottom:6px}
+body[data-theme=luna-blue] .pet .pet-space{border:0;background:none;width:auto;height:auto;padding:0}
+body[data-theme=luna-blue] .ecoflow .eco-runtime,body[data-theme=luna-blue] .ecoflow .eco-runtime>span,body[data-theme=luna-blue] .ecoflow .eco-runtime>b{font:9px/12px 'Segoe UI',sans-serif;letter-spacing:0}
+body[data-theme=luna-blue] #settings .settings-reset{width:100%;min-height:40px;border:1px solid #a5c9e444;background:transparent;color:#b4cbe0;border-radius:8px;font:13px 'Segoe UI',sans-serif;padding:9px 12px}
+body[data-theme=luna-blue] .power-dialog #powerConfirm { background:#b6d8f8; border-color:#b6d8f8; color:#09213a; }
+body[data-theme=luna-blue] .power-dialog #powerConfirm:hover:enabled { background:#d4e9fc; }

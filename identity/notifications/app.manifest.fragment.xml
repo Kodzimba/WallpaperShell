@@ -1,0 +1,3 @@
+<!-- Put this child inside src/app.manifest's assembly, then rebuild the EXE.
+     A registered identity package is required before it takes effect. -->
+<msix xmlns="urn:schemas-microsoft-com:msix.v1" publisher="CN=PaperGreen.Local" packageName="PaperGreen.App" applicationId="PaperGreen"/>

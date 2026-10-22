@@ -1,0 +1,1476 @@
+{
+  "schemaVersion": 1,
+  "mode": "source",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 226,
+      "sha256": "b0ad5218d8a72dbb24e4ffdd0efb902c6b0e02ebcf1581b221b85f799245ce6a"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size": 942,
+      "sha256": "9a8f7020bbdbfeb968f9022c8518e8ce6efa3255e912631108b302baeb615600"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 1469,
+      "sha256": "c919d930a2918e50c01b15882aff6a605945a218da174349bbcc942f12f19ac5"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "size": 4066,
+      "sha256": "8815326bc14d5756ea9f9103c4de0fcdd9e23b7f5b17a475724fb185574f3047"
+    },
+    {
+      "path": ".gitignore",
+      "size": 356,
+      "sha256": "6cfb318850500c99aef2733ea646457292de2fe9fcf2eb021fc34ac2433fc376"
+    },
+    {
+      "path": "BUILD.cmd",
+      "size": 128,
+      "sha256": "3b2fcd0a6e30568b33e25c370bf5d8841d414d481ba74c7d39e112f20366ca0b"
+    },
+    {
+      "path": "NOTICE.md",
+      "size": 1867,
+      "sha256": "3b43b507966c50377ae81d386347577ee8fcdaf8d86d8d5019d3cf44b09926ac"
+    },
+    {
+      "path": "README.md",
+      "size": 7707,
+      "sha256": "7f221aa4fec0cdc26933c85a376de80d59dc39f9fb50989a51796c30489f0942"
+    },
+    {
+      "path": "RUN.cmd",
+      "size": 226,
+      "sha256": "4910ccc43740eedd6ff92bc5e146aa60105167eb1513b942062a17d50e8a682c"
+    },
+    {
+      "path": "RUN_DESKTOP.cmd",
+      "size": 236,
+      "sha256": "85a3aadcbae7a984d4b3df52e495a35afdfdc8bd245e0b0e6a96da2f5305c923"
+    },
+    {
+      "path": "RUN_LUNA_BLUE.cmd",
+      "size": 143,
+      "sha256": "3c4bc7cd394105e49d01515fe48474bd6e0a075b50e184b881d52028c050164c"
+    },
+    {
+      "path": "SECURITY.md",
+      "size": 1502,
+      "sha256": "98c53ea0f29fcdfb612f611fe054001062d5eac1e0cd12fded710a53a2c8db55"
+    },
+    {
+      "path": "WallpaperShell.csproj",
+      "size": 2942,
+      "sha256": "17f78ee89ce06e4a30eda1c05483104a35a5ae32e8e82a4b05d1d4f9fb082e50"
+    },
+    {
+      "path": "app-release.json",
+      "size": 135,
+      "sha256": "4ba4b26432a9d657e6e56b5464dd4539b27ce639506e83959a3711338a677beb"
+    },
+    {
+      "path": "docs/DEPENDENCIES.md",
+      "size": 2631,
+      "sha256": "a4097a6bb595cc8111c1dd469c7c001c0c1405d971877066688c62ee2f6f761c"
+    },
+    {
+      "path": "docs/NOTIFICATIONS.md",
+      "size": 4294,
+      "sha256": "5b6997a54cd06ebff05c139eadf1fcf16e43760fe32561aa0cbeadc91362041a"
+    },
+    {
+      "path": "docs/PRIVACY.md",
+      "size": 2725,
+      "sha256": "b8a9c44745960eed474b8652ecb1c7311e66ce1d5d8d8bfec0f120b59b26ddb4"
+    },
+    {
+      "path": "docs/RELEASING.md",
+      "size": 2827,
+      "sha256": "50e53906c7a23dd9d85142b05608396603b34e1a057f26d2c5cd450ef3df428f"
+    },
+    {
+      "path": "docs/SECURITY_REVIEW.md",
+      "size": 5253,
+      "sha256": "69a22d95a50694cf2e2a10ca18c438ef516c3a98fad28e76992dc56e537f5ad8"
+    },
+    {
+      "path": "identity/notifications/AppxManifest.xml",
+      "size": 1656,
+      "sha256": "0a31345479cab2942a467ac22912c5352b28af0e802a480c44c4c4e3b8e5addd"
+    },
+    {
+      "path": "identity/notifications/Assets/Square150x150Logo.png",
+      "size": 923,
+      "sha256": "f0cd5ec4531e943853cbf3cc2ba152041b0b0335a82d7bc0baa5a394d8e54bfb"
+    },
+    {
+      "path": "identity/notifications/Assets/Square44x44Logo.png",
+      "size": 316,
+      "sha256": "e713b13037aab32070d27be1d75c3cb4b66609bf6539b363032385e19c6bee75"
+    },
+    {
+      "path": "identity/notifications/Assets/StoreLogo.png",
+      "size": 344,
+      "sha256": "16efcc20d816e7e050b2d61bf5a770ddad025d30fa9c955a2718edd4eef467dc"
+    },
+    {
+      "path": "identity/notifications/README.md",
+      "size": 4294,
+      "sha256": "5b6997a54cd06ebff05c139eadf1fcf16e43760fe32561aa0cbeadc91362041a"
+    },
+    {
+      "path": "identity/notifications/app.manifest.fragment.xml",
+      "size": 291,
+      "sha256": "2b059a90fa938de247ce17a8d245d312b29983164c9fe74dbb8f76572d739d7b"
+    },
+    {
+      "path": "licenses/Node-LICENSE.txt",
+      "size": 160555,
+      "sha256": "ed34dd8e3f0a78dbaf00d0444ce8e285b015b765379c2e17880455f70370f8e9"
+    },
+    {
+      "path": "licenses/assets-provenance.json",
+      "size": 2680,
+      "sha256": "239533136093b558a54c82f0d3afdef240fdaad7fd9216557d3abdc80a97c718"
+    },
+    {
+      "path": "licenses/fonts/DejaVu-LICENSE.txt",
+      "size": 4766,
+      "sha256": "4d0644fe20b43d078496305a2c178620ceb71d257e0f623f1bdf07c4561bddd8"
+    },
+    {
+      "path": "licenses/fonts/Oswald-OFL.txt",
+      "size": 4483,
+      "sha256": "0fd731a904b729a4e02eaf5e8ebd06783edd9abe400e8882760160230675b652"
+    },
+    {
+      "path": "runtime/companion/DesktopInterop.cs",
+      "size": 14541,
+      "sha256": "1e533fe3ce70e16e9944163752f1b65d50463b7df32937aa6e465e3c68211fe5"
+    },
+    {
+      "path": "runtime/companion/LauncherContext.cs",
+      "size": 17100,
+      "sha256": "4e9ba11123d661b64a4a0b37515fffc3a46efb1828b3141901bc1425a79ec3ef"
+    },
+    {
+      "path": "runtime/companion/LauncherFiles.cs",
+      "size": 9929,
+      "sha256": "e65f97fd1ab41ebd7883ea4df26637d0f46767c2f5e69bcf4c7566a0618ccb2f"
+    },
+    {
+      "path": "runtime/companion/LauncherInterop.cs",
+      "size": 10388,
+      "sha256": "2a7b69df5419cac9f3bac83d5c648f201fb757ef417c719b31778bad06450978"
+    },
+    {
+      "path": "runtime/companion/LauncherMenuTheme.cs",
+      "size": 2586,
+      "sha256": "d3c3357e79e5fb0f989057e89f14942542b23cb301a5f6962398872be0206d0b"
+    },
+    {
+      "path": "runtime/companion/LauncherOverlay.cs",
+      "size": 24462,
+      "sha256": "ad7fca692af313b397523947d1eba0a7bc1d1277d5076a335ad7e7f1765bad82"
+    },
+    {
+      "path": "runtime/companion/LauncherPlacement.cs",
+      "size": 1410,
+      "sha256": "aaa46c25cae0d31c891cdb923d455d4d7603f70ab4ae377dc3c601efaad7eb8f"
+    },
+    {
+      "path": "runtime/companion/LauncherSession.cs",
+      "size": 1359,
+      "sha256": "d8c4752f9af89497ab157c303b399355c918ba377629a44663827d5337025b94"
+    },
+    {
+      "path": "runtime/companion/LauncherWheel.cs",
+      "size": 6856,
+      "sha256": "78f3ccda6db3ca4dcca30e5ad5cdf528d8db3cb7d927dc1e056bddb66c346151"
+    },
+    {
+      "path": "runtime/companion/PrivateBootstrap.cs",
+      "size": 5484,
+      "sha256": "e321f7cd669875d458585e82faf2e026169dee180b5d429ee5848feb4dc99d1d"
+    },
+    {
+      "path": "runtime/companion/app-http.cjs",
+      "size": 2493,
+      "sha256": "3a40527e16c053c0c32434971508b3c13a0e0f45da9ef15d96651939da5cc4fe"
+    },
+    {
+      "path": "runtime/companion/app-relay.cjs",
+      "size": 1870,
+      "sha256": "613a45e4d9e203a80073a6e2618170ffb31f50135bea265d7c46ddd6810b4c97"
+    },
+    {
+      "path": "runtime/companion/app-sources.cjs",
+      "size": 1263,
+      "sha256": "2836593d1807e599996ebcb65428d8feeffdc46c0c554780a1963b77aadc1dc6"
+    },
+    {
+      "path": "runtime/companion/app-static.cjs",
+      "size": 3054,
+      "sha256": "83f4787c103afc646ef2d3d68082d99a1dd6939b53d5fa3cb15d95dc4e7aa870"
+    },
+    {
+      "path": "runtime/companion/appearance.cjs",
+      "size": 1285,
+      "sha256": "efd7aa5cc3b98073d70c99755b230567eb2651208e8bb8690cb7b849fb427ef4"
+    },
+    {
+      "path": "runtime/companion/builder-codex.cjs",
+      "size": 6948,
+      "sha256": "590a9cd9453e0259947dddc544036594aeeb25fbd2e700182d6d73958bd536a4"
+    },
+    {
+      "path": "runtime/companion/builder.cjs",
+      "size": 6261,
+      "sha256": "d022d9b096e9fc6dbc1908887a56ab1f5c34da8b903aef400ea47afbc3589def"
+    },
+    {
+      "path": "runtime/companion/desktop-control.ps1",
+      "size": 2810,
+      "sha256": "735ace8e9f232413c77f294d293f07c0bae5fb16462da1e0b2896bc1ab4cefb0"
+    },
+    {
+      "path": "runtime/companion/desktop-controls.cjs",
+      "size": 4001,
+      "sha256": "b86a01ad5fdeeb6f66efc404deb806fe7c3909709f68926ba8f1d8bcde0be19d"
+    },
+    {
+      "path": "runtime/companion/device-probe.ps1",
+      "size": 5798,
+      "sha256": "06fa9922b6e642f2ab620efaea782b56500741a468e588472a82553c809dbdd1"
+    },
+    {
+      "path": "runtime/companion/device-provider.cjs",
+      "size": 3293,
+      "sha256": "f6099c2b7a9dee6f3674159422f7ae9ce5983f0ed28e4ddf594eef22e30f5236"
+    },
+    {
+      "path": "runtime/companion/devices.cjs",
+      "size": 15578,
+      "sha256": "3cc863664f51e02271dd33a0441b86bde926dec842be691d6eccf8e5e178fb5f"
+    },
+    {
+      "path": "runtime/companion/ecoflow-app.cjs",
+      "size": 4125,
+      "sha256": "a3481f58f4d6a4d59ea64dd3eb233aabae98d479e0774838ea9b726bc1f49295"
+    },
+    {
+      "path": "runtime/companion/ecoflow-live.cjs",
+      "size": 5550,
+      "sha256": "f2c64e8c2838f853c0664dd86e5e5238d95d24cb44697561343e1517f510a855"
+    },
+    {
+      "path": "runtime/companion/ecoflow-proto.cjs",
+      "size": 2050,
+      "sha256": "8b538798cc48ee171c5024ed8b5a6e0c488348a599bce743d592228b3a0fded6"
+    },
+    {
+      "path": "runtime/companion/ecoflow.cjs",
+      "size": 2892,
+      "sha256": "de5bcbb4f1bd92948e08c8bf3e28661d236d580d025cdb1428fb21f2d7530af8"
+    },
+    {
+      "path": "runtime/companion/energy.cjs",
+      "size": 2305,
+      "sha256": "6c6737bc7e3887047cb69d5d606a2a3ce2363a17f19fe83ae1648a167058a253"
+    },
+    {
+      "path": "runtime/companion/events.cjs",
+      "size": 3992,
+      "sha256": "d1c2fa88c48183aedd87ef675f8009439726ed4ffc0baf2baef8a5e8c6497f90"
+    },
+    {
+      "path": "runtime/companion/launcher-freshness.cjs",
+      "size": 1449,
+      "sha256": "5059f56fc3c648f022b98e7b85635b374cc45dc6247832ec2377a8c5d147c00f"
+    },
+    {
+      "path": "runtime/companion/launcher-input.cjs",
+      "size": 5143,
+      "sha256": "eee825106e4729bd6b84d2bb494338f827570a88e3b6948e9f9b1b60a1301213"
+    },
+    {
+      "path": "runtime/companion/launcher-overlay.cjs",
+      "size": 15935,
+      "sha256": "c950552b6226e62ef42a28293e3ae7d6591ba15a6066ac32d17134a126547f18"
+    },
+    {
+      "path": "runtime/companion/launcher-windows.ps1",
+      "size": 11098,
+      "sha256": "e25f0ea59a9fda045ad8788643fcfb5c5acc1f31b520b623c95eab1d31fd863b"
+    },
+    {
+      "path": "runtime/companion/launcher.cjs",
+      "size": 20289,
+      "sha256": "41e9f3b61a922465f0f418659df43958a25884e44ba338fc5231bb596be1eead"
+    },
+    {
+      "path": "runtime/companion/layouts.cjs",
+      "size": 5357,
+      "sha256": "d8a92eb77e27107504f13f169b42e022e42190a600cd9a2e615c5800ee94d670"
+    },
+    {
+      "path": "runtime/companion/logic.cjs",
+      "size": 2491,
+      "sha256": "c7e39f81c06e2888327e96333da70bd9fad244e85c7495d43839496c1c0eb571"
+    },
+    {
+      "path": "runtime/companion/mqtt-readonly.cjs",
+      "size": 4075,
+      "sha256": "ee37933f6428077ba6aafa6afe8ef3be45259e4273939f57ffa515ed21ceaf34"
+    },
+    {
+      "path": "runtime/companion/power.cjs",
+      "size": 4272,
+      "sha256": "5c67858acd4534aa2276020147021a6921702943438f148cfb401b1fc4809e6b"
+    },
+    {
+      "path": "runtime/companion/server.cjs",
+      "size": 20406,
+      "sha256": "19887591668fb442405793c573661b015dab9fe913cf122c06c2ce0529a12040"
+    },
+    {
+      "path": "runtime/companion/session.cjs",
+      "size": 736,
+      "sha256": "848e9941dcb9e729f4d1686ad00d63e5c370e0134a88f4cf262331f9e7196cc2"
+    },
+    {
+      "path": "runtime/companion/speedtest.cjs",
+      "size": 1592,
+      "sha256": "86b23b532e6abd14998642a2efdaf5e8b9d41c8bf53ac8dfb853cfbb53e286a5"
+    },
+    {
+      "path": "runtime/companion/themes.cjs",
+      "size": 720,
+      "sha256": "240ea40d38d32bba56583b5a8f59d35833efcf275850a007c65cf6464c8e9e79"
+    },
+    {
+      "path": "runtime/companion/ui-diagnostics.cjs",
+      "size": 2348,
+      "sha256": "40560a38fc2e591d8e044f2bf75a2a262a98c85cf653c6cb87fbbe52c7645565"
+    },
+    {
+      "path": "runtime/companion/vendor/webview2/LICENSE.txt",
+      "size": 1487,
+      "sha256": "0af8f1b807512aae39c2ac1aa4d0cae65cabecb6fd554b8439a5162a0d6eca55"
+    },
+    {
+      "path": "runtime/companion/vendor/webview2/Microsoft.Web.WebView2.Core.dll",
+      "size": 649840,
+      "sha256": "4b50632e5ddfb83b185ebddeb5e1fb233a05aeeda9cfdec96bee269e11c5b49d"
+    },
+    {
+      "path": "runtime/companion/vendor/webview2/Microsoft.Web.WebView2.WinForms.dll",
+      "size": 39024,
+      "sha256": "6ac2725b90837eba6cb3aab84c57f8927aa43dabdcdb00d1701b29aa1bbca50d"
+    },
+    {
+      "path": "runtime/companion/vendor/webview2/WebView2Loader.dll",
+      "size": 160880,
+      "sha256": "86545b66cdb0603bc26b626fb9ad610cb6e71f28d468f5ea66df23b03dda96d5"
+    },
+    {
+      "path": "runtime/companion/vendor/webview2/package.json",
+      "size": 237,
+      "sha256": "5982d56142dd80211195736eff7d85d13e2f46317861b31400fcfd6f47c68c84"
+    },
+    {
+      "path": "runtime/companion/weather-config.cjs",
+      "size": 1459,
+      "sha256": "323afb376aec2f34c3142b416e31e465be301180d34c290d32f82fe95d932302"
+    },
+    {
+      "path": "runtime/companion/windows-media.ps1",
+      "size": 6525,
+      "sha256": "2d40f0c799af4fa17d22cca62866512426c01a88b7cb32099a0d22610f2af067"
+    },
+    {
+      "path": "runtime/companion/windows-sensors.ps1",
+      "size": 3654,
+      "sha256": "c0ebc72a4bcb71e4524446ebe47c39b1abb0fca627b6ed33d74831c3484098e3"
+    },
+    {
+      "path": "runtime/themes/classic/app.js",
+      "size": 29896,
+      "sha256": "8dfcf64b12e49f95ed381c98f8b3d5159db8c7fcff9a60cad92dfd2eefef3d22"
+    },
+    {
+      "path": "runtime/themes/classic/assets/DejaVuSans-Bold.ttf",
+      "size": 708920,
+      "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+    },
+    {
+      "path": "runtime/themes/classic/assets/DejaVuSansMono.ttf",
+      "size": 343140,
+      "sha256": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88"
+    },
+    {
+      "path": "runtime/themes/classic/assets/FONT-LICENSE.txt",
+      "size": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "runtime/themes/classic/assets/public-water.png",
+      "size": 2226262,
+      "sha256": "1628e7055d6394dd9c1032ae8d0f02126b86b11b8c24a70bba53187e598b8245"
+    },
+    {
+      "path": "runtime/themes/classic/controls.js",
+      "size": 3099,
+      "sha256": "bc13e0b9a0fc198144c886030857fd107fe3897c9053e24c0f06dda7cf64657c"
+    },
+    {
+      "path": "runtime/themes/classic/core.js",
+      "size": 7946,
+      "sha256": "26cac2c1c9b9eca3247d1d56b4bbfb79158f902725f85e3e6066fee0d34e438e"
+    },
+    {
+      "path": "runtime/themes/classic/index.html",
+      "size": 27554,
+      "sha256": "a0cbd2dea8a1a6331f7eea8ca89fc5d56cd07da3b3753c47233530659f508af8"
+    },
+    {
+      "path": "runtime/themes/classic/launcher-overlay.css",
+      "size": 486,
+      "sha256": "9f37773f3d6e1eb0ae61f1e8a53c2c2219288c5deacb82aee513256476b21dd1"
+    },
+    {
+      "path": "runtime/themes/classic/launcher-overlay.html",
+      "size": 10317,
+      "sha256": "f77392863854cec3961a311afc22b86aa5aedc9e00db4ce867cf5b2524321005"
+    },
+    {
+      "path": "runtime/themes/classic/launcher-overlay.js",
+      "size": 1715,
+      "sha256": "bc5c0bd31d82f7351bb01967502597bbcb532ab2e0bec2fffaf7883c547408dd"
+    },
+    {
+      "path": "runtime/themes/classic/launcher.css",
+      "size": 14431,
+      "sha256": "31d4a802c19217ed4c6e4aa42c4aba5bf2234201299468e4e3e890147164400d"
+    },
+    {
+      "path": "runtime/themes/classic/launcher.js",
+      "size": 45692,
+      "sha256": "35cdc0c043ab879591b9ffdaa3b2fef6919651adcb6e483327626a5d46faa9fc"
+    },
+    {
+      "path": "runtime/themes/classic/liquid.js",
+      "size": 5403,
+      "sha256": "d4c5a1d615e5c4bae14d4be3868d9088e056f6ae66c925396d051acd9abcbc1c"
+    },
+    {
+      "path": "runtime/themes/classic/player.js",
+      "size": 3768,
+      "sha256": "75c6df051a41e7027cf5f1c45d40bd225db7c47195214ce55e274cc167b17e63"
+    },
+    {
+      "path": "runtime/themes/classic/power.js",
+      "size": 6420,
+      "sha256": "66f4a0ad5c08453e4d7bfe3b6bbff80931a8cb2a362b95e76eebd7caa55a7f8a"
+    },
+    {
+      "path": "runtime/themes/classic/speedtest.js",
+      "size": 2172,
+      "sha256": "47b5579822cb7d5183ca253c9dd121a11b8a29acfd5d39a62789e01b5521130d"
+    },
+    {
+      "path": "runtime/themes/classic/styles.css",
+      "size": 25159,
+      "sha256": "8414d65a805b109581248ac044523d2a40cb52e01faf44d57f65ed3f52b32c7b"
+    },
+    {
+      "path": "runtime/themes/classic/themes.css",
+      "size": 1889,
+      "sha256": "3b1ae61980d3d386f7dbb4e28c7310a5bd91f88365a90853bb2ef5fccfdf852e"
+    },
+    {
+      "path": "runtime/themes/classic/themes.js",
+      "size": 4951,
+      "sha256": "9bfa0918d7b02dfbcd6176649cf97768236e661f9f5dce71e6bb922ed670b1dd"
+    },
+    {
+      "path": "runtime/themes/luna-blue/appearance.css",
+      "size": 8582,
+      "sha256": "5af562eb072936920201aafb9fe6fac0fa6f78075797a058caea94f4d837737e"
+    },
+    {
+      "path": "runtime/themes/luna-blue/appearance.js",
+      "size": 6397,
+      "sha256": "c61b3f7cb65b1bb8a7d10331373789901c83bb561222d7f919788f9f4902f1aa"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/DejaVuSans-Bold.ttf",
+      "size": 708920,
+      "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/DejaVuSansMono.ttf",
+      "size": 343140,
+      "sha256": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/FONT-LICENSE.txt",
+      "size": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/Oswald.ttf",
+      "size": 172088,
+      "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/marble-water.png",
+      "size": 2226262,
+      "sha256": "1628e7055d6394dd9c1032ae8d0f02126b86b11b8c24a70bba53187e598b8245"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/moon.png",
+      "size": 1532612,
+      "sha256": "44a81e2ecb8b541b8a4719f73bc8b60bb78219b4e89459a5c1ac219d44c6bdde"
+    },
+    {
+      "path": "runtime/themes/luna-blue/assets/public-water.png",
+      "size": 2226262,
+      "sha256": "1628e7055d6394dd9c1032ae8d0f02126b86b11b8c24a70bba53187e598b8245"
+    },
+    {
+      "path": "runtime/themes/luna-blue/composition.css",
+      "size": 23913,
+      "sha256": "4bb8ec8b79894662a25fb45e7e21090165a06183485973703736ee916c2ec674"
+    },
+    {
+      "path": "runtime/themes/luna-blue/core.js",
+      "size": 999,
+      "sha256": "820d20219e94a98bd75aa9e6ed7cbaa73a2883fbb99102262d4117bba6759499"
+    },
+    {
+      "path": "runtime/themes/luna-blue/daylight.css",
+      "size": 23571,
+      "sha256": "e9d8b6adaeaf1d38c8e50b4c40f6632cc87ef43bc8064a99270040822f7bdd4a"
+    },
+    {
+      "path": "runtime/themes/luna-blue/index.html",
+      "size": 30801,
+      "sha256": "ab4e149e3be84eb81d9ceb9da7cb17ae92aa0953e144c4af7c9108c63275ef9a"
+    },
+    {
+      "path": "runtime/themes/luna-blue/launcher-overlay.css",
+      "size": 486,
+      "sha256": "9f37773f3d6e1eb0ae61f1e8a53c2c2219288c5deacb82aee513256476b21dd1"
+    },
+    {
+      "path": "runtime/themes/luna-blue/launcher-overlay.html",
+      "size": 11189,
+      "sha256": "88316215bd594663b16a9447556e907187ce7181f58584c07ecf179d3b0d747f"
+    },
+    {
+      "path": "runtime/themes/luna-blue/launcher-overlay.js",
+      "size": 3280,
+      "sha256": "92035f31b4f98ad8dd09a70b6a4332c4308736326888542669c7d0f9c6b765ab"
+    },
+    {
+      "path": "runtime/themes/luna-blue/launcher.css",
+      "size": 14944,
+      "sha256": "1c6b791da5bd781762ce2d2d36d9be6160b243ea0abea75066a54770005add84"
+    },
+    {
+      "path": "runtime/themes/luna-blue/launcher.js",
+      "size": 49398,
+      "sha256": "6b8046f5fd58c7056424c50d78d69e548d90db12b5138fd5cf6ae79fe597feb7"
+    },
+    {
+      "path": "runtime/themes/luna-blue/luna.css",
+      "size": 24013,
+      "sha256": "c750a4da44501190546a02fdfb41acf0d4344f501c476da8919cdb41a8852b1f"
+    },
+    {
+      "path": "runtime/themes/luna-blue/luna.js",
+      "size": 573,
+      "sha256": "fa0cd0ec2f3898bf944a32a636d48581ca68d8b3c5bba0588467aa971b24fc8b"
+    },
+    {
+      "path": "runtime/themes/luna-blue/scene.js",
+      "size": 12337,
+      "sha256": "0bd14a8ab63354326a9c87453f36f2b362e2cca4fe2b8e447a4861ad144b5107"
+    },
+    {
+      "path": "runtime/themes/luna-blue/styles.css",
+      "size": 25159,
+      "sha256": "8414d65a805b109581248ac044523d2a40cb52e01faf44d57f65ed3f52b32c7b"
+    },
+    {
+      "path": "runtime/wallpaper/app-host.js",
+      "size": 6258,
+      "sha256": "7b020fc996ad4522f02609342fe8445a4b39d1d98024a5e38f25938c9f659152"
+    },
+    {
+      "path": "runtime/wallpaper/app-maintenance.css",
+      "size": 3179,
+      "sha256": "88ff2d9ce28ac74479ea1bdbcff1390d8661ad36969745cae6e0d8aa8d480f74"
+    },
+    {
+      "path": "runtime/wallpaper/app-maintenance.js",
+      "size": 7233,
+      "sha256": "88730200c2754add274ffa9a5c38a46de5d06ac4e659a9a49d7dcde731852bf8"
+    },
+    {
+      "path": "runtime/wallpaper/app.js",
+      "size": 33094,
+      "sha256": "c3dcece297acb0d9e0a559402eda548bc13b499f839a7612e7ed350f1c17379f"
+    },
+    {
+      "path": "runtime/wallpaper/appearance.css",
+      "size": 8582,
+      "sha256": "5af562eb072936920201aafb9fe6fac0fa6f78075797a058caea94f4d837737e"
+    },
+    {
+      "path": "runtime/wallpaper/appearance.js",
+      "size": 6397,
+      "sha256": "c61b3f7cb65b1bb8a7d10331373789901c83bb561222d7f919788f9f4902f1aa"
+    },
+    {
+      "path": "runtime/wallpaper/assets/DejaVuSans-Bold.ttf",
+      "size": 708920,
+      "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+    },
+    {
+      "path": "runtime/wallpaper/assets/DejaVuSansMono.ttf",
+      "size": 343140,
+      "sha256": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88"
+    },
+    {
+      "path": "runtime/wallpaper/assets/FONT-LICENSE.txt",
+      "size": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "runtime/wallpaper/assets/Oswald.ttf",
+      "size": 172088,
+      "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817"
+    },
+    {
+      "path": "runtime/wallpaper/assets/public-water.png",
+      "size": 2226262,
+      "sha256": "1628e7055d6394dd9c1032ae8d0f02126b86b11b8c24a70bba53187e598b8245"
+    },
+    {
+      "path": "runtime/wallpaper/builder-session.js",
+      "size": 11035,
+      "sha256": "8cdaa219d7002acd9affd2885c583f408d92e7c0c49124416a22bfaab18e2de3"
+    },
+    {
+      "path": "runtime/wallpaper/builder-ui.js",
+      "size": 10739,
+      "sha256": "909f89c581b6733c71c81eff3dabe9755c71e024480720e26ddce768d4e2c574"
+    },
+    {
+      "path": "runtime/wallpaper/builder.css",
+      "size": 5809,
+      "sha256": "e2756b39e36e9e4d7a2ef546eef397045a0e9b55eae3426bcefe7f36a40bbf1e"
+    },
+    {
+      "path": "runtime/wallpaper/controls.js",
+      "size": 3099,
+      "sha256": "bc13e0b9a0fc198144c886030857fd107fe3897c9053e24c0f06dda7cf64657c"
+    },
+    {
+      "path": "runtime/wallpaper/core.js",
+      "size": 9007,
+      "sha256": "49d4d79adf398bc97ff3da4a5e8e062dbf043c6bb96777210a0b6bf725f34cf3"
+    },
+    {
+      "path": "runtime/wallpaper/custom-widget-model.js",
+      "size": 4441,
+      "sha256": "604ee83155c554819e07b71bbc1ea7bcf72c767f0d3e9d474bd6c70fbbdd93b4"
+    },
+    {
+      "path": "runtime/wallpaper/custom-widget-renderer.js",
+      "size": 7382,
+      "sha256": "484db64df8a87098e29b6511a391871e08f91da5c20c5c6d2b2aeb037aaef2ae"
+    },
+    {
+      "path": "runtime/wallpaper/daylight.css",
+      "size": 23571,
+      "sha256": "e9d8b6adaeaf1d38c8e50b4c40f6632cc87ef43bc8064a99270040822f7bdd4a"
+    },
+    {
+      "path": "runtime/wallpaper/daylight.js",
+      "size": 2220,
+      "sha256": "c6a62a64feb0ce90e57df4555c0aab9d33387826234e2645041fdede1ddca11a"
+    },
+    {
+      "path": "runtime/wallpaper/desktop-hub.css",
+      "size": 11612,
+      "sha256": "0a1040a29996b90d8d6916769fd45d97e17a2ec000feb9bf60351184b0f76035"
+    },
+    {
+      "path": "runtime/wallpaper/desktop-hub.js",
+      "size": 27954,
+      "sha256": "470ddad0f78f884e076afdbe0064315b808c2725b54ef80086b57b1c1a8d68dd"
+    },
+    {
+      "path": "runtime/wallpaper/devices-ui.css",
+      "size": 2357,
+      "sha256": "1a2dc02e13d3860c3f402ea180555b243a8ca6edc4b002c454206eb8d51f5f96"
+    },
+    {
+      "path": "runtime/wallpaper/devices-ui.js",
+      "size": 10400,
+      "sha256": "9b7cc07cd322866e77168c3c488f656d40b3cee57123edf616d467f0512f46b8"
+    },
+    {
+      "path": "runtime/wallpaper/index.html",
+      "size": 29933,
+      "sha256": "ab5268f24adceabeac7099f9075e5e2e0b3bc3f62d6d09f0ea29735b93235f44"
+    },
+    {
+      "path": "runtime/wallpaper/launcher-overlay.css",
+      "size": 486,
+      "sha256": "9f37773f3d6e1eb0ae61f1e8a53c2c2219288c5deacb82aee513256476b21dd1"
+    },
+    {
+      "path": "runtime/wallpaper/launcher-overlay.html",
+      "size": 11106,
+      "sha256": "512e8169d33348dd4bc270ec70756924f3ff96ea8bda4125fa68385e645855f0"
+    },
+    {
+      "path": "runtime/wallpaper/launcher-overlay.js",
+      "size": 3280,
+      "sha256": "92035f31b4f98ad8dd09a70b6a4332c4308736326888542669c7d0f9c6b765ab"
+    },
+    {
+      "path": "runtime/wallpaper/launcher.css",
+      "size": 14944,
+      "sha256": "1c6b791da5bd781762ce2d2d36d9be6160b243ea0abea75066a54770005add84"
+    },
+    {
+      "path": "runtime/wallpaper/launcher.js",
+      "size": 49398,
+      "sha256": "6b8046f5fd58c7056424c50d78d69e548d90db12b5138fd5cf6ae79fe597feb7"
+    },
+    {
+      "path": "runtime/wallpaper/layout-client.js",
+      "size": 18628,
+      "sha256": "46d7e1e94958956b11c40eb38a7a6daaaf34468158837b5e6fab5c8c8206c567"
+    },
+    {
+      "path": "runtime/wallpaper/layout-editor-core.js",
+      "size": 7739,
+      "sha256": "3f78f85b024bd1785fefa52e418f5af883b9f9ad81538e8c31fbe63838cc1f47"
+    },
+    {
+      "path": "runtime/wallpaper/layout-editor.css",
+      "size": 5288,
+      "sha256": "6d76d688ae50e6ad0bf862f74239e95edd3c3dbe0caff395af200183a0de3861"
+    },
+    {
+      "path": "runtime/wallpaper/layout-editor.js",
+      "size": 18810,
+      "sha256": "887aee1f7e946a4d4111463131a9eecb2b54332808c35aee55766a5f55b52481"
+    },
+    {
+      "path": "runtime/wallpaper/layout-file-bridge.js",
+      "size": 2784,
+      "sha256": "e7b29381662b4833793ab733149c3566699c547b7c0e68f99b3160901e1cd14a"
+    },
+    {
+      "path": "runtime/wallpaper/layout-integration.js",
+      "size": 2354,
+      "sha256": "8cf28a7ea76d82ccb4c398335e7cee61aff10457094dde5a0e38547e7922ca07"
+    },
+    {
+      "path": "runtime/wallpaper/layout-transfer-core.js",
+      "size": 7156,
+      "sha256": "eacce849619dd01f8da6c63b8247c1314f364eccc7cefd2db4c3bc0bffd42875"
+    },
+    {
+      "path": "runtime/wallpaper/layout-transfer-ui.js",
+      "size": 10806,
+      "sha256": "605e05fdb4d0f7965f08f7c014c08cda83fe014f35bce1f97504fa9ab2f153f7"
+    },
+    {
+      "path": "runtime/wallpaper/layout-transfer.css",
+      "size": 3003,
+      "sha256": "99f319628b3cc21352316da838cd54e1af499e4c020e19f3f95773bd0ba194fd"
+    },
+    {
+      "path": "runtime/wallpaper/layout-ui.css",
+      "size": 1312,
+      "sha256": "83725d63d6317ebb52e66b8dbf4350112bf569d5bad6512c0bfe8b4c35d04364"
+    },
+    {
+      "path": "runtime/wallpaper/layout-ui.js",
+      "size": 3269,
+      "sha256": "4fd3cc5b96246376ac80f3370e6590d14fffbdc8dde507797836b43b20aefc56"
+    },
+    {
+      "path": "runtime/wallpaper/liquid.js",
+      "size": 5403,
+      "sha256": "d4c5a1d615e5c4bae14d4be3868d9088e056f6ae66c925396d051acd9abcbc1c"
+    },
+    {
+      "path": "runtime/wallpaper/player.js",
+      "size": 3768,
+      "sha256": "75c6df051a41e7027cf5f1c45d40bd225db7c47195214ce55e274cc167b17e63"
+    },
+    {
+      "path": "runtime/wallpaper/polymer.js",
+      "size": 7933,
+      "sha256": "06ba3f9de4fea90b45a295488636a42025465b565981314ceb76022f815988aa"
+    },
+    {
+      "path": "runtime/wallpaper/power.js",
+      "size": 6420,
+      "sha256": "66f4a0ad5c08453e4d7bfe3b6bbff80931a8cb2a362b95e76eebd7caa55a7f8a"
+    },
+    {
+      "path": "runtime/wallpaper/settings-scroll.js",
+      "size": 6870,
+      "sha256": "a7c53d3960887b401252ce77a9f47584586222ff049ede4424dd8ec2f812f037"
+    },
+    {
+      "path": "runtime/wallpaper/settings-ui.css",
+      "size": 4123,
+      "sha256": "c08225df2cc601412fb848c2cb757ee0361cc4f8dc83fb84886aea9174d5d033"
+    },
+    {
+      "path": "runtime/wallpaper/settings-ui.js",
+      "size": 5571,
+      "sha256": "89657279b96ffd4108483f9e5554d19513c9450bfdde8df5c6851cae3b8360ea"
+    },
+    {
+      "path": "runtime/wallpaper/speedtest.js",
+      "size": 2172,
+      "sha256": "47b5579822cb7d5183ca253c9dd121a11b8a29acfd5d39a62789e01b5521130d"
+    },
+    {
+      "path": "runtime/wallpaper/styles.css",
+      "size": 25159,
+      "sha256": "8414d65a805b109581248ac044523d2a40cb52e01faf44d57f65ed3f52b32c7b"
+    },
+    {
+      "path": "runtime/wallpaper/themes.css",
+      "size": 2053,
+      "sha256": "b449e132a5d65acfee78376c81176700447c59376b39d05acf3e551dd22e5c32"
+    },
+    {
+      "path": "runtime/wallpaper/themes.js",
+      "size": 5841,
+      "sha256": "2292e881ee8ffca501679ff71b94e6dc3212b2e9022d1e6d830f7f1a2df2d2a4"
+    },
+    {
+      "path": "runtime/wallpaper/widget-model.js",
+      "size": 8637,
+      "sha256": "f68a2f5f0c03d6181a99f3940f76ec9a19918d967f3c218fa24bdf19093f360c"
+    },
+    {
+      "path": "runtime/wallpaper/window-policy.css",
+      "size": 486,
+      "sha256": "22ce06fd408c0d9f20a40ea4ee294105c4c8e332d7524c3b4250796ae55fa6a2"
+    },
+    {
+      "path": "runtime/wallpaper/window-policy.js",
+      "size": 9357,
+      "sha256": "e7aa06568d1b422b8293818739267e505ecd9cf8182cfe92ad4f6dad3e985a48"
+    },
+    {
+      "path": "src/AppMaintenance.cs",
+      "size": 7861,
+      "sha256": "ec4eb0e223cce426e14c9abc5a4054d8877197a01de423f30e359395c27323e8"
+    },
+    {
+      "path": "src/AppUpdates.cs",
+      "size": 33793,
+      "sha256": "db84316de2fbeaf9a56591b74a8d7ab0e0af4653d925cd6c7d2ba92d709ce946"
+    },
+    {
+      "path": "src/AudioLoopback.cs",
+      "size": 9932,
+      "sha256": "6302803d007b133c4cfe7ac4c025664854ee01eb5d0c4953cdffe6d7713ef405"
+    },
+    {
+      "path": "src/DesktopHost.cs",
+      "size": 5201,
+      "sha256": "4ac062b9d8a73e9fe0eaf844583969b813d250adaa8da4221619f0c838b52b4e"
+    },
+    {
+      "path": "src/DesktopHubPolicy.cs",
+      "size": 1509,
+      "sha256": "10ffb93da0df9c48056280867af2c2089f58fee7ec2a91b7889ea6989c70757f"
+    },
+    {
+      "path": "src/LayoutFiles.cs",
+      "size": 14200,
+      "sha256": "8fbfb297fe0985766737569c1ca43a913bc6c47bc9612e3a0df093016258c041"
+    },
+    {
+      "path": "src/NativeDiagnostics.cs",
+      "size": 7191,
+      "sha256": "d413dfdd8165d389527014c1fd5d8395b5515c0fdf0d985c80ae76c3961d80c0"
+    },
+    {
+      "path": "src/NativeNotificationsSource.cs",
+      "size": 12130,
+      "sha256": "0236b62b989449cfdc478beffb5e95050f501b1c4c3c3f20ce4f17a503a8e7ce"
+    },
+    {
+      "path": "src/NotificationActivation.cs",
+      "size": 9221,
+      "sha256": "cdd01356395f9dea77dc334432171e99a1b4635982d613eb2b92291cc20c8877"
+    },
+    {
+      "path": "src/NotificationPortrait.cs",
+      "size": 4971,
+      "sha256": "9cf2546efeaf2eb58c14876042d4e25b66a69095484a30898758542ff0194aed"
+    },
+    {
+      "path": "src/Notifications.cs",
+      "size": 16238,
+      "sha256": "9d1ef8a8f23c06f30762dbc9c8e413840d74c7351e283d3bf7a1e4ad05fc3375"
+    },
+    {
+      "path": "src/OpenWindows.cs",
+      "size": 26022,
+      "sha256": "46f309669094725332eb65f2d0ec88dc5f18a4ac704f3e23aaf09ef10f28ffce"
+    },
+    {
+      "path": "src/Program.cs",
+      "size": 38486,
+      "sha256": "c8eafab25775a7a901d2f312ab8a6c460ddf51cfd3af92374cfc86dba0207ecc"
+    },
+    {
+      "path": "src/ThemeSupport.cs",
+      "size": 397,
+      "sha256": "d464198cb660092d6efe352247395159cdd7044f87db16275e7d05215262a10e"
+    },
+    {
+      "path": "src/WebViewRecovery.cs",
+      "size": 1513,
+      "sha256": "47cdbcec0139bfd2d4bb4c3bd30a6c0fd6757da3e2d933f6dc143042e06e49a3"
+    },
+    {
+      "path": "src/WindowAttention.cs",
+      "size": 2433,
+      "sha256": "dd104150677df65f60dde8aa3a9ba29c1aa00c79593b621ef0aef98da92f5d37"
+    },
+    {
+      "path": "src/WindowEnvironment.cs",
+      "size": 9386,
+      "sha256": "95f673450483e77e615b883ffd678bd4314f6ee4b694e26782d44bbf8798085e"
+    },
+    {
+      "path": "src/WindowPolicy.cs",
+      "size": 3845,
+      "sha256": "1543aa7886f32292093a15665f6ab3b6a002293583ab7abf903437d81613082d"
+    },
+    {
+      "path": "src/app.manifest",
+      "size": 983,
+      "sha256": "90e81d82f4810b3b9875f686ac947aab73e594a3a8bd77eae51de5333b255762"
+    },
+    {
+      "path": "tests/AppUpdatesTests.cs",
+      "size": 17477,
+      "sha256": "5978dde4b85ce5bfcb4e02b980998b843315562e8bfea867e508f238313e7541"
+    },
+    {
+      "path": "tests/AudioTests.cs",
+      "size": 4212,
+      "sha256": "3949c3a1a4d2184c83054966368795f8115b139ef4a9f5d047ccafdf43822907"
+    },
+    {
+      "path": "tests/LauncherSessionTests.cs",
+      "size": 5260,
+      "sha256": "262d47d08aeb754011f3e7846799c5f45976b8595397f8cb91fcd6d2657f8f82"
+    },
+    {
+      "path": "tests/LayoutFilesTests.cs",
+      "size": 13051,
+      "sha256": "b44e4dd1a30c69b6083b8232aff54e91ee912f47e012938da49313fd153e1507"
+    },
+    {
+      "path": "tests/NativeMenuThemeTests.cs",
+      "size": 5038,
+      "sha256": "94b7570ed16a9bd8b335448b65cea5c795275f5eadc7d89c2796e3f6c8ecd6ea"
+    },
+    {
+      "path": "tests/NativeSecurityTests.cs",
+      "size": 10885,
+      "sha256": "6a11d11dce9e035f27c59ffc453b4c66f710c74dab19af4ca9b60f821eb9f519"
+    },
+    {
+      "path": "tests/NotificationsTests.cs",
+      "size": 20448,
+      "sha256": "f1be2b195af9993e20ca624ca70be6d35b219425c7fb4b83e4f9a272d30c3984"
+    },
+    {
+      "path": "tests/OpenWindowsTests.cs",
+      "size": 10456,
+      "sha256": "74382cf61ee7755560dde0b0defc29b3dd7a329eede3c088254f5a471542573a"
+    },
+    {
+      "path": "tests/PrivateBootstrapTests.cs",
+      "size": 4929,
+      "sha256": "a76af5c4bbc9b97d61677cfa998794f966062c9d95d50f9f1f9be7d45aa7da7c"
+    },
+    {
+      "path": "tests/ThemeSupportTests.cs",
+      "size": 855,
+      "sha256": "f832156ebc1e81f9293ed53bd3de6d1ceec3b67e93014e44544f96cd0a21b6d9"
+    },
+    {
+      "path": "tests/WebViewRecoveryTests.cs",
+      "size": 2584,
+      "sha256": "6f20cd4ed9d46a093eb21f3e52548ec5c1c0660f565af0fa5d21531a410e9fb5"
+    },
+    {
+      "path": "tests/WindowPolicyTests.cs",
+      "size": 17099,
+      "sha256": "2f6d63b5340f8b6b63757d1e233c1654908cb1a2062fe5c7f78135d33c73b664"
+    },
+    {
+      "path": "tests/WorkerInteropTests.ps1",
+      "size": 2939,
+      "sha256": "9cf735d8660178ba1a11a6e8228ca09a88f64aceafd37285b709c344630663a0"
+    },
+    {
+      "path": "tests/app-desktop-exit.test.cjs",
+      "size": 1547,
+      "sha256": "c2bc8f952dcf434326765f35951cb4315def173966748554fba5c8c7e17562e8"
+    },
+    {
+      "path": "tests/app-http-security.test.cjs",
+      "size": 4141,
+      "sha256": "a9a52ba7a33e2523622c84538e47983cd5f44d687ef871bdaa64b05dc6cb13a1"
+    },
+    {
+      "path": "tests/app-maintenance.test.cjs",
+      "size": 5407,
+      "sha256": "a1fc85e7843a8a3edb55953224fb60c96262188177472e5e183090feaf1a3cbf"
+    },
+    {
+      "path": "tests/builder.test.cjs",
+      "size": 12380,
+      "sha256": "13ab84b55d725eaeaa3bbdea7978f10bb59f324a2d8741766e6e1d2148e1ce3a"
+    },
+    {
+      "path": "tests/core-appearance.test.cjs",
+      "size": 2168,
+      "sha256": "a8070f4608d78a4983fbc2b77cd3d2ca45002559fee7b827ce27c99cf37ec3d7"
+    },
+    {
+      "path": "tests/core-companion.test.cjs",
+      "size": 2763,
+      "sha256": "a560fff2ca8125b00f880f7dd2e5c2589fdbe4405fa8b604004e2a46ab956647"
+    },
+    {
+      "path": "tests/core-desktop-controls.test.cjs",
+      "size": 4144,
+      "sha256": "2fb27083a3e001121874bd248104e5b362c8c2978306108abff59cbcb281e807"
+    },
+    {
+      "path": "tests/core-ecoflow-live.test.cjs",
+      "size": 7319,
+      "sha256": "21cbfc502743b1c8a86ace91e97793019918db6eb15645dad1b41ed91e36261c"
+    },
+    {
+      "path": "tests/core-ecoflow.test.cjs",
+      "size": 1185,
+      "sha256": "b9b67a80aa20765f89ba50a15f160cf8be98ac7bddaf065771d77aa748a557cf"
+    },
+    {
+      "path": "tests/core-launcher-input.test.cjs",
+      "size": 4209,
+      "sha256": "17641f1f87c8ace5f80e4c05c01f1ac3e196c45cc543eb419862274c763ae3ea"
+    },
+    {
+      "path": "tests/core-launcher-overlay.test.cjs",
+      "size": 2715,
+      "sha256": "a370130959e18ca0a1a14cfbcc168b90b443c6871c65132890b697585cd1dc14"
+    },
+    {
+      "path": "tests/core-launcher.test.cjs",
+      "size": 27774,
+      "sha256": "623fb515cfdcf91e665d2788235d7a46a8a1829b6e6c54adae4e0bf92e031511"
+    },
+    {
+      "path": "tests/core-power.test.cjs",
+      "size": 5294,
+      "sha256": "8cef3addbd983c72539b4a7c6c8b15c10a80f133ae9b8d284d93d9f7771c0419"
+    },
+    {
+      "path": "tests/core-speedtest.test.cjs",
+      "size": 2168,
+      "sha256": "73d1c25d926da5ae3815d8792f623a7cfde1430bcbae45beacfdd8518813418f"
+    },
+    {
+      "path": "tests/core-ui-diagnostics.test.cjs",
+      "size": 2259,
+      "sha256": "970faa579d35eb9ac1e81b6595979ca2784adf6b0543ec4dbc5df7efb5cff6bb"
+    },
+    {
+      "path": "tests/custom-widget-renderer.test.cjs",
+      "size": 5726,
+      "sha256": "75adbceacd503dd17ed1ad194c471d7bfe44289e37141a8bfc80017d6c75c747"
+    },
+    {
+      "path": "tests/desktop-hub-migration.test.cjs",
+      "size": 6919,
+      "sha256": "70da3b6695b6e4b3b32e572c132dd1228321d8e5f645ab13b19c7a922265cfe3"
+    },
+    {
+      "path": "tests/desktop-hub-ui.test.cjs",
+      "size": 30059,
+      "sha256": "fdb5eef89f1c1e769a1565caf1f9d52c7f9c3d97f335949a00c617884952e769"
+    },
+    {
+      "path": "tests/devices.test.cjs",
+      "size": 13298,
+      "sha256": "eed999d13ff03eed4ae396ff787ad8e7223207177e25fc03ad99c0cc6ddd94af"
+    },
+    {
+      "path": "tests/helpers/editor-dom.cjs",
+      "size": 10800,
+      "sha256": "377275f8eede7e3de948e666ebf84282ed0071e94dae7dc97f1f62636bd9e7d0"
+    },
+    {
+      "path": "tests/helpers/luna-scene-fixture.cjs",
+      "size": 3423,
+      "sha256": "d1ecdf9d8aef3fb02a41d426a9093a9a04431092b89d83419a7c3556edc0d10e"
+    },
+    {
+      "path": "tests/launcher-freshness.test.cjs",
+      "size": 2325,
+      "sha256": "88e3a7b61ca11ca60c48798741b8a7b25601930137028f3b7b87cecf330a93f9"
+    },
+    {
+      "path": "tests/launcher-window-policy.test.cjs",
+      "size": 11837,
+      "sha256": "c62b096d6885b807c620eb1bf6c71be8193b44338a4928bc7253abbe341a686e"
+    },
+    {
+      "path": "tests/layout-editor.test.cjs",
+      "size": 14873,
+      "sha256": "b9360704c32e9f59833cc09c5544fb0fbb2436b1e88b474ea4d4725d05419861"
+    },
+    {
+      "path": "tests/layout-file-bridge.test.cjs",
+      "size": 4136,
+      "sha256": "d57ed2360febfc81aa34f1ae7ccfac095b16383985ade12070cd0fa970473098"
+    },
+    {
+      "path": "tests/layout-history.test.cjs",
+      "size": 19345,
+      "sha256": "49faac213589f654ff2a8bfdfc1af59c61230c4d32bf7b961119ca873e249d58"
+    },
+    {
+      "path": "tests/layout-import.test.cjs",
+      "size": 14518,
+      "sha256": "cceffcfca142e36611d022369f5a0a19cdc2c0a06e0366d9a76e282768b00962"
+    },
+    {
+      "path": "tests/layout-integration.test.cjs",
+      "size": 3994,
+      "sha256": "ef532dc8c82157610a255f96a83a2a7c346eb9fa98a476699da8076af9b5a4b0"
+    },
+    {
+      "path": "tests/layout-snapping.test.cjs",
+      "size": 7337,
+      "sha256": "d0f1562714089143d72add7ea387b8bd8b6910ef07ffcde9f1f47001268e5e86"
+    },
+    {
+      "path": "tests/layout-transfer-core.test.cjs",
+      "size": 9214,
+      "sha256": "bc4d38c6e547dd4a237942a941ac1502f381b5d453fc5d7c3fea1331c613aafd"
+    },
+    {
+      "path": "tests/layout-transfer-ui.test.cjs",
+      "size": 7099,
+      "sha256": "07b289576dd49ca37561315cab925d0bdc15a54619eae63f3c4c2cdcdbc15164"
+    },
+    {
+      "path": "tests/luna-scene.test.cjs",
+      "size": 8311,
+      "sha256": "0cf9f9e96880e03c22861e337b4fe26f0fe2cd37c63c67eed37ae119a24f03ff"
+    },
+    {
+      "path": "tests/luna-theme.test.cjs",
+      "size": 3863,
+      "sha256": "1d272007b50e7c3c1c1798180233ab40257486a272d12bed81e1830816c0b521"
+    },
+    {
+      "path": "tests/paper-app.test.cjs",
+      "size": 24193,
+      "sha256": "3e3289ee694d174a84fe6d6b178ad9b92ecc9bc62a2449517f8a8e08dcf80da5"
+    },
+    {
+      "path": "tests/paper-appearance.test.cjs",
+      "size": 1106,
+      "sha256": "12d66adcc25a58e9e01f2c2d5296610bf608d7e628b6c80440aa3c2f38a04be1"
+    },
+    {
+      "path": "tests/paper-controls-ui.test.cjs",
+      "size": 3604,
+      "sha256": "325d024e56db9db4d4ee41a02b9820f25d6ab14b174083d7b3106b6207f79bd9"
+    },
+    {
+      "path": "tests/paper-isolation.test.cjs",
+      "size": 697,
+      "sha256": "7288a0b809b06ca6700fed0c333e280f7a76557e78e92ef6f4fb94efb0327e2a"
+    },
+    {
+      "path": "tests/paper-launcher-hover.test.cjs",
+      "size": 13876,
+      "sha256": "19c898e5d32c9c611b6a4f192486a6af60b978304c95c0fe0c7e50fbfeb57d22"
+    },
+    {
+      "path": "tests/paper-launcher-ui.test.cjs",
+      "size": 4659,
+      "sha256": "623cdc1a68f7d4c7fe53891a37a98c86c8a47bdc8fbc2de22fd16c3a2cbfea0e"
+    },
+    {
+      "path": "tests/paper-overlay-layout.test.cjs",
+      "size": 3984,
+      "sha256": "ffa92b859fddb3cabf09dea5a0b79c846151b57309e38917dd1be9c164d5473f"
+    },
+    {
+      "path": "tests/paper-player.test.cjs",
+      "size": 3545,
+      "sha256": "42534b871cddd0151632a4b06e1a2a6d09f83b878f91624115aeee499d1bf373"
+    },
+    {
+      "path": "tests/paper-polymer.test.cjs",
+      "size": 4498,
+      "sha256": "4c472739d32306003a43a3488e316f7ed85a8d708c5ced5e4fc7bfb467ee9b0b"
+    },
+    {
+      "path": "tests/paper-power-ui.test.cjs",
+      "size": 5139,
+      "sha256": "d3781d405f17e8fd6c66e8abcdc5243f288288e1aaa9aee8f62333b9af18edd0"
+    },
+    {
+      "path": "tests/paper-settings-scroll.test.cjs",
+      "size": 4277,
+      "sha256": "be147c24f674dc66f6dc9cb5cb6d593f0f3b4a2877482bb29a4c415c61cd33c7"
+    },
+    {
+      "path": "tests/paper-standard-desktop-ui.test.cjs",
+      "size": 2774,
+      "sha256": "2e44df02b5b2815a2282de2a4ac0ec4fe317c5db5d9e060f080183f2da35d034"
+    },
+    {
+      "path": "tests/platform.test.cjs",
+      "size": 6608,
+      "sha256": "8bcc8ea52d8afce63ebde4933bc1f8ef6e51ac1cb9cfe93543376eda1dd4a398"
+    },
+    {
+      "path": "tests/privacy-config.test.cjs",
+      "size": 5509,
+      "sha256": "1e87742afea001694252b324e3b1bd2e5ebcf364ec937c6ab35e3fe2c3fca308"
+    },
+    {
+      "path": "tests/private-bootstrap-script.cjs",
+      "size": 1618,
+      "sha256": "6fb8d1f4812f12a8c54853d0a522b270d5e63cd030182e7607e645336ccc5b87"
+    },
+    {
+      "path": "tests/publication.test.cjs",
+      "size": 5581,
+      "sha256": "68da361a44ff7f8581bbb3261ba19738348740dfc3531e2564db8bae89a82e25"
+    },
+    {
+      "path": "tests/security-scan.test.cjs",
+      "size": 3007,
+      "sha256": "57a9927c9236a7689ef5cd48e2d54e595326e28454864f425e290a49c86bebf3"
+    },
+    {
+      "path": "tests/system-freshness.test.cjs",
+      "size": 1892,
+      "sha256": "22a2b3d34826c8c47ca64991b2a466c94283357d655386b1945ef7507ccfc0a3"
+    },
+    {
+      "path": "tests/widget-layout.test.cjs",
+      "size": 12160,
+      "sha256": "c9e72d04ad91363b9e4fd3f4c44c3ceed53da0317c0f84b44a1acd394ed2745b"
+    },
+    {
+      "path": "tests/window-policy.test.cjs",
+      "size": 12075,
+      "sha256": "f6e59f88eb8c91afdb5231fb185e11773f404f6cf0b32d9bd6e43955f554f394"
+    },
+    {
+      "path": "tools/UpdateInstallerMain.cs",
+      "size": 215,
+      "sha256": "6c90216f86609e058afbcb191cd5fd9950d96649b17ca16d8879f0b09a327f34"
+    },
+    {
+      "path": "tools/ValidateUpdatePackageMain.cs",
+      "size": 2039,
+      "sha256": "fde2ca05fd0a8effcf2a849a2b553358aa4405440f2581eae62af76c2f96ba3d"
+    },
+    {
+      "path": "tools/adapt-ui.cjs",
+      "size": 1462,
+      "sha256": "860bb74763bcf8c823da72a20bb435591249b1e381683f5e1911f9d4f1761d7e"
+    },
+    {
+      "path": "tools/assert-dependencies.ps1",
+      "size": 2491,
+      "sha256": "2ef42d7f591a36bb8c58be4e7a354791beec8e64ea551825baa5a79c80e6e297"
+    },
+    {
+      "path": "tools/bootstrap-build.ps1",
+      "size": 1898,
+      "sha256": "fef1edf983dc09f87da98c108c67fb01eff481df3b7880c2fa626d095f5b27ef"
+    },
+    {
+      "path": "tools/build-launcher.ps1",
+      "size": 844,
+      "sha256": "b629d77ee1cb37bf311b0b0cd4b6a2c86d57bede7704e8083c289c9d32fa7e3c"
+    },
+    {
+      "path": "tools/build-updater.ps1",
+      "size": 857,
+      "sha256": "2fddf70de5cb1215c54eb85be5ece877d39573964973fae01a68813074e57b3f"
+    },
+    {
+      "path": "tools/build-worker-interop.ps1",
+      "size": 2059,
+      "sha256": "72be02648562e46d6032ef487ce66bab24d50fb353f2022838c009e8f2b97f6e"
+    },
+    {
+      "path": "tools/build.ps1",
+      "size": 3745,
+      "sha256": "5deb9430e9f965c65ec9dfa3de2cd14e5c8b7e4438f0c6ad8fd593885a54a2ef"
+    },
+    {
+      "path": "tools/check-security.cjs",
+      "size": 3293,
+      "sha256": "ad6eb9e535e2ed1792348480a6f78d397fb6f49fff9e2206bc863aaf50186a1a"
+    },
+    {
+      "path": "tools/export-source.ps1",
+      "size": 540,
+      "sha256": "a6c062550d12a580e1c2c7f396b394d2f4d062f1ddb9a6573c2b98d6b26cdf04"
+    },
+    {
+      "path": "tools/generate-notification-icons.ps1",
+      "size": 1534,
+      "sha256": "271b53cee38ff969d2f50f736b796b21b302c8c70539d41090cf2c76d6f9f7fc"
+    },
+    {
+      "path": "tools/launch-luna.ps1",
+      "size": 1475,
+      "sha256": "09d6c52a9aff657535e569ecae882474c2cde6ab567f55b20627dbc6bb77eb81"
+    },
+    {
+      "path": "tools/package-release.ps1",
+      "size": 2164,
+      "sha256": "2c76b37a753bb73cacffc97ea3d1baed9914eb866ea8561231c7763510f53547"
+    },
+    {
+      "path": "tools/publication.cjs",
+      "size": 11044,
+      "sha256": "fa316cdb691799eb535f00a0e74978ae6c3b9d6471d085a229931f9ebf5b1695"
+    },
+    {
+      "path": "tools/runtime-dependencies.json",
+      "size": 956,
+      "sha256": "64bd81a29b5f42ecaf37bd4d04a437ccce57c6fd3be04e5f8dcbe08f338cc012"
+    },
+    {
+      "path": "tools/setup-notifications.ps1",
+      "size": 11578,
+      "sha256": "70186070cc056e6354a439796a0a57a350c4286d048f8cb2417bf56ab52778d5"
+    },
+    {
+      "path": "tools/sync-luna.cjs",
+      "size": 4472,
+      "sha256": "dd8e696814f4ff17d9737ee48be54a00375b71b32fb47823382059a377f91e06"
+    },
+    {
+      "path": "tools/test-app-updates.ps1",
+      "size": 696,
+      "sha256": "078dc334782054d0aba41b960e407a0d3ebb77df981cd543fb518b95044e9323"
+    },
+    {
+      "path": "tools/test-dependency-integrity.ps1",
+      "size": 3136,
+      "sha256": "dcd4fcbc283e9237261b1b89533137dc06bf19cc62f6b592fac74fc3be00ac07"
+    },
+    {
+      "path": "tools/test-launcher-session.ps1",
+      "size": 772,
+      "sha256": "799ce68a065ac1dc5fee01c011cbaf857f477e063aedf0e3c2e7c2929d9e9e7c"
+    },
+    {
+      "path": "tools/test-layout-files.ps1",
+      "size": 688,
+      "sha256": "f019ba9d32d60553524d4dd5fddb963a1aa54f9a4b19ed48d17d9ef606a9f5e7"
+    },
+    {
+      "path": "tools/test-native-menu-theme.ps1",
+      "size": 664,
+      "sha256": "2e4823bd6602acca0e966a4bd798ed4495784d6ccf965c246f0cdb6fd5f09110"
+    },
+    {
+      "path": "tools/test-native-security.ps1",
+      "size": 1100,
+      "sha256": "1ec93f4fafdca913dba2753f8c1801ddf4f2fbe02792b09c1c15f2f0263adfee"
+    },
+    {
+      "path": "tools/test-notifications.ps1",
+      "size": 1397,
+      "sha256": "b420ea5dc0fc5f772ac2e0002a7f1ed0cfaf34f47bb10b8e1675c0f21c835899"
+    },
+    {
+      "path": "tools/test-open-windows.ps1",
+      "size": 741,
+      "sha256": "65a1b36ab0df54eee2e9be39db834cd5de208b02868a5489ac9511d8b6b9124c"
+    },
+    {
+      "path": "tools/test-private-bootstrap.ps1",
+      "size": 986,
+      "sha256": "7410a073d14c32ef7ebac89f1ae0ae31949f92755759c0e396131d42a2daf41f"
+    },
+    {
+      "path": "tools/test-themes.ps1",
+      "size": 559,
+      "sha256": "7c423f2ada8bfb031c096255a434fdb5414d6cea90bf2aab563eab77517dd958"
+    },
+    {
+      "path": "tools/test-webview-recovery.ps1",
+      "size": 556,
+      "sha256": "0d329bb340325bb3b834ae268b39deed178ee958fe0a93a0fb5abecf0e05130c"
+    },
+    {
+      "path": "tools/test-window-policy.ps1",
+      "size": 713,
+      "sha256": "127dddb55593de573df2b7bdbb870e733b0b5a6edda1037a05bec9c14353c8e6"
+    },
+    {
+      "path": "tools/test-worker-interop.ps1",
+      "size": 1734,
+      "sha256": "d1a2b2ebf2fa62db3e504fde1373e6525094da270643bdb9290ed8a6604084d4"
+    },
+    {
+      "path": "tools/test.ps1",
+      "size": 2038,
+      "sha256": "67282ca6f71e2dcf1c2f877049b9d072c00396d0f8ebc0a153458ad1d54d6a0d"
+    },
+    {
+      "path": "tools/validate-update-package.ps1",
+      "size": 1089,
+      "sha256": "b73a1544df0fcee09a891ee483a8434e48ff9f9f2d6c0211cc9c07a3258b8e70"
+    }
+  ]
+}

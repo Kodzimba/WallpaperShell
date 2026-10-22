@@ -1,0 +1,13 @@
+# Local data and connections
+
+Public source and release archives do not contain the developer's profiles, settings, local account files, capabilities, certificates, notifications or screenshots. Third-party license authors and the configured public GitHub repository identity are intentional public information.
+
+Weather is not configured in a fresh distribution. To enable it, create `data/weather.json` with exactly `enabled: true`, numeric `latitude` and `longitude`, and a `city` string. Coordinates must be within valid geographic ranges. Only then is the selected location sent to Open-Meteo. No location discovery runs. The clock uses the Windows/system time zone.
+
+EcoFlow is disabled by default. The app-account integration requires explicit `data/ecoflow-app.json` with only `enabled: true`, and a DPAPI-protected authentication file in `data/ecoflow-app-auth.txt`. The optional official API requires its own enabled `data/ecoflow.json`. The app does not search another application's account profile. These files are private and must never be committed or attached to a report. There is no automatic account migration or login UI in this distribution.
+
+Optional legacy telemetry sharing is disabled by default. It requires `data/shared-source.json` with only `enabled: true` and an explicitly supplied 64-hex capability in `data/shared-source.key`. The peer is fixed to the loopback port 8765; the app does not discover or read a sibling application's capability. Without opt-in, it uses its own collectors.
+
+Other enabled widgets contact their providers as needed: network connectivity checks and Cloudflare speed tests, GitHub when manually checking updates or opening a report, and the configured constructor provider only for an explicit chat request. A speed test transfers substantial data. Desktop windows and notifications remain in the native-to-renderer bridge; telemetry persists only allowlisted numeric counters, states and flags. Audio is processed in memory for visualization, without microphone capture or recording.
+
+The control capability is generated under protected `data/private/control.key` and injected only into the app’s native main/popup pages. It is not available to an ordinary browser preview or through an HTTP bootstrap. The app changes ACLs only for this private directory; other settings, WebView profiles and account files are local under `data` and hidden runtime state. Keep the installation and these directories protected by Windows file permissions. Updates preserve user data. The source exporter, release packager and local scanner exclude private runtime locations; publish the reviewed Git contents or generated release ZIP rather than a copy of a working installation.

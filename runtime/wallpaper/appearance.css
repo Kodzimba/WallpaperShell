@@ -1,0 +1,60 @@
+/* One palette and one interaction rule for every Paper Green surface. */
+:root{--surface:#f1f1ed;--ink:#080909;--muted-ink:#555b52;--line:#92958e;--raised:#e5e8df;--field:#fff;--hover:rgba(var(--accent-rgb,202,255,0),.20);--accent-rgb:202,255,0;--accent-ink:#080909;--scene-color:#caff00}
+:root[data-appearance=dark]{color-scheme:dark;--surface:#111411;--ink:#eceee7;--muted-ink:#a5ada0;--line:#555e51;--raised:#20261e;--field:#191f17}
+body[data-theme=paper-green],body[data-theme=paper-green] #stage{background:var(--surface);color:var(--ink)}
+body[data-theme=paper-green] .widget{color:var(--ink)}
+body[data-theme=paper-green] .widget.media{color:#f1f1ed}
+body[data-theme=paper-green] :is(.weather-art .icon,.control-choices .icon,.launcher-system .icon,.settings-toggle,.theme-toggle,.start-toggle){color:var(--ink)}
+body[data-theme=paper-green] :is(.weather #weatherText,.connection,.network-detail,.launcher-categories>button,.launcher-categories>button>small,.launcher-system>button,.desktop-control .control-choices>button,.compact-values,.eco-runtime>span,.eco-runtime>b,.eco-model){color:var(--ink)}
+body[data-theme=paper-green] .scene{background:var(--scene-color);color:var(--accent-ink)}
+:root[data-appearance=dark] .scene{color:var(--ink)}
+body[data-theme=paper-green] #scenePixels i{background:repeating-linear-gradient(to top,currentColor 0 4px,transparent 4px 7px)}
+body[data-theme=paper-green] .media .audio-bars i{background:var(--media-accent,var(--accent))}
+body[data-theme=paper-green] :is(.settings,.theme-picker,.launcher-panel,.launcher-feedback,.launcher-drag-ghost){background:var(--surface);color:var(--ink);border-color:var(--line)}
+body[data-theme=paper-green] :is(.settings p,.settings .help,.theme-picker p,.source-detail small,.source-detail[data-state=unavailable],.launcher-empty,.launcher-section,.launcher-panel-foot,.launcher-panel-foot>button,.launcher-selection>span){color:var(--muted-ink)}
+body[data-theme=paper-green] :is(.settings>button,.settings-viewport>button,.settings-tabs>button,.profile-picker button,.daylight-check,.daylight-field,.launcher-panel h2,.launcher-panel>header>button,.launcher-item-name,.launcher-selection>button,.launcher-file-filters>button,.launcher-file-filters>button>small,.launcher-file-check,.launcher-scrollbar>button){color:var(--ink);border-color:var(--line)}
+body[data-theme=paper-green] .daylight-field{background:var(--field)}
+body[data-theme=paper-green] .launcher-item{background:var(--raised)}
+body[data-theme=paper-green] .launcher-item-icon>.icon{color:var(--ink)}
+body[data-theme=paper-green] .launcher-item:hover:enabled{border-color:var(--accent)}
+body[data-theme=paper-green] .launcher-file-check{background:var(--surface)}
+body[data-theme=paper-green] :is(.launcher-scroll-track,.settings-scroll-track){background:var(--raised)}
+body[data-theme=paper-green] :is(.launcher-scroll-thumb,.settings-scroll-thumb){background:var(--muted-ink)}
+body[data-theme=paper-green] .calendar button{color:var(--ink)}
+body[data-theme=paper-green] :is(.weekdays>span,.calendar-days>span){color:var(--ink);border-color:var(--line)}
+body[data-theme=paper-green] .calendar-days>.today{background:var(--accent);color:var(--accent-ink)}
+body[data-theme=paper-green] :is(.bar,.traffic-rule){background:var(--raised)}
+body[data-theme=paper-green] .bar>i{background:var(--accent)}
+body[data-theme=paper-green] .mouse[data-battery=normal] #mouseBattery{color:var(--ink)}
+:root[data-appearance=dark] .compact-body>.icon{fill:var(--ink);stroke:var(--surface)}
+body[data-theme=paper-green] :is(.theme-picker,.settings,.launcher-panel,.desktop-control .widget-content,.compact .widget-content,.network .widget-content,.weather .widget-content){border-color:var(--line)}
+body[data-theme=paper-green] .network-test-row button{color:var(--accent-ink);background:var(--accent)}
+body[data-theme=paper-green] #stage button.primary{background:var(--accent);color:var(--accent-ink)}
+body[data-theme=paper-green] .network-test-row>#networkSpeedTime{color:var(--ink)}
+:root[data-appearance=dark] .traffic small{color:var(--muted-ink)}
+body[data-theme=paper-green] :is(#stage,.power-dialog) button{transition:background-color 80ms linear;box-shadow:none}
+body[data-theme=paper-green] :is(#stage,.power-dialog) button:not(:disabled):hover,
+body[data-theme=paper-green] :is(#stage,.power-dialog) button:not(:disabled):focus-visible{background:var(--hover)!important;color:inherit!important;transform:none!important}
+body[data-theme=paper-green] :is(#stage,.power-dialog) button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+body[data-theme=paper-green] #stage button:is([aria-pressed=true],[aria-checked=true],[aria-expanded=true]),
+body[data-theme=paper-green] #stage button:is([aria-pressed=true],[aria-checked=true],[aria-expanded=true]):hover{background:var(--accent)!important;color:var(--accent-ink)!important;border-color:var(--accent)!important}
+body[data-theme=paper-green] #stage button:is([aria-pressed=true],[aria-checked=true],[aria-expanded=true]) :is(.icon,small){color:inherit}
+body[data-theme=paper-green] #stage .launcher-categories.launcher-hovering>button:not([data-hovered=true]){background:transparent!important;color:var(--ink)!important}
+body[data-theme=paper-green] #stage .launcher-categories.launcher-hovering>button[data-hovered=true]{background:var(--hover)!important;color:var(--ink)!important}
+body[data-theme=paper-green] #stage .launcher-categories.launcher-hovering>button[data-hovered=true][aria-expanded=true]{background:var(--accent)!important;color:var(--accent-ink)!important}
+body[data-theme=paper-green] .launcher-selected .launcher-item{background:var(--hover);border-color:var(--accent);outline-color:var(--accent);box-shadow:none}
+body[data-theme=paper-green] .launcher-selection-box{background:var(--hover);border-color:var(--accent);box-shadow:none}
+body[data-theme=paper-green] .launcher-drag-ghost :is(strong,span){color:var(--ink)}
+body[data-theme=paper-green] .launcher-dragging-file :is(#launcherTrash,[data-drop-folders],[data-drop-folder]){outline-color:var(--accent)}
+body[data-theme=paper-green] #stage .launcher-dragging-file .launcher-drop-hover{background:var(--hover)!important;outline-color:var(--accent);box-shadow:none}
+body[data-theme=paper-green] #stage .launcher-file-filters>button[aria-pressed=true]>small{color:var(--accent-ink)}
+body[data-theme=paper-green] :is(.power-dialog,.power-dialog h2){background:var(--surface);color:var(--ink)}
+body[data-theme=paper-green] :is(.power-dialog p,.power-dialog .power-status){color:var(--muted-ink)}
+.appearance-controls>strong{display:block;font-size:18px;margin:16px 0 9px}.appearance-modes{display:flex;gap:8px}.appearance-modes>button{flex:1;padding:12px;background:none;color:inherit;border:1px solid var(--line);font:inherit}
+.appearance-colors{display:flex;gap:10px;flex-wrap:wrap}.appearance-colors>button{width:48px;height:44px;display:grid;place-items:center;background:none;border:1px solid var(--line);padding:8px}.appearance-colors i{width:24px;height:24px;border-radius:50%;box-shadow:0 0 0 1px #8885}.appearance-colors>button[aria-pressed=true] i{box-shadow:0 0 0 2px var(--accent-ink),inset 0 0 0 1px #8885}.appearance-custom{display:flex;gap:8px;align-items:stretch;margin-top:14px}.appearance-custom .daylight-field{flex:1;margin:0}.appearance-custom>button{background:none;color:inherit;border:1px solid var(--line);font:inherit;padding:8px 12px}.appearance-message{min-height:22px;font-size:14px!important}
+body[data-theme=paper-green] .settings{display:flex;gap:14px;overflow:hidden;max-height:880px}
+.settings-viewport{flex:1;min-width:0;max-height:832px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;overscroll-behavior:contain}.settings-viewport::-webkit-scrollbar{display:none}
+.settings-viewport>header{display:flex;justify-content:space-between;align-items:center}.settings-viewport>header button{background:none;color:inherit;border:0;font-size:28px;padding:3px 9px}
+.settings-viewport>button{padding:9px 12px;border:1px solid var(--line);background:none;color:inherit;margin:7px 4px 0 0;font:inherit}.settings-tabs{flex-wrap:wrap}.settings-tabs>button{font-size:16px!important}
+.settings-scrollbar{width:16px;flex:0 0 16px;position:relative;align-self:stretch}.settings-scroll-track{position:absolute;inset:0}.settings-scroll-thumb{position:absolute;left:2px;top:0;width:12px;min-height:38px;border:0;padding:0;touch-action:none;cursor:grab}.settings-scrollbar.no-scroll{visibility:hidden}
+body[data-theme=paper-green] .settings-scroll-thumb:active{cursor:grabbing}

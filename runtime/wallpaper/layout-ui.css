@@ -1,0 +1,13 @@
+.widget-layout-settings{margin-top:16px;padding-top:14px;border-top:1px solid var(--line,#8885)}
+.widget-layout-settings summary{cursor:pointer;padding:8px 0;font:inherit}
+.widget-layout-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+.widget-layout-settings button{font:inherit;color:inherit;background:transparent;border:1px solid var(--line,#8885);padding:9px 10px}
+.widget-layout-list .widget-visibility{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;min-height:40px}
+.widget-layout-settings .widget-visibility[aria-pressed=true]{background:var(--selected,#8c34fa26)}
+.widget-layout-settings button:hover:enabled{background:var(--hover,#8c34fa36)}
+.widget-layout-settings .widget-visibility>span:last-child{color:inherit}
+body[data-theme=paper-green] .widget-layout-settings .widget-visibility[aria-pressed=true]{background:var(--lime,#caff00);color:var(--accent-ink,#080909)}
+.pg-editor-ready .pg-legacy-editor-toggle{display:none!important}
+.widget-layout-settings .layout-editor-open{display:block;width:100%;margin:0 0 10px;padding:12px;font-weight:600}
+.pg-editor-ready.editing .resize-grip,.pg-editor-ready.editing .launcher-handle,.pg-editor-ready.editing .clock-grip{display:none!important}
+.pg-editor-ready.editing .widget{outline:none}

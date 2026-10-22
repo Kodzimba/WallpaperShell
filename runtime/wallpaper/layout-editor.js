@@ -1,0 +1,90 @@
+(function(){
+ 'use strict';
+ const layouts=window.PGBuilderLayouts||window.PGLayouts,M=window.PGBuilderModel||window.PGWidgetModel,Core=window.PGLayoutEditorCore,stage=document.getElementById('stage');
+ if(!window.PG_APP||!layouts||!M||!Core||!stage||typeof layouts.preview!=='function')return;
+ const root=document.createElement('div');root.id='layoutEditorOverlay';root.className='pg-layout-editor';root.dataset.pgLayoutEditor='true';root.hidden=true;root.setAttribute('aria-label','Редактор компоновки');
+ const shield=document.createElement('div');shield.className='pg-editor-shield';const boxesRoot=document.createElement('div'),guidesRoot=document.createElement('div');guidesRoot.className='pg-editor-guides';guidesRoot.setAttribute('aria-hidden','true');root.append(shield,boxesRoot,guidesRoot);
+ const toolbar=document.createElement('section');toolbar.id='layoutEditorToolbar';toolbar.className='pg-layout-editor-toolbar pg-editor-toolbar';toolbar.dataset.pgLayoutEditor='true';toolbar.hidden=true;toolbar.setAttribute('aria-label','Параметры выбранного блока');
+ const top=document.createElement('div');top.className='pg-editor-top';const controls=document.createElement('div');controls.className='pg-editor-fields';const foot=document.createElement('div');foot.className='pg-editor-top';
+ const button=(title,label,action)=>{const el=document.createElement('button');el.type='button';el.textContent=label;el.title=title;el.setAttribute('aria-label',title);if(action)el.addEventListener('click',action);return el;};
+ const handle=button('Переместить панель редактора','⠿');handle.className='pg-editor-toolbar-handle';const heading=document.createElement('strong');heading.textContent='Конструктор';
+ const undo=button('Отменить действие · Ctrl+Z','↶ Отменить',()=>historyAction('undo')),redo=button('Повторить действие · Ctrl+Shift+Z','↷ Повторить',()=>historyAction('redo')),done=button('Завершить редактирование','Готово',()=>setEditing(false));done.className='pg-editor-done';
+ const snapToggle=button('Привязка к краям и центрам · Alt временно отключает','Привязка',()=>setSnapping(!snapping));snapToggle.className='pg-editor-snap';
+ const spacer=document.createElement('span');spacer.className='pg-editor-spacer';top.append(handle,heading,snapToggle,spacer,undo,redo,done);
+ const label=(caption,field)=>{const el=document.createElement('label'),text=document.createElement('span');text.textContent=caption;el.append(text,field);return el;};
+ const picker=document.createElement('select');picker.setAttribute('aria-label','Выбрать блок, включая скрытые');const pickLabel=label('Блок',picker);pickLabel.className='pg-editor-picker';
+ const dirtyFields=new WeakSet(),watchField=field=>{field.addEventListener('input',()=>dirtyFields.add(field));field.addEventListener('blur',()=>{dirtyFields.delete(field);render();});return field;};
+ const input=(caption,key,step)=>{const el=document.createElement('input');el.type='number';el.step=step;el.setAttribute('aria-label',caption);el.addEventListener('change',()=>{dirtyFields.delete(el);if(!Number.isFinite(el.valueAsNumber)){const p=layouts.current()?.widgets[controller.state().selected];el.value=p?String(key==='scale'?Math.round(p.scale*1000)/10:p[key]):'';return;}commitField(key,key==='scale'?el.valueAsNumber/100:el.valueAsNumber);const p=layouts.current()?.widgets[controller.state().selected];if(p)el.value=String(key==='scale'?Math.round(p.scale*1000)/10:p[key]);});return watchField(el);};
+ const x=input('Положение X','x','1'),y=input('Положение Y','y','1'),size=input('Масштаб в процентах','scale','1'),visibility=button('Скрыть выбранный блок','Скрыть',()=>{const doc=layouts.current(),id=controller.state().selected;if(doc&&id)run(()=>controller.apply({visible:!doc.widgets[id].visible}));});
+ const dimension=(caption,axis)=>{const field=document.createElement('input');field.type='number';field.step='1';field.setAttribute('aria-label',caption);field.addEventListener('change',()=>{dirtyFields.delete(field);const id=controller.state().selected,d=M.catalog(doc.theme)[id];if(d&&Number.isFinite(field.valueAsNumber))commitField('scale',field.valueAsNumber/d.base[axis]);else render();});return watchField(field);};
+ const width=dimension('Ширина в пикселях',2),height=dimension('Высота в пикселях',3);
+ controls.append(pickLabel,label('X',x),label('Y',y),label('Масштаб %',size),label('Ширина',width),label('Высота',height),visibility);
+ const status=document.createElement('span');status.className='pg-editor-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');const hint=document.createElement('span');hint.className='pg-editor-help';hint.textContent='Alt: без привязки · Стрелки · Shift: 10 px · Esc: отмена';const footSpacer=document.createElement('span');footSpacer.className='pg-editor-spacer';foot.append(status,footSpacer,hint);toolbar.append(top,controls,foot);stage.append(root);document.body.append(toolbar);
+ let editing=false,doc=null,pointer=null,toolbarDrag=null,observer=null,errorMessage='',lastScope=null,gestureCount=0,frame=null,pendingPoint=null,altHeld=false,snapping=true;
+ const snapKey='paper-green-editor-snapping-v1';try{snapping=window.localStorage?.getItem(snapKey)!=='off';}catch{}
+ const boxes=new Map();
+ const controller=Core.createController({model:M,geometry,get:()=>layouts.current(),preview:changes=>layouts.preview(changes),cancelPreview:()=>layouts.cancelPreview(),commit:changes=>{gestureCount++;return layouts.update(changes);},constrain:(id,p)=>{if(id!=='launcher'||!Number.isFinite(p.y))return p;const rail=document.getElementById('launcherRail'),scale=stage.getBoundingClientRect().width/M.WIDTH,height=rail?.getBoundingClientRect().height/scale;return Number.isFinite(height)&&height>0?{...p,y:Math.min(p.y,Math.max(80,1010-height))}:p;}});
+ const logical=event=>Core.logicalPoint({x:event.clientX,y:event.clientY},stage.getBoundingClientRect());
+ function run(action){errorMessage='';try{Promise.resolve(action()).then(result=>{if(result?.ok===false)errorMessage=result.message||'Это действие пока недоступно.';render();},error=>{errorMessage=error.message||'Не удалось применить изменение.';render();});}catch(error){errorMessage=error.message||'Не удалось применить изменение.';render();}render();}
+ function historyAction(kind){cancel();run(()=>layouts[kind]());}
+ function commitField(key,value){run(()=>controller.apply({[key]:value}));}
+ function select(id){cancel();controller.select(id);errorMessage='';render();}
+ function releasePointer(){const held=pointer;pointer=null;if(held)try{if(held.element.hasPointerCapture(held.id))held.element.releasePointerCapture(held.id);}catch{}}
+ function discardMove(){if(frame!==null)window.cancelAnimationFrame?.(frame);frame=null;pendingPoint=null;}
+ function cancel(){discardMove();releasePointer();altHeld=false;guidesRoot.replaceChildren();if(toolbarDrag){const id=toolbarDrag.id;toolbarDrag=null;try{if(handle.hasPointerCapture(id))handle.releasePointerCapture(id);}catch{}}controller.cancel();render();}
+ function begin(event,id,kind){if(!editing||event.button!==0)return;event.preventDefault();event.stopPropagation();cancel();const point=logical(event);if(!controller.begin(id,kind,point)){select(id);return;}boxes.get(id)?.focus({preventScroll:true});altHeld=!!event.altKey;pointer={id:event.pointerId,element:event.currentTarget,point};try{event.currentTarget.setPointerCapture(event.pointerId);}catch{pointer=null;controller.cancel();}errorMessage='';render();}
+ function flushMove(){if(frame!==null)window.cancelAnimationFrame?.(frame);frame=null;const point=pendingPoint;pendingPoint=null;if(!point||!pointer)return;pointer.point=point;try{const scale=stage.getBoundingClientRect().width/M.WIDTH;controller.move(point,{snapping:snapping&&!altHeld,threshold:6/scale,release:10/scale});render();}catch(error){errorMessage=error.message;cancel();}}
+ function refreshSnapping(){if(pointer){pendingPoint=pendingPoint||pointer.point;flushMove();}else render();}
+ function setSnapping(value){snapping=!!value;try{window.localStorage?.setItem(snapKey,snapping?'on':'off');}catch{}refreshSnapping();}
+ function move(event){if(!editing||pointer?.id!==event.pointerId)return;event.preventDefault();altHeld=!!event.altKey;pendingPoint=logical(event);if(frame===null){if(typeof window.requestAnimationFrame==='function')frame=window.requestAnimationFrame(()=>{frame=null;flushMove();});else flushMove();}}
+ function finish(event){if(pointer?.id!==event.pointerId)return;event.preventDefault();altHeld=!!event.altKey;if(Number.isFinite(event.clientX)&&Number.isFinite(event.clientY))pendingPoint=logical(event);flushMove();releasePointer();run(()=>controller.finish());}
+ function canceled(event){if(pointer?.id===event.pointerId)cancel();}
+ function box(id,d){
+  const el=document.createElement('div');el.className='pg-editor-box';el.dataset.widgetId=id;el.dataset.locked=String(!d.movable&&!d.resizable);el.tabIndex=d.movable||d.resizable?0:-1;el.setAttribute('role','button');el.setAttribute('aria-label',d.title+' · выбрать и переместить');
+  const name=document.createElement('span');name.className='pg-editor-label';name.textContent=d.title;el.append(name);
+  el.addEventListener('pointerdown',event=>begin(event,id,'move'));el.addEventListener('pointermove',move);el.addEventListener('pointerup',finish);el.addEventListener('pointercancel',canceled);el.addEventListener('lostpointercapture',canceled);el.addEventListener('focus',()=>{if(editing&&controller.state().selected!==id)select(id);});
+  if(d.resizable){const grip=button('Изменить размер: '+d.title,'');grip.className='pg-editor-resize';grip.tabIndex=-1;grip.addEventListener('pointerdown',event=>begin(event,id,'resize'));grip.addEventListener('pointermove',move);grip.addEventListener('pointerup',finish);grip.addEventListener('pointercancel',canceled);grip.addEventListener('lostpointercapture',canceled);el.append(grip);}
+  boxes.set(id,el);boxesRoot.append(el);return el;
+ }
+ function geometry(id,p,d){if(id==='launcher'){const rail=document.getElementById('launcherRail'),r=rail?.getBoundingClientRect(),s=stage.getBoundingClientRect().width/M.WIDTH;if(r?.width&&r?.height&&s>0){const bounds=stage.getBoundingClientRect();return {x:(r.left-bounds.left)/s,y:(r.top-bounds.top)/s,width:r.width/s,height:r.height/s};}}return {x:p.x,y:p.y,width:d.base[2]*p.scale,height:d.base[3]*p.scale};}
+ function render(){
+  if(!editing)return;doc=layouts.current();if(!doc)return;const catalog=M.catalog(doc.theme),state=controller.state(),selected=state.selected;
+  snapToggle.setAttribute('aria-pressed',String(snapping));guidesRoot.replaceChildren();const scale=stage.getBoundingClientRect().width/M.WIDTH;
+  for(const guide of state.guides){const line=document.createElement('div');line.className='pg-editor-guide';line.dataset.axis=guide.axis;Object.assign(line.style,guide.axis==='x'?{left:guide.position+'px',top:'0',width:1/scale+'px',height:M.HEIGHT+'px'}:{left:'0',top:guide.position+'px',width:M.WIDTH+'px',height:1/scale+'px'});guidesRoot.append(line);}
+  if(lastScope!==M.scope(doc.theme,doc.profile)+':'+Object.keys(catalog).join(',')){lastScope=M.scope(doc.theme,doc.profile)+':'+Object.keys(catalog).join(',');boxes.clear();boxesRoot.replaceChildren();picker.replaceChildren();const empty=document.createElement('option');empty.value='';empty.textContent='Выбери блок на экране';picker.append(empty);for(const [id,d]of Object.entries(catalog)){const option=document.createElement('option');option.value=id;picker.append(option);}
+   // A full-screen Classic background must stay below every movable widget.
+   for(const id of ['scene',...Object.keys(catalog).filter(id=>id!=='scene')])box(id,catalog[id]);
+  }
+  for(const [id,d]of Object.entries(catalog)){const p=doc.widgets[id],el=boxes.get(id),g=geometry(id,p,d);el.hidden=!p.visible;el.dataset.selected=String(selected===id);el.setAttribute('aria-pressed',String(selected===id));Object.assign(el.style,{left:g.x+'px',top:g.y+'px',width:g.width+'px',height:g.height+'px'});picker.querySelector('option[value="'+id+'"]').textContent=d.title+(p.visible?'':' · скрыт');const grip=el.querySelector('.pg-editor-resize');if(grip)grip.hidden=selected!==id;}
+  picker.value=selected||'';const p=doc.widgets[selected],d=catalog[selected];
+  for(const [field,key]of [[x,'x'],[y,'y'],[size,'scale']]){field.disabled=!p||(key==='scale'?!d.resizable:!d.movable);if(document.activeElement!==field||!dirtyFields.has(field))field.value=p?String(key==='scale'?Math.round(p.scale*1000)/10:p[key]):'';}
+  for(const [field,axis]of [[width,2],[height,3]]){field.disabled=!p||!d.resizable;if(document.activeElement!==field||!dirtyFields.has(field))field.value=p?String(Math.round(d.base[axis]*p.scale)):'';}
+  visibility.disabled=!p;visibility.textContent=p&&!p.visible?'Показать':'Скрыть';visibility.setAttribute('aria-label',p?(p.visible?'Скрыть: ':'Показать: ')+d.title:'Выбери блок');
+  const h=layouts.history?.()||{};undo.disabled=!h.canUndo;redo.disabled=!h.canRedo;
+  status.dataset.error=String(!!errorMessage);status.textContent=errorMessage||({loading:'Загрузка…',saving:'Сохранение…',saved:'Сохранено на этом ПК',local:'Локальный кэш · файл пока недоступен',memory:'Изменения в памяти · запись недоступна'})[layouts.status()]||'';
+ }
+ function setEditing(value){
+  value=!!value;if(value===editing)return;if(value&&(!layouts.current()||window.PGWindows&&!window.PGWindows.canInteract()))return;
+  if(value){window.PGWindows?.closePanel('settings','editor');window.PGWindows?.closePanel('themes','editor');}
+  cancel();editing=value;root.hidden=!value;toolbar.hidden=!value;document.body.classList.toggle('pg-layout-editing',value);window.dispatchEvent(new CustomEvent('paper:layout-editing',{detail:{editing:value}}));
+  if(value){controller.select(null);if(typeof ResizeObserver!=='undefined'){observer=new ResizeObserver(()=>{if(editing)render();});observer.observe(stage);const rail=document.getElementById('launcherRail');if(rail)observer.observe(rail);}render();picker.focus({preventScroll:true});}
+  else{observer?.disconnect();observer=null;toolbarDrag=null;errorMessage='';}
+ }
+ function keydown(event){
+  if(!editing||window.PGLayoutTransfer?.isBusy?.())return;const target=event.target,editable=target instanceof Element&&(target.isContentEditable||!!target.closest('input,textarea,select,[contenteditable],[role=textbox]'));
+  if(event.key==='Alt'&&pointer){event.preventDefault();altHeld=true;refreshSnapping();return;}
+  if(event.key==='Escape'){if(window.PGWindows)return;if(editable&&!controller.state().gesture)return;event.preventDefault();event.stopPropagation();if(controller.state().gesture)cancel();else setEditing(false);return;}if(editable)return;
+  if((event.ctrlKey||event.metaKey)&&!event.altKey){const key=event.key.toLowerCase();if(key==='z'||key==='y'){event.preventDefault();event.stopPropagation();historyAction(key==='y'||event.shiftKey?'redo':'undo');return;}}
+  if(event.ctrlKey||event.metaKey||event.altKey)return;const step=event.shiftKey?10:1,directions={ArrowLeft:[-step,0],ArrowRight:[step,0],ArrowUp:[0,-step],ArrowDown:[0,step]};if(directions[event.key]){event.preventDefault();event.stopPropagation();run(()=>controller.nudge(...directions[event.key]));}
+ }
+ picker.addEventListener('change',()=>select(picker.value||null));shield.addEventListener('pointerdown',event=>{if(event.button===0){event.preventDefault();select(null);}});root.addEventListener('contextmenu',event=>{if(editing)event.preventDefault();});
+ handle.addEventListener('pointerdown',event=>{if(event.button!==0)return;cancel();const r=toolbar.getBoundingClientRect();toolbarDrag={id:event.pointerId,p:{x:event.clientX,y:event.clientY},x:r.left,y:r.top};handle.setPointerCapture(event.pointerId);event.preventDefault();});
+ handle.addEventListener('pointermove',event=>{if(toolbarDrag?.id!==event.pointerId)return;const g=toolbarDrag;Object.assign(toolbar.style,{left:Math.max(0,Math.min(window.innerWidth-toolbar.offsetWidth,g.x+event.clientX-g.p.x))+'px',top:Math.max(0,Math.min(window.innerHeight-toolbar.offsetHeight,g.y+event.clientY-g.p.y))+'px',bottom:'auto',transform:'none'});event.preventDefault();});
+ const finishToolbar=event=>{if(toolbarDrag?.id===event.pointerId){toolbarDrag=null;try{if(handle.hasPointerCapture(event.pointerId))handle.releasePointerCapture(event.pointerId);}catch{}}};for(const type of ['pointerup','pointercancel','lostpointercapture'])handle.addEventListener(type,finishToolbar);
+ window.PGWindows?.registerContext('editor',{isOpen:()=>editing,escape:()=>{if(controller.state().gesture)cancel();else setEditing(false);}});
+ window.addEventListener('pg:window-policy',event=>{if(editing&&['external','suspend','reset'].includes(event.detail?.event))cancel();});
+ window.addEventListener('keydown',keydown,true);window.addEventListener('keyup',event=>{if(event.key==='Alt'){altHeld=false;if(editing&&pointer){event.preventDefault();refreshSnapping();}}},true);for(const type of ['blur','pagehide'])window.addEventListener(type,()=>{if(editing)cancel();});window.addEventListener('resize',()=>{if(editing){cancel();Object.assign(toolbar.style,{left:'',top:'',bottom:'',transform:''});render();}});
+ layouts.subscribe(value=>{if(controller.receive(value)){discardMove();releasePointer();errorMessage='Компоновка обновилась в другом окне. Незавершённое перемещение отменено.';}if(value.historyError)errorMessage=value.historyError;if(editing)render();});
+ window.PGLayoutEditor={setEditing,isEditing:()=>editing,setSnapping,select,state:()=>({editing,snapping,...controller.state(),dragging:!!controller.state().gesture,history:layouts.history?.(),theme:layouts.current()?.theme,profile:layouts.current()?.profile}),diagnostics:()=>({editing,snapping,guides:controller.state().guides.length,selected:controller.state().selected,dragging:!!controller.state().gesture,boxes:editing?[...boxes.values()].filter(el=>!el.hidden).length:0,targets:editing?[...boxes.values()].filter(el=>!el.hidden&&el.dataset.locked!=='true').length:0,toolbarMounted:toolbar.isConnected,history:layouts.history?.(),commits:gestureCount}),cancel};
+})();
+

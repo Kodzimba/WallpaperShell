@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a WallpaperShell problem without private diagnostics
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: Please omit window titles, notifications, avatars, usernames, local paths, account data, tokens, and personal screenshots. The app never uploads a report automatically.
+  - type: input
+    id: version
+    attributes:
+      label: WallpaperShell version
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 x64
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      options: [Paper Green, Luna Blue, Classic]
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+    validations:
+      required: true

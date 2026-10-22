@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": {
+    "version": "24.22.1",
+    "url": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-win-x64.zip",
+    "sha256": "d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5",
+    "directory": "node-v24.22.1-win-x64",
+    "executableSha256": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5"
+  },
+  "webview2": {
+    "version": "1.0.3800.47",
+    "url": "https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/1.0.3800.47/microsoft.web.webview2.1.0.3800.47.nupkg",
+    "sha256": "56c9f26bdd07916a2d1949fb58a5c7e434dfa1173577dca879206050c4e718db",
+    "files": {
+      "Microsoft.Web.WebView2.Core.dll": "4b50632e5ddfb83b185ebddeb5e1fb233a05aeeda9cfdec96bee269e11c5b49d",
+      "Microsoft.Web.WebView2.WinForms.dll": "6ac2725b90837eba6cb3aab84c57f8927aa43dabdcdb00d1701b29aa1bbca50d",
+      "WebView2Loader.dll": "86545b66cdb0603bc26b626fb9ad610cb6e71f28d468f5ea66df23b03dda96d5"
+    }
+  }
+}

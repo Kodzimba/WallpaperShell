@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paper Green</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="launcher.css">
+  <link rel="stylesheet" href="daylight.css">
+</head>
+<body class="daylight" data-theme="paper-green">
+<svg class="symbol-bank" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-mouse" viewBox="0 0 32 40"><rect x="6" y="2" width="20" height="36" rx="10"/><path d="M16 2v14m-10 0h20"/><rect x="14" y="7" width="4" height="7" rx="2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 36 36"><rect x="2" y="7" width="32" height="24" rx="1"/><path d="M11 7V3h14v4M7 13h22v12H7zM20 12l-6 7h7l-5 7"/></symbol>
+  <symbol id="i-network" viewBox="0 0 36 36"><path d="M3 13a24 24 0 0 1 30 0M8 19a16 16 0 0 1 20 0m-15 6a8 8 0 0 1 10 0"/><circle cx="18" cy="31" r="1"/></symbol>
+  <symbol id="i-system" viewBox="0 0 36 36"><path d="M8 8h20v20H8zM12 12h12v12H12zM12 2v6m6-6v6m6-6v6M12 28v6m6-6v6m6-6v6M2 12h6m-6 6h6m-6 6h6m20-12h6m-6 6h6m-6 6h6"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 60 44"><path d="M14 37C0 36 0 17 14 17c0-17 25-20 31-3 18-3 21 23 3 23Z"/><path d="M8 42h39"/></symbol>
+  <path id="weather-cloud-shape" d="M18 42h29a11 11 0 0 0 0-22h-2a15 15 0 0 0-29-2 12 12 0 0 0 2 24Z"/>
+  <g id="weather-sun-shape"><circle cx="32" cy="31" r="11"/><path d="M32 9v7m0 30v7M10 31h7m30 0h7M16 15l5 5m22 22 5 5M16 47l5-5m22-22 5-5"/></g>
+  <symbol id="i-weather-sun" viewBox="0 0 64 64"><use href="#weather-sun-shape"/></symbol>
+  <symbol id="i-weather-moon" viewBox="0 0 64 64"><path d="M43 46A22 22 0 0 1 27 8a20 20 0 1 0 26 29 22 22 0 0 1-10 9Z"/></symbol>
+  <symbol id="i-weather-cloud" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/></symbol>
+  <symbol id="i-weather-partly" viewBox="0 0 64 64"><g transform="translate(-4 -7) scale(.65)"><use href="#weather-sun-shape"/></g><use href="#weather-cloud-shape"/></symbol>
+  <symbol id="i-weather-partly-night" viewBox="0 0 64 64"><path d="M22 8a12 12 0 0 0 13 16A14 14 0 1 1 22 8Z"/><use href="#weather-cloud-shape"/></symbol>
+  <symbol id="i-weather-fog" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="M10 47h40m-34 6h38m-44 6h33"/></symbol>
+  <symbol id="i-weather-drizzle" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m20 48-2 3m13-3-2 3m13-3-2 3m-16 5-2 3m13-3-2 3"/></symbol>
+  <symbol id="i-weather-rain" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m20 48-5 10m18-10-5 10m18-10-5 10"/></symbol>
+  <symbol id="i-weather-showers" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m17 46-6 13m17-13-6 13m17-13-6 13m17-13-6 13"/></symbol>
+  <symbol id="i-weather-ice-rain" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m18 47-4 9m17-9-4 9m19-10v14m-6-11 12 8m-12 0 12-8"/></symbol>
+  <symbol id="i-weather-snow" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="M21 47v13m-6-10 12 7m-12 0 12-7m16-3v13m-6-10 12 7m-12 0 12-7"/></symbol>
+  <symbol id="i-weather-snow-showers" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="M15 46v12m-5-9 10 6m-10 0 10-6m12-3v12m-5-9 10 6m-10 0 10-6m12-3v12m-5-9 10 6m-10 0 10-6"/></symbol>
+  <symbol id="i-weather-thunder" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m35 37-13 14h10l-4 12 15-18H32l5-8"/></symbol>
+  <symbol id="i-weather-hail" viewBox="0 0 64 64"><use href="#weather-cloud-shape"/><path d="m35 37-9 12h9l-5 12 14-16H33"/><circle cx="15" cy="52" r="3"/><circle cx="49" cy="53" r="3"/></symbol>
+  <symbol id="i-weather-unknown" viewBox="0 0 64 64"><circle cx="32" cy="31" r="22"/><path d="M25 24a7 7 0 1 1 10 6c-3 2-3 5-3 8m0 5v3"/></symbol>
+  <symbol id="i-dock" viewBox="0 0 44 44"><path d="M4 14V4h10m16 0h10v10M4 30v10h10m16 0h10V30"/><circle cx="22" cy="21" r="7"/><path d="M16 31h12"/></symbol>
+  <symbol id="i-screen-one" viewBox="0 0 36 30"><rect x="3" y="3" width="30" height="20" rx="1"/><path d="M18 23v5m-7 0h14"/></symbol>
+  <symbol id="i-screen-two" viewBox="0 0 40 30"><rect x="2" y="8" width="23" height="16" rx="1"/><path d="M10 24v4m-5 0h15M13 5V2h25v18H28m-2 3h8"/></symbol>
+  <symbol id="i-headphones" viewBox="0 0 32 32"><path d="M5 19v-4a11 11 0 0 1 22 0v4"/><rect x="3" y="16" width="6" height="12" rx="2"/><rect x="23" y="16" width="6" height="12" rx="2"/></symbol>
+  <symbol id="i-speakers" viewBox="0 0 32 32"><rect x="3" y="3" width="10" height="26" rx="1"/><rect x="19" y="3" width="10" height="26" rx="1"/><circle cx="8" cy="21" r="3"/><circle cx="24" cy="21" r="3"/><path d="M8 9v2m16-2v2"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 32 32"><rect x="2" y="6" width="28" height="20" rx="1"/><path d="m10 1 6 5 6-5M9 29h14"/></symbol>
+  <symbol id="i-previous" viewBox="0 0 24 24"><path d="M5 5v14M19 5 8 12l11 7Z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M19 5v14M5 5l11 7L5 19Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4v16m8-16v16"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-volume-off" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3Zm13 0 6 6m0-6-6 6"/></symbol>
+  <symbol id="i-launch-work" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v5"/></symbol>
+  <symbol id="i-launch-games" viewBox="0 0 24 24"><path d="M7 7h10c4 0 6 13 2 13l-4-4H9l-4 4C1 20 3 7 7 7Zm1 3v5m-2-2h4m5-2h1m2 3h1"/></symbol>
+  <symbol id="i-launch-chat" viewBox="0 0 24 24"><path d="M3 4h18v13H9l-6 4V4Zm4 5h10M7 13h7"/></symbol>
+  <symbol id="i-launch-tools" viewBox="0 0 24 24"><path d="m14 4 1 5 5 1a7 7 0 0 1-9 4l-7 7-3-3 7-7a7 7 0 0 1 6-7Z"/></symbol>
+  <symbol id="i-launch-folder" viewBox="0 0 24 24"><path d="M2 6h8l2 3h10v12H2V6Zm0 0V3h7l3 3h8v3"/></symbol>
+  <symbol id="i-launch-files" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2Zm9 0v6h5M2 6v16m7-10h8m-8 4h8"/></symbol>
+  <symbol id="i-launch-inbox" viewBox="0 0 24 24"><path d="m3 4-2 12v5h22v-5L21 4H3Zm-2 12h7l2 3h4l2-3h7M8 9h8"/></symbol>
+  <symbol id="i-launch-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+  <symbol id="i-pc-shutdown" viewBox="0 0 24 24"><path d="M12 2v10M6 5a9 9 0 1 0 12 0"/></symbol>
+  <symbol id="i-pc-restart" viewBox="0 0 24 24"><path d="M20 7a9 9 0 1 0 1 8M20 2v6h-6"/></symbol>
+</defs></svg>
+<main id="stage" aria-label="Живые обои Paper Green">
+  <div class="masthead"><span>PAPER GREEN</span><div id="daylightPower"></div></div>
+  <section class="scene" aria-label="Полимерная петля, реагирующая на системный звук"><canvas id="liquidCanvas" aria-label="Анимированная полимерная петля"></canvas><div id="scenePixels" class="scene-equalizer" role="img" aria-label="Пиксельный эквалайзер системного звука" data-signal="silent"></div></section>
+
+  <section class="widget clock" data-widget="clock" aria-label="Время и дата">
+    <div class="widget-content">
+      <header class="drag-handle clock-grip">Время и дата</header>
+      <div class="clock-numbers"><span id="hours">--</span><i>:</i><span id="minutes">--</span><small id="seconds">--</small></div>
+      <div class="clock-date-row"><span id="clockDate" class="clock-date">—</span><span class="date-slash"> / </span><span id="clockWeekday" class="clock-weekday">—</span></div><span id="zoneLabel" class="zone-label">UTC</span>
+    </div>
+  </section>
+
+  <section class="widget calendar" data-widget="calendar" aria-label="Календарь">
+    <div class="pc-powerbar" role="group" aria-label="Питание компьютера">
+      <button id="powerShutdown" type="button" aria-haspopup="dialog" aria-controls="powerOverlay" disabled><svg class="icon" aria-hidden="true"><use href="#i-pc-shutdown"/></svg><span>Выключить</span></button>
+      <button id="powerRestart" type="button" aria-haspopup="dialog" aria-controls="powerOverlay" disabled><svg class="icon" aria-hidden="true"><use href="#i-pc-restart"/></svg><span>Перезагрузка</span></button>
+    </div>
+    <div class="widget-content">
+      <header class="drag-handle"><button id="calendarToday" title="Вернуться к текущему месяцу">—</button><span id="calendarMonth">—</span><div class="month-nav"><button id="calendarPrev" aria-label="Предыдущий месяц">‹</button><button id="calendarNext" aria-label="Следующий месяц">›</button></div></header>
+      <div class="weekdays"><span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span>СБ</span><span>ВС</span></div>
+      <div id="calendarDays" class="calendar-days"></div>
+      <div class="calendar-bottom"><span id="calendarCaption">СЕГОДНЯ</span><i></i></div>
+    </div>
+  </section>
+
+  <section class="widget weather" data-widget="weather" aria-label="Погода">
+    <div class="widget-content"><header class="drag-handle"><span id="weatherLocation">ПОГОДА</span><span class="dot"></span></header>
+      <div class="weather-body"><div class="weather-art"><svg class="icon" role="img"><title id="weatherIconTitle">Нет данных о погоде</title><use id="weatherSymbol" href="#i-weather-unknown"/></svg></div><div class="weather-info"><div class="temperature"><span id="temperature">—</span><small>°</small></div><span id="weatherText" class="subtle">Нет данных</span></div></div>
+      <div id="weatherStatus" class="source-note">Источник не подключён</div>
+    </div>
+  </section>
+
+  <section class="widget system" data-widget="system" aria-label="Видеопамять и оперативная память">
+    <div class="widget-content"><header class="drag-handle"><svg class="icon"><use href="#i-system"/></svg><span id="systemModel">SYSTEM</span><span class="dot"></span></header>
+      <div class="metric"><span>VRAM</span><span id="vramValue">— / — GiB</span></div><div class="bar"><i id="vramBar"></i></div>
+      <div class="metric"><span>RAM</span><span id="ramValue">— / — GiB</span></div><div class="bar"><i id="ramBar"></i></div>
+      <div id="systemStatus" class="source-note">Мониторинг не подключён</div>
+    </div>
+  </section>
+
+  <section class="widget network" data-widget="network" aria-label="Интернет и текущий трафик">
+    <div class="widget-content"><header class="drag-handle"><svg class="icon"><use href="#i-network"/></svg><span>ИНТЕРНЕТ</span><span id="internetState" class="connection">—</span></header>
+      <div class="traffic"><span>↓ <b id="downValue">—</b><small>Mbps</small></span><span>↑ <b id="upValue">—</b><small>Mbps</small></span></div>
+      <div class="network-detail"><span>RTT <b id="pingValue">—</b> ms</span></div>
+      <div class="network-test-row"><span id="networkSpeedTime">Ещё не измерена</span><button id="networkTest" title="Измерить доступную скорость: 200 МБ" aria-label="Проверить скорость интернета">ТЕСТ</button></div><div class="network-meta"><span id="networkStatus" class="source-note">Источник не подключён</span><span id="networkTarget">Задержка: нет измерения</span></div>
+    </div>
+  </section>
+
+  <section class="widget desktop-control screens" data-widget="screens" aria-label="Переключение мониторов">
+    <div class="widget-content"><header class="drag-handle" id="screensLabel">ЭКРАНЫ</header><div class="control-choices">
+      <button id="screenSingle" type="button" aria-label="Только основной монитор 2К" aria-pressed="false" disabled><svg class="icon"><use href="#i-screen-one"/></svg></button>
+      <button id="screenDual" type="button" aria-label="Расширить на оба монитора 2К и 4К" aria-pressed="false" disabled><svg class="icon"><use href="#i-screen-two"/></svg></button>
+    </div><span id="screensFeedback" class="control-feedback" role="status" hidden></span></div>
+  </section>
+  <section class="widget desktop-control audio" data-widget="audio" aria-label="Выход звука">
+    <div class="widget-content"><header class="drag-handle" id="audioLabel">ЗВУК</header><div class="control-choices">
+      <button id="audioHeadphones" type="button" aria-label="Наушники" aria-pressed="false" disabled><svg class="icon"><use href="#i-headphones"/></svg></button>
+      <button id="audioSpeakers" type="button" aria-label="Колонки" aria-pressed="false" disabled><svg class="icon"><use href="#i-speakers"/></svg></button>
+      <button id="audioTv" type="button" aria-label="Телевизор или HDMI" aria-pressed="false" disabled><svg class="icon"><use href="#i-tv"/></svg></button>
+    </div><span id="audioFeedback" class="control-feedback" role="status" hidden></span></div>
+  </section>
+
+  <section class="widget media" data-widget="media" aria-label="Сейчас играет">
+    <div class="widget-content"><header class="drag-handle"><span>▷ &nbsp; NOW PLAYING</span><span id="mediaState">ОЖИДАНИЕ</span></header>
+      <div class="media-body"><div class="cover"><img id="mediaCover" alt="Обложка текущего медиа" hidden><span id="coverPlaceholder" aria-hidden="true">◈</span></div><div class="media-info"><div id="mediaTitle" class="media-title">Тишина в эфире</div><div id="mediaArtist" class="media-artist">Ожидание медиасессии Windows</div><div id="timeline" class="timeline" hidden><div><i id="timelineBar"></i></div><span id="timelineText"></span></div>
+        <div class="player-controls"><button id="mediaPrevious" aria-label="Предыдущий трек" disabled><svg class="icon"><use href="#i-previous"/></svg></button><button id="mediaPlay" aria-label="Воспроизвести" disabled><svg class="icon"><use id="mediaPlaySymbol" href="#i-play"/></svg></button><button id="mediaNext" aria-label="Следующий трек" disabled><svg class="icon"><use href="#i-next"/></svg></button><label class="player-volume" title="Громкость выбранного выхода Windows"><svg class="icon"><use id="volumeSymbol" href="#i-volume"/></svg><input id="mediaVolume" type="range" min="0" max="100" step="1" value="0" aria-label="Громкость выбранного аудиовыхода" disabled></label></div>
+      </div></div><span id="playerFeedback" class="player-feedback" role="status" hidden></span>
+    </div>
+  </section>
+
+  <section class="widget desktop-hub open-windows" data-widget="openwindows" aria-label="Открытые окна">
+    <div class="widget-content"><header class="drag-handle"><span>ОТКРЫТЫЕ ОКНА</span><small id="openWindowsCount"></small></header>
+      <div id="openWindowsGrid" class="desktop-window-grid" role="group" aria-label="Открытые приложения и папки" tabindex="0" hidden></div>
+      <p id="openWindowsStatus" class="desktop-hub-status" role="status">Подключение к Windows…</p>
+      <p id="openWindowsFeedback" class="desktop-window-feedback" role="status" aria-live="polite" hidden></p>
+    </div>
+  </section>
+  <section class="widget desktop-hub notifications" data-widget="notifications" aria-label="Уведомления Windows">
+    <div class="widget-content"><header class="drag-handle"><span>УВЕДОМЛЕНИЯ</span></header>
+      <div id="notificationsList" class="desktop-notification-list" role="list" aria-label="Последние уведомления Windows" tabindex="0" hidden></div>
+      <p id="notificationsFeedback" class="desktop-notification-feedback" role="status" aria-live="polite" hidden></p>
+      <div id="notificationsEmpty" class="desktop-notification-empty"><p id="notificationsStatus" class="desktop-hub-status" role="status">Подключение к Windows…</p><button id="notificationsAccess" type="button" class="desktop-hub-connect" hidden>Подключить уведомления</button><p id="notificationsSetup" class="desktop-hub-setup" hidden>Инструкция установки: identity\notifications\README.md в папке приложения WallpaperShell. tools\setup-notifications.ps1 без параметров только проверяет готовность. После установки перезапусти приложение и разреши уведомления.</p></div>
+    </div>
+  </section>
+
+  <section class="widget compact mouse" data-widget="mouse" aria-label="Заряд мыши беспроводной мыши">
+    <div class="widget-content"><header class="drag-handle"><span>МЫШЬ</span><span id="mouseModel" hidden>Беспроводная мышь</span><span class="dot"></span></header><div class="compact-body"><svg class="icon"><use href="#i-mouse"/></svg><div class="compact-info"><div class="compact-values"><b id="mouseBattery">—%</b><span id="mouseCharging"></span></div><div class="bar"><i id="mouseBar"></i></div><span id="mouseStatus" class="source-note">Нет связи с G HUB</span></div></div></div>
+  </section>
+
+  <section class="widget compact ecoflow" data-widget="ecoflow" aria-label="Заряд EcoFlow DELTA 3 Max">
+    <div class="widget-content"><header class="drag-handle">ECOFLOW <span class="dot"></span></header><div class="compact-body"><svg class="icon"><use href="#i-power"/></svg><div class="compact-info"><div class="compact-values"><b id="ecoBattery">—%</b><span class="eco-power"><span><small>IN W</small><b id="ecoIn">—</b></span><span><small>OUT W</small><b id="ecoOut">—</b></span></span></div><div class="bar"><i id="ecoBar"></i></div></div></div><div class="eco-runtime"><span>БЕЗ ВХОДА ≈</span><b id="ecoRuntime">—</b></div><svg class="eco-load" viewBox="0 0 240 24" preserveAspectRatio="none" role="img" aria-label="График выходной мощности EcoFlow"><title id="ecoLoadTitle">Нагрузка · до 20 минут</title><path id="ecoLoadPath" d=""/><circle id="ecoLoadDot" r="1.8" visibility="hidden"/></svg><button id="ecoModel" class="eco-model" type="button" title="Модель оценки автономности">МОДЕЛЬ ↗</button><span id="ecoStatus" class="source-note">Источник не подключён</span></div>
+  </section>
+
+  <div id="eventNotice" class="event-notice" role="status" aria-live="polite" hidden><i aria-hidden="true"></i><span id="eventMessage"></span></div>
+  <section id="launcher" class="launcher" aria-label="Программы и файлы" hidden>
+    <div id="launcherRail" class="launcher-rail">
+      <div id="launcherHandle" class="launcher-handle">КАТЕГОРИИ ⠿</div>
+      <nav id="launcherCategories" class="launcher-categories" aria-label="Категории программ"></nav>
+      <div class="launcher-system"><button id="launcherPC" type="button" title="Этот компьютер"><svg class="icon" aria-hidden="true"><use href="#i-screen-one"/></svg><span>ПК</span></button><button id="launcherTrash" type="button" title="Открыть корзину"><svg class="icon" aria-hidden="true"><use href="#i-launch-trash"/></svg><span>Корзина</span></button><button id="daylightDesktop" type="button" title="Обычный рабочий стол Windows: отключить наши обои и функции"><svg class="icon"><use href="#i-launch-folder"/></svg><span>РАБОЧИЙ СТОЛ</span></button></div>
+    </div>
+    <section id="launcherPanel" class="launcher-panel" aria-label="Содержимое категории" hidden>
+      <header><h2 id="launcherTitle"></h2><button id="launcherArrange" type="button" aria-pressed="false">Разложить</button><button id="launcherClose" type="button" aria-label="Закрыть категорию">×</button></header>
+      <div id="launcherFileFilters" class="launcher-file-filters" role="group" aria-label="Фильтр по типу файла" hidden>
+        <button type="button" data-file-filter="all" aria-pressed="true">Все <small>0</small></button>
+        <button type="button" data-file-filter="images" aria-pressed="false">Картинки <small>0</small></button>
+        <button type="button" data-file-filter="text" aria-pressed="false" title="Текстовые файлы, PDF и офисные документы">Текст <small>0</small></button>
+        <button type="button" data-file-filter="other" aria-pressed="false">Другое <small>0</small></button>
+      </div>
+      <div id="launcherSelection" class="launcher-selection" role="group" aria-label="Выделение файлов" hidden>
+        <button id="launcherSelectMode" type="button" aria-pressed="false" title="Нажимай на файлы, чтобы выбрать несколько">Выбрать</button>
+        <button id="launcherSelectAll" type="button">Выделить всё</button>
+        <button id="launcherSelectClear" type="button">Снять</button>
+        <span id="launcherSelectedCount" role="status" aria-live="polite">Галочки · Ctrl / Shift · рамка</span>
+      </div>
+      <div class="launcher-scroll-shell">
+        <div id="launcherItems" class="launcher-items"></div>
+        <div id="launcherScrollbar" class="launcher-scrollbar">
+          <button id="launcherScrollUp" type="button" aria-label="Прокрутить вверх">⌃</button>
+          <div id="launcherScrollTrack" class="launcher-scroll-track"><button id="launcherScrollThumb" class="launcher-scroll-thumb" type="button" role="scrollbar" aria-label="Прокрутка категории" aria-controls="launcherItems" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></button></div>
+          <button id="launcherScrollDown" type="button" aria-label="Прокрутить вниз">⌄</button>
+        </div>
+      </div>
+      <div class="launcher-panel-foot"><span id="launcherCount"></span><button id="launcherDesktop" type="button" title="Вернуть фон и ярлыки Windows, остановить наши обои и функции">Рабочий стол ↗</button></div>
+    </section>
+    <div id="launcherFeedback" class="launcher-feedback" role="status" aria-live="polite" hidden></div>
+  </section>
+  <div id="powerOverlay" class="power-overlay" hidden>
+    <section class="power-dialog" role="alertdialog" aria-modal="true" aria-labelledby="powerTitle" aria-describedby="powerDescription powerStatus">
+      <svg class="icon power-dialog-icon" aria-hidden="true"><use id="powerDialogSymbol" href="#i-pc-shutdown"/></svg>
+      <h2 id="powerTitle">Выключить компьютер?</h2>
+      <p id="powerDescription">Сохрани работу перед подтверждением.</p>
+      <p id="powerStatus" class="power-status" role="status" aria-live="polite"></p>
+      <div class="power-dialog-actions"><button id="powerCancel" type="button">Отмена</button><button id="powerConfirm" type="button" disabled>Да, выключить</button></div>
+    </section>
+  </div>
+</main>
+
+<button id="settingsToggle" class="settings-toggle" aria-label="Настройки приложения" title="Настройки приложения">⚙</button>
+<aside id="settings" class="settings" hidden aria-label="Настройки приложения"><div id="settingsViewport" class="settings-viewport">
+  <div class="settings-navigation"><header><b>НАСТРОЙКИ</b><button id="settingsClose" aria-label="Закрыть настройки">×</button></header>
+    <nav class="settings-tabs" aria-label="Разделы настроек"><button data-settings-tab="general" type="button" aria-pressed="true" aria-controls="settingsGeneral">Общие</button><button data-settings-tab="appearance" type="button" aria-pressed="false" aria-controls="settingsAppearance">Оформление</button><button data-settings-tab="layout" type="button" aria-pressed="false" aria-controls="settingsLayout">Компоновка</button><button data-settings-tab="sources" type="button" aria-pressed="false" aria-controls="settingsSources">Сведения</button></nav>
+  </div>
+  <section id="settingsGeneral" data-settings-panel="general">
+    <h3>Часы и движение</h3>
+    <label>Часовой пояс<input id="timezoneInput" type="text" value="UTC" spellcheck="false" aria-describedby="settingsMessage"></label>
+    <label class="check"><input id="secondsInput" type="checkbox" checked> Показывать секунды</label>
+    <label class="check"><input id="motionInput" type="checkbox" checked> Движение фигуры</label>
+    <h3>Рабочий стол</h3>
+    <label class="check"><input id="launcherEnabled" type="checkbox" disabled> Категории программ</label>
+    <label class="check"><input id="launcherHideIcons" type="checkbox" disabled> Скрывать значки рабочего стола Windows</label>
+    <p id="launcherSettingsStatus" class="help" role="status">Подключение категорий…</p>
+    <div id="settingsGeneralHost"></div>
+  </section>
+  <section id="settingsAppearance" data-settings-panel="appearance" hidden>
+    <div id="applicationThemes"></div>
+    <div id="appearanceSettings"></div>
+    <p class="help">Дизайн и цвета применяются ко всему приложению.</p>
+  </section>
+  <section id="settingsLayout" data-settings-panel="layout" hidden>
+    <label>Профиль раскладки<select id="profileInput"><option value="display-1">Монитор 1 · 2560 × 1440</option><option value="display-2">Монитор 2 · 3840 × 2160</option></select></label>
+    <p class="help">Расположение и видимость блоков сохраняются отдельно для каждого дизайна и профиля.</p>
+    <div id="settingsLayoutWidgets"></div>
+    <button id="resetLayout" type="button" class="settings-reset">Восстановить исходную раскладку</button>
+  </section>
+  <section id="settingsSources" data-settings-panel="sources" hidden>
+    <h3>Подключения</h3><div id="sourceDetails"></div>
+    <details id="ecoInfo" class="settings-details"><summary>Оценка автономности EcoFlow</summary><p class="help">2048 Вт·ч × заряд × 0,85 / средняя выходная мощность за 60 с. История нагрузки — последние 20 минут; пропуски не соединяются. Станция подключена только для чтения.</p></details>
+    <a class="weather-credit" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Погода: Open-Meteo · CC BY 4.0</a>
+  </section>
+  <p class="settings-autosave">Изменения сохраняются автоматически.</p><p id="settingsMessage" class="help settings-message" role="status" aria-live="polite"></p>
+  <div hidden inert aria-hidden="true"><label><input id="editInput" type="checkbox">Редактирование</label><button id="saveSettings" type="button">Сохранить</button><button id="launcherRestore" type="button" disabled>Закрыть приложение</button><button id="speedTest" type="button">Тест</button><p id="speedResult"></p><input id="bridgeInput" type="url" value="http://127.0.0.1:8767/status" readonly></div>
+</div><div id="settingsScrollbar" class="settings-scrollbar"><div id="settingsScrollTrack" class="settings-scroll-track"><button id="settingsScrollThumb" class="settings-scroll-thumb" type="button" role="scrollbar" aria-label="Прокрутка настроек" aria-controls="settingsViewport" aria-valuemin="0" aria-valuemax="100"></button></div></div></aside>
+<link rel="stylesheet" href="window-policy.css"><script src="window-policy.js"></script><script src="app-host.js"></script><script src="core.js"></script>
+<script src="appearance.js"></script>
+<script src="polymer.js"></script>
+
+<script src="widget-model.js"></script><script src="layout-client.js"></script>
+<script src="controls.js"></script>
+<script src="power.js"></script>
+<script src="player.js"></script>
+<script src="launcher.js"></script>
+<script src="app.js"></script>
+<script src="speedtest.js"></script><script src="daylight.js"></script><link rel="stylesheet" href="settings-ui.css"><script src="settings-ui.js"></script>
+<link rel="stylesheet" href="themes.css"><link rel="stylesheet" href="appearance.css"><script src="themes.js"></script><script src="settings-scroll.js"></script>
+<link rel="stylesheet" href="layout-ui.css"><script src="custom-widget-model.js"></script><script src="builder-session.js"></script><link rel="stylesheet" href="builder.css"><script src="custom-widget-renderer.js"></script><script src="layout-ui.js"></script><link rel="stylesheet" href="devices-ui.css"><script src="devices-ui.js"></script>
+<link rel="stylesheet" href="layout-editor.css"><script src="layout-editor-core.js"></script><script src="layout-editor.js"></script><script src="layout-integration.js"></script><script src="builder-ui.js"></script>
+<link rel="stylesheet" href="layout-transfer.css"><script src="layout-transfer-core.js"></script><script src="layout-file-bridge.js"></script><script src="layout-transfer-ui.js"></script>
+<link rel="stylesheet" href="desktop-hub.css"><script src="desktop-hub.js"></script>
+<link rel="stylesheet" href="app-maintenance.css"><script src="app-maintenance.js"></script></body>
+</html>
+

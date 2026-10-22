@@ -1,0 +1,7 @@
+html,body.overlay-host{width:100%;height:100%;margin:0;overflow:hidden;background:#100d18}
+.overlay-host #stage{position:absolute;inset:auto;width:1920px;height:1080px;transform-origin:0 0;background:#100d18}
+.overlay-host .launcher-panel{animation:none;box-shadow:none}
+.overlay-host .launcher-panel[hidden]{display:none}
+.overlay-host .launcher-items{align-content:start}
+.overlay-host .launcher-rail{box-shadow:none;backdrop-filter:none}
+.overlay-host .launcher-feedback{z-index:90}

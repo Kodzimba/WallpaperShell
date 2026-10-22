@@ -1,0 +1,8 @@
+/* One CSS ladder mirrors the native hierarchy; no global Windows TopMost. */
+:root{--pg-layer-panel:120;--pg-layer-editor:160;--pg-layer-modal:240;--pg-layer-notice:260}
+#settings,#themePicker{z-index:var(--pg-layer-panel)}
+#layoutEditorToolbar{z-index:var(--pg-layer-editor)}
+#powerOverlay,#layoutTransferDialog{z-index:var(--pg-layer-modal)}
+#powerOverlay{position:fixed}
+.layout-transfer-notice{z-index:var(--pg-layer-notice);pointer-events:none}
+.pg-window-blocked{cursor:default}

@@ -1,0 +1,38 @@
+name: Clean Windows build
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Bootstrap and build without globally installed Node
+        shell: powershell
+        run: ./tools/bootstrap-build.ps1
+      - name: Test source and publication boundaries
+        shell: powershell
+        run: |
+          ./tools/test.ps1
+          if (!$?) { throw 'Tests failed' }
+          ./bin/node.exe ./tools/check-security.cjs --worktree-only
+          if ($LASTEXITCODE -ne 0) { throw 'Security scan failed' }
+          ./tools/export-source.ps1 -Destination ./dist/source
+      - name: Package and validate portable archive
+        shell: powershell
+        run: |
+          ./tools/package-release.ps1 -SkipBuild -OutputDirectory ./dist/release
+          ./tools/validate-update-package.ps1 -ZipPath ./dist/release/WallpaperShell-win-x64.zip -Version (Get-Content app-release.json -Raw | ConvertFrom-Json).version
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: WallpaperShell-win-x64
+          path: |
+            dist/release/WallpaperShell-win-x64.zip
+            dist/release/WallpaperShell-win-x64.zip.sha256
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,86 @@
+/* WallpaperShell: the player shares the scene; the lower rail is Windows. */
+body[data-theme=paper-green] .scene canvas{height:510px}
+body[data-theme=paper-green] #scenePixels{position:absolute;left:26px;right:26px;top:520px;height:54px;margin:0;display:flex;gap:4px;align-items:flex-end;color:var(--ink);pointer-events:none}
+body[data-theme=paper-green] #scenePixels i{flex:1;min-height:2px;max-height:53px;background:repeating-linear-gradient(to top,currentColor 0 4px,transparent 4px 7px)}
+body[data-theme=paper-green] .widget.media{background:var(--scene-color);color:var(--ink)}
+body[data-theme=paper-green] .media .widget-content{padding:10px 0 12px;height:100%}
+body[data-theme=paper-green] .media .media-body{height:154px;gap:18px;align-items:center}
+body[data-theme=paper-green] .media .cover{width:148px;height:148px;flex:0 0 148px;border:0;background:#080909;color:var(--scene-color)}
+body[data-theme=paper-green] .media[data-artwork=wide] .cover{width:216px;height:122px;flex-basis:216px}
+body[data-theme=paper-green] .media[data-artwork=portrait] .cover{width:112px;height:148px;flex-basis:112px}
+body[data-theme=paper-green] .media .cover img{width:100%;height:100%;object-fit:contain}
+body[data-theme=paper-green] .media .media-info{height:154px;gap:4px;overflow:hidden}
+body[data-theme=paper-green] .media .media-title{font:22px/1.12 Daylight,sans-serif;letter-spacing:0;max-height:50px;-webkit-line-clamp:2;flex-shrink:0}
+body[data-theme=paper-green] .media .media-artist{font:20px/1.15 Daylight,sans-serif;letter-spacing:0;max-height:24px;opacity:.78;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;flex-shrink:0}
+body[data-theme=paper-green] .media .timeline{position:relative;display:flex;flex-direction:row;align-items:flex-start;gap:8px;height:30px;margin-top:auto;margin-bottom:0;padding:3px 0 18px;flex-shrink:0}
+body[data-theme=paper-green] .media .timeline>div{height:2px;width:auto;flex:1;background:color-mix(in srgb,currentColor 25%,transparent)}
+body[data-theme=paper-green] .media .timeline i{height:2px;background:currentColor}
+body[data-theme=paper-green] .media .timeline>span{position:absolute;left:0;right:auto;bottom:0;font:13px/1 GhostMono,monospace;color:inherit}
+body[data-theme=paper-green] .media .player-controls{height:30px;min-height:30px;padding:0;margin-top:auto;gap:12px;justify-content:flex-start;flex-shrink:0}
+body[data-theme=paper-green] .media .player-controls>button{width:30px;height:30px;padding:5px;border:0;border-radius:0;background:none;color:inherit}
+body[data-theme=paper-green] .media .player-controls>button .icon{width:20px;height:20px}
+body[data-theme=paper-green] .media .player-volume{width:128px;height:30px;margin-left:auto;gap:7px;color:inherit}
+body[data-theme=paper-green] .media .player-volume .icon{width:18px;height:18px;flex:0 0 18px}
+body[data-theme=paper-green] .media .player-volume input{width:100px;height:24px;color:inherit;accent-color:currentColor}
+body[data-theme=paper-green] .media .player-volume input::-webkit-slider-runnable-track{height:2px;background:color-mix(in srgb,currentColor 35%,transparent)}
+body[data-theme=paper-green] .media .player-volume input::-webkit-slider-thumb{width:9px;height:9px;margin-top:-3.5px;background:currentColor;border:0;border-radius:50%}
+body[data-theme=paper-green] .media .player-feedback{left:166px;right:0;bottom:2px;background:var(--scene-color);color:var(--ink);font-size:13px;padding:2px 0}
+body[data-theme=paper-green] .media[data-artwork=wide] .player-feedback{left:234px}
+body[data-theme=paper-green] .desktop-hub{--hub-ink:#f1f1ed;--hub-muted:#bac2b7;--hub-line:#41473f;background:#080909;color:var(--hub-ink);overflow:hidden}
+body[data-theme=paper-green] .desktop-hub .widget-content{padding:12px 20px 14px;height:242px;border-bottom:0}
+body[data-theme=paper-green] .open-windows .widget-content{position:relative}
+body[data-theme=paper-green] .notifications{box-shadow:-1px 0 #080909}
+/* The notification widget retains its portable bounds; the inset divider
+   follows the scene's right edge (1310), leaving a noninteractive 30px gutter. */
+body[data-theme=paper-green] .notifications .widget-content{position:relative;padding-left:50px}
+body[data-theme=paper-green] .notifications .widget-content:before{content:"";position:absolute;left:30px;top:0;bottom:0;width:1px;background:var(--hub-line);pointer-events:none}
+body[data-theme=paper-green] .desktop-hub header{height:26px;display:flex;justify-content:space-between;align-items:center;margin:0 0 8px;font:20px/1 Daylight,sans-serif;letter-spacing:.6px}
+body[data-theme=paper-green] .desktop-hub header small{font:13px/1 GhostMono,monospace;letter-spacing:0;color:var(--hub-muted);white-space:nowrap}
+.desktop-window-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:80px;align-content:start;gap:8px;height:180px;padding:0}
+.desktop-window-grid,.desktop-notification-list{overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;outline-offset:-1px}
+.desktop-window-grid::-webkit-scrollbar,.desktop-notification-list::-webkit-scrollbar{display:none;width:0;height:0}
+.desktop-window-tile{position:relative;min-width:0;height:80px}
+body[data-theme=paper-green] .desktop-window{min-width:0;width:100%;height:80px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:2px 4px;border:0;background:none;color:inherit;font:14px/18px 'Segoe UI',Arial,sans-serif;text-align:center;opacity:1}
+body[data-theme=paper-green] .desktop-window-close{position:absolute;right:0;top:0;transform:none;z-index:1;display:grid;place-items:center;width:28px;height:28px;padding:0;border:0;border-radius:0;background:transparent;color:var(--accent);font:28px/1 'Segoe UI',Arial,sans-serif;cursor:pointer}
+body[data-theme=paper-green] #stage .desktop-window-close:not(:disabled):is(:hover,:focus-visible,:active){color:var(--accent)!important}
+body[data-theme=paper-green] .desktop-window-close:disabled{cursor:wait;opacity:.5}
+body[data-theme=paper-green] .desktop-window-close:focus-visible{outline:1px solid var(--accent);outline-offset:-1px}
+.desktop-window-feedback{position:absolute;bottom:0;left:20px;right:20px;margin:0;background:#080909;color:#f1f1ed;font:12px/14px 'Segoe UI',Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+.desktop-window.is-minimized,.desktop-window-glyph{opacity:1;filter:none}
+.desktop-window-icon,.desktop-notification-icon{display:grid;place-items:center;flex:none;width:44px;height:44px;font:28px/1 'Segoe UI',Arial,sans-serif;overflow:hidden;color:#f1f1ed;opacity:1}
+.desktop-window-icon img,.desktop-notification-icon img{display:block;width:100%;height:100%;object-fit:contain;opacity:1;filter:none}
+.desktop-window-label{display:block;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.desktop-hub-status{margin:0;color:var(--hub-muted);font:17px/1.4 'Segoe UI',Arial,sans-serif;letter-spacing:0}
+.desktop-notification-empty{display:flex;align-items:flex-start;gap:8px;flex-direction:column;padding:2px 0;max-height:180px;overflow:hidden}
+.desktop-hub-setup{margin:0;color:var(--hub-muted);font:14px/1.35 'Segoe UI',Arial,sans-serif;overflow-wrap:anywhere}
+body[data-theme=paper-green] .desktop-hub-connect{padding:6px 10px;background:var(--accent);color:var(--accent-ink);border:0;font:16px/1.15 'Segoe UI',Arial,sans-serif}
+.desktop-notification-list{display:grid;grid-auto-rows:60px;align-content:start;height:180px;min-width:0}
+.desktop-notification{position:relative;display:flex;align-items:center;gap:12px;min-width:0;min-height:0;height:60px;padding:2px 32px 2px 0;border-bottom:1px solid var(--hub-line)}
+.desktop-notification.is-actionable{padding-right:56px}
+body[data-theme=paper-green] .desktop-notification.is-actionable:hover,body[data-theme=paper-green] .desktop-notification.is-actionable:focus-within{background:var(--hover)}
+body[data-theme=paper-green] .desktop-notification-open{position:absolute;inset:0 32px 0 0;border:0;background:transparent;color:var(--accent);padding:3px 3px 0 0;text-align:right;display:flex;align-items:flex-start;justify-content:flex-end;font:16px/1 'Segoe UI',Arial,sans-serif;cursor:pointer}
+body[data-theme=paper-green] .desktop-notification-open:disabled{cursor:wait;opacity:.5}
+body[data-theme=paper-green] .desktop-notification-open:focus-visible{outline:1px solid var(--accent);outline-offset:-1px}
+body[data-theme=paper-green] #stage .desktop-notification-open:not(:disabled):is(:hover,:focus-visible){background:transparent!important;color:var(--accent)!important}
+body[data-theme=paper-green] .desktop-notification-dismiss{position:absolute;right:0;top:0;bottom:0;margin:auto 0;transform:none;z-index:1;display:grid;place-items:center;width:28px;height:28px;padding:0;border:0;border-radius:0;background:transparent;color:var(--accent);font:28px/1 'Segoe UI',Arial,sans-serif;cursor:pointer}
+body[data-theme=paper-green] #stage .desktop-notification-dismiss:not(:disabled):is(:hover,:focus-visible,:active){color:var(--accent)!important}
+body[data-theme=paper-green] .desktop-notification-dismiss:disabled{cursor:wait;opacity:.5}
+body[data-theme=paper-green] .desktop-notification-dismiss:focus-visible{outline:1px solid var(--accent);outline-offset:-1px}
+.desktop-notification-feedback{position:absolute;bottom:0;left:50px;right:20px;margin:0;background:#080909;color:#f1f1ed;font:12px/14px 'Segoe UI',Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+.desktop-notification:last-child{border-bottom:0}
+.desktop-notification-icon{width:54px;height:54px;font-size:36px}
+.desktop-notification-icon.is-portrait{border-radius:50%}
+.desktop-notification-icon.is-portrait img{object-fit:cover}
+.desktop-notification-copy{flex:1;min-width:0;font-family:'Segoe UI',Arial,sans-serif;letter-spacing:0;text-transform:none}
+.desktop-notification-heading{display:flex;flex-direction:column;gap:0;min-width:0}
+.desktop-notification-sender{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;max-width:100%;font-size:17px;line-height:20px;font-weight:600}
+.desktop-notification-app{order:-1;min-width:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;font:12px/13px 'Segoe UI',Arial,sans-serif;color:var(--hub-muted)}
+.desktop-notification-viewport{overflow:hidden;min-width:0;max-width:100%;font:18px/22px 'Segoe UI',Arial,sans-serif;outline-offset:-1px}
+.desktop-notification-track{display:flex;width:max-content;gap:44px;transform:translateX(0)}
+.desktop-notification-text,.desktop-notification-copy-text{display:block;flex:none;width:max-content;max-width:none;white-space:nowrap}
+body[data-theme=paper-green] .desktop-notification.has-overflow .desktop-notification-track{animation:desktop-notification-ticker var(--ticker-duration,14s) .6s linear infinite!important;will-change:transform}
+@keyframes desktop-notification-ticker{from{transform:translateX(0)}to{transform:translateX(var(--ticker-shift,0px))}}
+body[data-theme=paper-green] .desktop-notification-list.is-paused .desktop-notification-track,body[data-theme=paper-green] .desktop-notification:is(:hover,:focus-within,.is-outside) .desktop-notification-track{animation-play-state:paused!important}
+body[data-theme=paper-green] .desktop-notification.is-outside .desktop-notification-track{will-change:auto}
+@media(prefers-reduced-motion:reduce){body[data-theme=paper-green] .desktop-notification.has-overflow .desktop-notification-track{animation:none!important;transform:none;will-change:auto}}
+.desktop-hub [hidden],body[data-theme=paper-green] .media [hidden]{display:none!important}
