@@ -3,6 +3,7 @@ using System.IO;
 using System.Security;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
 // Shared by the wallpaper host and the separate launcher WebView host.
@@ -12,6 +13,13 @@ internal static class PrivateBootstrap {
  static string Root(string root){var value=Path.GetFullPath(root);if(value.StartsWith("\\\\",StringComparison.Ordinal)||Path.GetPathRoot(value).Length!=3)throw new SecurityException("Private storage requires a local drive.");NoReparse(value);return value;}
  static void NoReparse(string path){for(string current=Path.GetFullPath(path);!String.IsNullOrEmpty(current);current=Path.GetDirectoryName(current)){try{if((File.GetAttributes(current)&FileAttributes.ReparsePoint)!=0)throw new SecurityException("Private storage reparse point rejected.");}catch(FileNotFoundException){}catch(DirectoryNotFoundException){}}}
  static DirectorySecurity Descriptor(SecurityIdentifier user){var acl=new DirectorySecurity();acl.SetAccessRuleProtection(true,false);acl.SetOwner(user);var inherit=InheritanceFlags.ContainerInherit|InheritanceFlags.ObjectInherit;acl.AddAccessRule(new FileSystemAccessRule(user,FileSystemRights.FullControl,inherit,PropagationFlags.None,AccessControlType.Allow));acl.AddAccessRule(new FileSystemAccessRule(SystemSid,FileSystemRights.FullControl,inherit,PropagationFlags.None,AccessControlType.Allow));return acl;}
+ static void CreateKey(string directory,SecurityIdentifier user){
+  var file=Path.Combine(directory,"control.key");NoReparse(file);try{File.GetAttributes(file);return;}catch(FileNotFoundException){}
+  var acl=new FileSecurity();acl.SetAccessRuleProtection(true,false);acl.SetOwner(user);acl.AddAccessRule(new FileSystemAccessRule(user,FileSystemRights.FullControl,AccessControlType.Allow));acl.AddAccessRule(new FileSystemAccessRule(SystemSid,FileSystemRights.FullControl,AccessControlType.Allow));
+  // An elevated token's default owner can be Administrators. Set the SID and
+  // private DACL atomically at creation, before the backend reads the token.
+  var random=new byte[32];byte[] bytes=null;try{using(var rng=RandomNumberGenerator.Create())rng.GetBytes(random);bytes=System.Text.Encoding.ASCII.GetBytes(BitConverter.ToString(random).Replace("-","").ToLowerInvariant());using(var stream=new FileStream(file,FileMode.CreateNew,FileSystemRights.Write,FileShare.None,4096,FileOptions.None,acl))stream.Write(bytes,0,bytes.Length);}finally{Array.Clear(random,0,random.Length);if(bytes!=null)Array.Clear(bytes,0,bytes.Length);}
+ }
  static void Verify(FileSystemSecurity acl,SecurityIdentifier user,bool protectedRequired){
   if(protectedRequired&&!acl.AreAccessRulesProtected)throw new SecurityException("Private directory inheritance is not protected.");
   if(!user.Equals(acl.GetOwner(typeof(SecurityIdentifier))))throw new SecurityException("Private storage owner rejected.");
@@ -22,7 +30,7 @@ internal static class PrivateBootstrap {
   var root=Root(appRoot);var data=Path.Combine(root,"data");NoReparse(data);Directory.CreateDirectory(data);NoReparse(data);
   var path=Path.Combine(data,"private");NoReparse(path);var user=User;var acl=Descriptor(user);
   if(Directory.Exists(path)){var current=Directory.GetAccessControl(path,AccessControlSections.Owner);if(!user.Equals(current.GetOwner(typeof(SecurityIdentifier))))throw new SecurityException("Private directory owner rejected.");Directory.SetAccessControl(path,acl);}else Directory.CreateDirectory(path,acl);
-  NoReparse(path);Verify(Directory.GetAccessControl(path),user,true);return path;
+  NoReparse(path);Verify(Directory.GetAccessControl(path),user,true);CreateKey(path,user);Read(root);return path;
  }
  internal static string Read(string appRoot){
   var path=Path.Combine(Root(appRoot),"data","private");NoReparse(path);var user=User;Verify(Directory.GetAccessControl(path),user,true);

@@ -94,8 +94,8 @@
     },
     {
       "path": "docs/SECURITY_REVIEW.md",
-      "size": 5253,
-      "sha256": "69a22d95a50694cf2e2a10ca18c438ef516c3a98fad28e76992dc56e537f5ad8"
+      "size": 5678,
+      "sha256": "1208aaa8b4d838988714a494a7bef23afa3ed61bb6d50fc9da9640ab9e2d6f36"
     },
     {
       "path": "identity/notifications/AppxManifest.xml",
@@ -194,8 +194,8 @@
     },
     {
       "path": "runtime/companion/PrivateBootstrap.cs",
-      "size": 5484,
-      "sha256": "e321f7cd669875d458585e82faf2e026169dee180b5d429ee5848feb4dc99d1d"
+      "size": 6684,
+      "sha256": "7b8b74a047eae20f12dd3cd3350fb3432c45e688c5de21a39671f324228437b4"
     },
     {
       "path": "runtime/companion/app-http.cjs",
@@ -1019,8 +1019,8 @@
     },
     {
       "path": "tests/PrivateBootstrapTests.cs",
-      "size": 4929,
-      "sha256": "a76af5c4bbc9b97d61677cfa998794f966062c9d95d50f9f1f9be7d45aa7da7c"
+      "size": 5823,
+      "sha256": "e2cd05710ef7547417d12cbb37f3a3698c5a6351425bafb29978e3b6c178299c"
     },
     {
       "path": "tests/ThemeSupportTests.cs",
