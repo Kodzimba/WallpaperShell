@@ -68,8 +68,10 @@ jobs:
           if ($checksum -cnotmatch '^[a-f0-9]{64}  WallpaperShell-win-x64\.zip$') { throw 'Invalid checksum file' }
           if ((Get-FileHash -LiteralPath ('release/'+$asset) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $checksum.Substring(0,64)) { throw 'Release checksum mismatch' }
           $tag = 'v'+$env:RELEASE_VERSION
-          gh release view $tag --json isDraft 2>$null | Out-Null
-          if ($LASTEXITCODE -ne 0) {
+          $releases = gh release list --limit 100 --json tagName,isDraft | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Could not list existing releases' }
+          $matching = @($releases | Where-Object { $_.tagName -ceq $tag })
+          if ($matching.Count -eq 0) {
             gh release create $tag --draft --verify-tag --title "WallpaperShell $env:RELEASE_VERSION" --notes 'Portable Windows x64 package. Verify checksums and review before publishing.'
             if ($LASTEXITCODE -ne 0) { throw 'Draft release creation failed' }
           }

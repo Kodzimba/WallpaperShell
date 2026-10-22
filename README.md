@@ -6,11 +6,17 @@ WallpaperShell — приложение живых обоев для Windows x64
 
 Luna Blue сочетает жидкий синий мрамор, отдельный полумесяц и стеклянные виджеты. Вода реагирует на мышь, Луна — на системный звук. В покое вода прекращает перерисовку; звук обрабатывается в памяти для визуализации, без записи и микрофона.
 
+## Скачать
+
+[Готовый архив для Windows x64](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-win-x64.zip) · [SHA256](https://github.com/Kodzimba/WallpaperShell/releases/latest/download/WallpaperShell-win-x64.zip.sha256) · [Все релизы](https://github.com/Kodzimba/WallpaperShell/releases).
+
+Для запуска скачай именно WallpaperShell-win-x64.zip из Assets релиза. Архивы GitHub «Source code» содержат исходники для сборки.
+
 ## Запуск
 
 Распакуй весь portable ZIP в собственную доступную для записи папку на локальном диске с Windows ACL. Для ключа создаётся защищённый data/private; сетевые папки и файловые системы без Windows ACL не подходят. Запускай RUN.cmd для обычного окна, RUN_DESKTOP.cmd для рабочего стола или RUN_LUNA_BLUE.cmd для Luna Blue. Не переноси один EXE отдельно от папки. Исполняемый файл приложения: bin/WallpaperShell.exe.
 
-Нужны Windows x64, .NET Framework 4.8 и Microsoft Edge WebView2 Runtime. Node.js и SDK-библиотеки WebView2 входят в portable пакет; отдельно устанавливать Node или npm не нужно. Сам WebView2 Runtime устанавливается отдельно. Приложение не устанавливает автозапуск или службу.
+Нужны Windows x64, [.NET Framework 4.8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) и [Microsoft Edge WebView2 Evergreen Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/). Если Runtime отсутствует, установи его с официальной страницы Microsoft. Node.js и SDK-библиотеки WebView2 входят в portable пакет; отдельно устанавливать Node или npm не нужно. Приложение не устанавливает автозапуск или службу.
 
 «Рабочий стол» возвращает значки Windows и завершает WallpaperShell. Обычное закрытие завершает только собственные окна и backend. Существующие обои и их службы приложение не заменяет.
 
@@ -28,7 +34,7 @@ Luna Blue сочетает жидкий синий мрамор, отдельн�
 
 **Обновить** вручную проверяет последний стабильный GitHub Release. После проверки появляется отдельная кнопка загрузки и установки. Приложение проверяет SHA256 архива и содержимое пакета, затем перезапускается через собственный helper. Настройки и раскладки сохраняются. Ошибка записи вызывает восстановление заменённых файлов из резервной копии; внезапное отключение питания не покрывается автоматическим восстановлением.
 
-Адрес проекта задаётся в app-release.json: Kodzimba/WallpaperShell. Для работы репортов и обновлений необходимо создать этот репозиторий и опубликовать первый стабильный релиз; одна подготовка локальной папки этого не делает. Секрет GitHub для чтения публичных релизов не нужен.
+Репорты открываются в [Kodzimba/WallpaperShell](https://github.com/Kodzimba/WallpaperShell/issues), обновления загружаются из его [стабильных релизов](https://github.com/Kodzimba/WallpaperShell/releases). Секрет GitHub для чтения публичных релизов не нужен.
 
 ## Сборка и публикация
 

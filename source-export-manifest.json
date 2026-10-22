@@ -19,8 +19,8 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "size": 4066,
-      "sha256": "8815326bc14d5756ea9f9103c4de0fcdd9e23b7f5b17a475724fb185574f3047"
+      "size": 4250,
+      "sha256": "1700c354ef9d83d142bc54329b06ffd8fdedf9dc532bf57b7add6cc44a5c7c94"
     },
     {
       "path": ".gitignore",
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "size": 7707,
-      "sha256": "7f221aa4fec0cdc26933c85a376de80d59dc39f9fb50989a51796c30489f0942"
+      "size": 8344,
+      "sha256": "bcd4161be0203ed80e6ab94ceaa2aa06dd7605fa17aacd1b18a2ba50509b0dba"
     },
     {
       "path": "RUN.cmd",
